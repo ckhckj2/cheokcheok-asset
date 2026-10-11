@@ -50,7 +50,11 @@ const passed=memory();const qp=Q.create(passed,questions),all=lessons.map(l=>l.i
 passed.setItem(L.KEY,JSON.stringify({version:1,completed:all,positions:Object.fromEntries(all.map(id=>[id,3])),resume:{},last:all[19]}));
 const normal=browser([...passed.values]);assert.equal(normal.run('investOpen()'),true);const learningBefore=normal.local.values.get(L.KEY),quizBefore=normal.local.values.get(Q.KEY);
 normal.click('view-invest','investAction','start');normal.submit('view-invest','investmentForm',{...I.baseline,price:-1,decision:'hold',reason:record.reason});assert.equal(normal.run('investmentSession.result'),null);assert.ok(normal.node('investmentError').textContent);
-normal.submit('view-invest','investmentForm',{...I.baseline,ltv:50,decision:'hold',reason:record.reason});assert.equal(normal.run('investmentSession.result.profit'),138);
+normal.submit('view-invest','investmentForm',{...I.baseline,ltv:50,decision:'hold',reason:record.reason});assert.equal(normal.run('investmentSession.result.profit'),138);assert.ok(normal.node('view-invest').innerHTML.includes('숫자를 말로 풀어보면'));assert.ok(normal.node('view-invest').innerHTML.includes('530억'));
 normal.submit('view-invest','investmentReflection',{reflection:record.reflection});assert.equal(normal.run('investmentProgress.records.length'),1);const savedWrites=normal.local.writes;normal.submit('view-invest','investmentReflection',{reflection:record.reflection});assert.equal(normal.local.writes,savedWrites);
 assert.equal(normal.local.values.get(L.KEY),learningBefore);assert.equal(normal.local.values.get(Q.KEY),quizBefore);assert.equal(I.create(normal.local).records[0].input.ltv,50);
 console.log('PASS: earned deputy gate, actual form validation, changed conditions, real record save/reload, duplicate submission guard and existing learning/quiz data preserved');
+normal.click('view-invest','investAction','start');const markup='<img src=x onerror=alert(1)> 내용을 확인합니다.';
+normal.submit('view-invest','investmentForm',{...I.baseline,decision:'hold',reason:markup});assert.ok(normal.node('view-invest').innerHTML.includes('&lt;img'));assert.ok(!normal.node('view-invest').innerHTML.includes('<img src=x'));
+normal.submit('view-invest','investmentReflection',{reflection:markup});normal.click('view-invest','investAction','hub');assert.ok(normal.node('view-invest').innerHTML.includes('&lt;img'));assert.ok(!normal.node('view-invest').innerHTML.includes('<img src=x'));
+console.log('PASS: user-entered judgment and reflection are escaped in results and stored-record display');
