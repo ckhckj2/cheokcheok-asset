@@ -35,3 +35,18 @@ const a=Q.create(store,questions),b=Q.create(store,questions);a.submit('lesson-2
 // A stale tab cannot grade an error review already resolved by another tab.
 a.submit('lesson-1',first,all);b.sync();a.submit('review',{'lesson-1-1':0},all,['lesson-1-1']);assert.equal(b.submit('review',{'lesson-1-1':0},all,['lesson-1-1']),null);
 console.log('PASS: 70 authored questions, lesson/exam gates, incomplete choices, grading, error resolution, 80-point promotion, best-score retention, reload, corrupt/blocked storage, independent learning records and shared tabs');
+// Drive the real UI handlers with a minimal DOM: selection, previous, grading,
+// retry and storage refresh must use the same session without losing answers.
+const nodes=new Map(),handlers={};let memoryValues=new Map([[L.KEY,JSON.stringify({version:1,completed:all,positions:Object.fromEntries(all.map(id=>[id,3])),resume:{},last:all[19]})]]),uiWrites=0;
+function node(id){if(!nodes.has(id))nodes.set(id,{id,textContent:'학습',innerHTML:'',dataset:{},focus(){},replaceChildren(){},addEventListener(name,fn){handlers[id+':'+name]=fn;},setAttribute(){},removeAttribute(){},classList:{toggle(){}},querySelector(){return node('child');}});return nodes.get(id);}
+const ctx={document:{title:'',getElementById:node,createElement:()=>node('new'),querySelectorAll:()=>[],querySelector:()=>node('heading')},location:{hash:'#quiz/lesson-1'},history:{replaceState(){}},window:{localStorage:{getItem:k=>memoryValues.get(k)??null,setItem:(k,v)=>{uiWrites++;memoryValues.set(k,v);}},scrollTo(){},addEventListener(name,fn){handlers[name]=fn;}}};
+vm.createContext(ctx);vm.runInContext(['curriculum.js','easy.js','progress.js','quiz-bank.js','quiz-progress.js','quiz-ui.js','app.js'].map(n=>fs.readFileSync(__dirname+'/'+n,'utf8')).join('\n'),ctx);
+const read=code=>vm.runInContext(code,ctx),choose=n=>handlers['view-quiz:change']({target:{name:'choice',value:String(n)}}),submit=()=>handlers['view-quiz:submit']({preventDefault(){}}),click=action=>handlers['view-quiz:click']({target:{closest(){return {disabled:false,dataset:{quizAction:action}};}}});
+assert.equal(read('quizSession.step'),0);submit();assert.equal(read('quizSession.step'),0);
+choose(1);submit();assert.equal(read('quizSession.step'),1);choose(1);click('previous');assert.equal(read('quizSession.answers["lesson-1-2"]'),1);assert.equal(read('quizSession.step'),0);
+submit();assert.equal(read('quizSession.step'),1);submit();assert.equal(read('quizSession.step'),2);choose(2);
+const uiWritesBefore=uiWrites;handlers.storage({key:Q.KEY});assert.equal(read('quizSession.answers["lesson-1-3"]'),2);assert.equal(uiWrites,uiWritesBefore);
+submit();assert.equal(read('quizSession.result.correct'),2);assert.ok(node('view-quiz').innerHTML.includes('67점'));assert.ok(node('view-quiz').innerHTML.includes('내 주머니 300'));
+const gradedWrites=uiWrites;submit();assert.equal(uiWrites,gradedWrites);click('retry');assert.equal(read('quizSession.result'),null);assert.equal(read('quizSession.step'),0);assert.equal(read('Object.keys(quizSession.answers).length'),0);
+ctx.location.hash='#quiz/lesson-999';handlers.hashchange();assert.equal(read('quizSession'),null);assert.ok(node('view-quiz').innerHTML.includes('해당 수업을 완료한 뒤'));
+console.log('PASS: actual UI handlers for required answers, previous/next, explanations, retry, invalid routes and non-writing storage refresh during a quiz');
