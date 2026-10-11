@@ -50,3 +50,10 @@ submit();assert.equal(read('quizSession.result.correct'),2);assert.ok(node('view
 const gradedWrites=uiWrites;submit();assert.equal(uiWrites,gradedWrites);click('retry');assert.equal(read('quizSession.result'),null);assert.equal(read('quizSession.step'),0);assert.equal(read('Object.keys(quizSession.answers).length'),0);
 ctx.location.hash='#quiz/lesson-999';handlers.hashchange();assert.equal(read('quizSession'),null);assert.ok(node('view-quiz').innerHTML.includes('해당 수업을 완료한 뒤'));
 console.log('PASS: actual UI handlers for required answers, previous/next, explanations, retry, invalid routes and non-writing storage refresh during a quiz');
+ctx.location.hash='#quiz/lesson-1';handlers.hashchange();
+const displayed=Array.from(node('view-quiz').innerHTML.matchAll(/name="choice" value="(\d)"/g),m=>Number(m[1]));
+assert.equal(JSON.stringify(displayed),read('JSON.stringify(quizSession.orders["lesson-1-1"])'));assert.equal(new Set(displayed).size,3);
+choose(1);assert.equal(node('quizChoiceCount').textContent,'1 / 3개 선택');
+read('quizProgress.submit("final",Object.fromEntries(quizQuestions.filter(q=>q.quizId==="final").map(q=>[q.id,q.answer])),progress.state.completed)');
+click('promote');assert.equal(node('currentLevel').textContent,'LV.2 · 대리');assert.ok(node('view-quiz').innerHTML.includes('data-start-quiz="final"'));assert.ok(node('view-quiz').innerHTML.includes('종합 퀴즈 다시 풀기'));
+console.log('PASS: shuffled display preserves canonical answer IDs, selected count updates immediately and comprehensive retry remains available after promotion');
