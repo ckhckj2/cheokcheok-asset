@@ -4,14 +4,14 @@ const icons={home:'<path d="M3 10 12 3l9 7v10H3z"/><path d="M9 20v-7h6v7"/>',lea
 const levels=[
 {name:'신입사원',motto:'개념을 이해하고, 내 말로 설명하기',purpose:'금융·부동산 자산운용의 기초를 익히는 단계예요.',items:['금융 기초·투자 실무 입문 20강','용어사전과 숫자 예시','퀴즈·해설·오답 복습'],view:'learn',cta:'기초학습 구성 보기'},
 {name:'대리',motto:'내 선택이 결과를 어떻게 바꾸는지 확인하기',purpose:'주어진 조건에서 투자 결정을 내리고, 선택 전후의 결과를 비교해요.',items:['매입·대출·운영·매각 조건 선택','현금흐름·수익률·위험 비교','판단 이유와 결과 복기'],view:'invest',cta:'모의투자 구성 보기'},
-{name:'과장',motto:'자료를 비교하고, 가정의 근거 세우기',purpose:'비교 건물 자료를 읽고 임대료·공실률·운영비 가정을 직접 정해요.',items:['유사 건물의 비교 가능성 판단','가정과 선택 근거 입력','가정 변경에 따른 결과 비교'],view:'invest',cta:'가정 수립 구성 보기'},
+{name:'과장',motto:'자료를 비교하고, 가정의 근거 세우기',purpose:'비교 건물 자료를 읽고 임대료·공실률·운영비 가정을 직접 정해요.',items:['유사 건물의 비교 가능성 판단','가정과 선택 근거 입력','가정 변경에 따른 결과 비교'],view:'assumptions',cta:'가정 수립 실습 보기'},
 {name:'팀장',motto:'전망이 달라져도 투자 판단이 타당한지 검토하기',purpose:'금리·공실·공사비·매각 조건이 달라지는 상황에서 투자 전략을 비교해요.',items:['금리 하락·유지·상승 시나리오','공실 증가·공사비 상승 민감도 분석','투자 여부·대출·보유·매각 전략 복기'],view:'invest',cta:'시나리오 구성 보기'}
 ];
 function svg(key){return '<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">'+icons[key]+'</svg></span>';}
 document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon);});
 let previewLevel=0;
 function setLevel(index){previewLevel=index;document.querySelectorAll('[data-preview-level]').forEach(btn=>btn.setAttribute('aria-pressed',String(Number(btn.dataset.previewLevel)===index)));const item=levels[index];document.getElementById('levelNumber').textContent='0'+(index+1);document.getElementById('levelName').textContent='LV.'+(index+1)+' · '+item.name;document.getElementById('levelMotto').textContent=item.motto;document.getElementById('levelPurpose').textContent=item.purpose;const list=document.getElementById('levelFeatures');list.replaceChildren(...item.items.map(label=>{const li=document.createElement('li');li.textContent=label;return li;}));document.getElementById('levelCta').textContent=item.cta;}
-function showView(name,focus=true){const allowed=['home','learn','quiz','invest','level','roadmap'];if(!allowed.includes(name))name='home';document.querySelectorAll('.view').forEach(section=>{const on=section.id==='view-'+name;section.hidden=!on;section.classList.toggle('active',on);});document.querySelectorAll('[data-nav]').forEach(btn=>{const on=btn.dataset.nav===name;btn.classList.toggle('active',on);if(on)btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current');});document.title=(name==='home'?'척척 에셋':document.querySelector('#view-'+name+' h1').textContent+' · 척척 에셋');if(focus){window.scrollTo({top:0,behavior:'instant'});document.querySelector('#view-'+name+' h1').focus({preventScroll:true});}}
+function showView(name,focus=true){const allowed=['home','learn','quiz','invest','assumptions','level','roadmap'];if(!allowed.includes(name))name='home';document.querySelectorAll('.view').forEach(section=>{const on=section.id==='view-'+name;section.hidden=!on;section.classList.toggle('active',on);});document.querySelectorAll('[data-nav]').forEach(btn=>{const on=btn.dataset.nav===name;btn.classList.toggle('active',on);if(on)btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current');});document.title=(name==='home'?'척척 에셋':document.querySelector('#view-'+name+' h1').textContent+' · 척척 에셋');if(focus){window.scrollTo({top:0,behavior:'instant'});document.querySelector('#view-'+name+' h1').focus({preventScroll:true});}}
 document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.level!==undefined)setLevel(Number(btn.dataset.level));location.hash=btn.dataset.view;}));
 document.querySelectorAll('[data-preview-level]').forEach(btn=>btn.addEventListener('click',()=>setLevel(Number(btn.dataset.previewLevel))));
 document.getElementById('levelCta').addEventListener('click',()=>{location.hash=levels[previewLevel].view;});
@@ -25,11 +25,13 @@ function updateProgressUI(){
   document.getElementById('adminBanner').hidden=!ReviewMode.enabled;
   document.getElementById('adminToggle').textContent=ReviewMode.enabled?'학습 모드로 돌아가기':'관리자 모드로 보기';
   document.getElementById('adminToggle').setAttribute('aria-pressed',String(ReviewMode.enabled));
-  const earnedLevel=earnedQuizProgress.level(progress.state.completed);
-  document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · '+(earnedLevel===2?'종합 퀴즈 통과':'퀴즈로 이해 확인');
-  document.getElementById('currentLevel').textContent='LV.'+earnedLevel+' · '+(earnedLevel===2?'대리':'신입사원');
-  document.getElementById('levelCurrentCopy').textContent=earnedLevel===2?'현재는 LV.2 · 대리예요. 수업과 퀴즈는 언제든 복습할 수 있어요.':'현재는 LV.1 · 신입사원이에요. 20강 완료와 종합 퀴즈 80점 이상을 달성하면 대리로 승급할 수 있어요.';
-  document.getElementById('stageProgress').textContent='LV.'+earnedLevel+' · '+(earnedLevel===2?'대리':'신입사원')+' / '+count+'강 완료';
+  investmentProgress.sync();assumptionsProgress.sync();
+  const earnedLevel=managerEarned()?3:earnedQuizProgress.level(progress.state.completed);
+  const earnedName=levels[earnedLevel-1].name;
+  document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · '+(earnedLevel>=2?'종합 퀴즈 통과':'퀴즈로 이해 확인');
+  document.getElementById('currentLevel').textContent='LV.'+earnedLevel+' · '+earnedName;
+  document.getElementById('levelCurrentCopy').textContent=earnedLevel===3?'현재는 LV.3 · 과장이에요. 비교 자료로 가정을 세우고 투자 결과를 확인할 수 있어요.':earnedLevel===2?'현재는 LV.2 · 대리예요. 수업과 퀴즈는 언제든 복습할 수 있어요.':'현재는 LV.1 · 신입사원이에요. 20강 완료와 종합 퀴즈 80점 이상을 달성하면 대리로 승급할 수 있어요.';
+  document.getElementById('stageProgress').textContent='LV.'+earnedLevel+' · '+earnedName+' / '+count+'강 완료';
   const next=LearningProgress.nextLesson(curriculum,progress.state);
   const finished=count===curriculum.length;
   document.getElementById('homeNextTitle').textContent=next?next.number+'강 · '+next.title:finished?'20강 학습 완료 · 헷갈린 내용 복습하기':'다음 수업을 준비하고 있어요';
@@ -80,6 +82,7 @@ function route(focus=true,recordVisit=true){
       if(recordVisit&&!ReviewMode.enabled)progress.visit(lesson.id,step);renderLesson(lesson,step,false);
     }else renderLearningList(parts[1]?'이 수업은 아직 열리지 않았어요. 이전 강을 먼저 완료해 주세요.':'');
   }else if(parts[0]==='invest'){investmentRoute(!recordVisit);}
+  else if(parts[0]==='assumptions'){assumptionsRoute(!recordVisit);}
   else if(parts[0]==='quiz'){quizRoute(parts,focus,!recordVisit);}
   else if(!learningView.querySelector('h1'))renderLearningList();
   showView(parts[0],focus);updateProgressUI();
@@ -113,8 +116,8 @@ learningView.addEventListener('click',event=>{
 });
 window.addEventListener('hashchange',()=>route());
 // Refresh the view on another tab's change without writing it back to storage.
-window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY||event.key===QuizProgress.KEY||event.key===Investment.KEY){route(false,false);}});
-function setReviewMode(enabled){ReviewMode.set(enabled);quizProgress=enabled?reviewQuizProgress:earnedQuizProgress;quizSession=null;investmentSession=null;activeLesson=null;renderLearningList();route(false,false);}
+window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY||event.key===QuizProgress.KEY||event.key===Investment.KEY||event.key===Assumptions.KEY){route(false,false);}});
+function setReviewMode(enabled){ReviewMode.set(enabled);quizProgress=enabled?reviewQuizProgress:earnedQuizProgress;quizSession=null;investmentSession=null;assumptionsSession=null;activeLesson=null;renderLearningList();route(false,false);}
 document.getElementById('adminToggle').addEventListener('click',()=>setReviewMode(!ReviewMode.enabled));
 document.getElementById('adminExit').addEventListener('click',()=>setReviewMode(false));
 quizProgress=ReviewMode.enabled?reviewQuizProgress:earnedQuizProgress;
