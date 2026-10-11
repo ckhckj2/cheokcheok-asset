@@ -37,7 +37,7 @@ const LearningProgress = (() => {
     try{state=read();}catch(error){writable=false;message='저장된 진도를 읽을 수 없어 이번 방문의 진도만 유지해요. 기존 기록은 덮어쓰지 않아요.';}
     function save(next){
       if(writable){
-        try{next=merge(read(),next,lessons);storage.setItem(KEY,JSON.stringify(next));}
+        try{const persisted=read();next=merge(persisted,next,lessons);if(JSON.stringify(next)!==JSON.stringify(persisted))storage.setItem(KEY,JSON.stringify(next));}
         catch(error){writable=false;message='진도를 저장하지 못했어요. 이번 방문에서는 계속 공부할 수 있지만, 새로고침하면 기록이 사라질 수 있어요.';}
       }
       state=next;return state;
