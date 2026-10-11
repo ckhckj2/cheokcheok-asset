@@ -30,7 +30,10 @@ function updateProgressUI(){
   document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · 승급 준비 중';
   document.getElementById('stageProgress').textContent='LV.1 · 신입사원 / '+count+'강 완료';
   const next=LearningProgress.nextLesson(curriculum,progress.state);
-  document.getElementById('homeNextTitle').textContent=next?next.number+'강 · '+next.title:'다음 수업을 준비하고 있어요';
+  const finished=count===curriculum.length;
+  document.getElementById('homeNextTitle').textContent=next?next.number+'강 · '+next.title:finished?'20강 학습 완료 · 헷갈린 내용 복습하기':'다음 수업을 준비하고 있어요';
+  document.getElementById('homeNextCopy').textContent=finished?'완료한 수업을 다시 읽고, 내 말로 설명해보세요. 정식 퀴즈와 승급은 다음 단계에서 추가돼요.':'먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.';
+  document.getElementById('homeLearningCta').textContent=finished?'복습할 수업 보기 →':'학습 시작하기 →';
 }
 function storageNotice(){return '<p class="storage-note" role="status">'+escapeText(progress.message||'진도는 이 기기·브라우저에 저장돼요. 브라우저 데이터를 지우면 기록도 사라져요.')+'</p>';}
 function lessonRow(lesson){
@@ -44,9 +47,9 @@ function renderLearningList(notice=''){
   const completed=progress.state.completed.length;
   learningView.innerHTML='<header class="page-head"><span class="eyebrow">LEARNING</span><h1 tabindex="-1">기초학습</h1><p>쉽게 이해하고, 숫자로 확인하고, 내 말로 정리해요.</p></header>'+
     (notice?'<p class="lesson-note" role="status">'+escapeText(notice)+'</p>':'')+
-    '<div class="learning-overview"><div><span class="eyebrow">나의 학습</span><h2>'+completed+' / 20강 완료</h2><p>완료한 수업은 언제든 다시 볼 수 있어요.</p></div>'+(next?'<button type="button" class="primary" data-lesson="'+next.id+'">'+next.number+'강 '+((progress.state.positions[next.id]||0)>0?'이어서 학습':'시작하기')+' →</button>':'<span class="status-label">다음 수업 준비 중</span>')+'</div><progress class="learning-progress" max="20" value="'+completed+'" aria-label="20강 학습 완료 진도"></progress>'+storageNotice()+
+    '<div class="learning-overview"><div><span class="eyebrow">나의 학습</span><h2>'+completed+' / 20강 완료</h2><p>완료한 수업은 언제든 다시 볼 수 있어요.</p></div>'+(next?'<button type="button" class="primary" data-lesson="'+next.id+'">'+next.number+'강 '+((progress.state.positions[next.id]||0)>0?'이어서 학습':'시작하기')+' →</button>':'<span class="status-label">'+(completed===curriculum.length?'20강 학습 완료 · 복습 가능':'다음 수업 준비 중')+'</span>')+'</div><progress class="learning-progress" max="20" value="'+completed+'" aria-label="20강 학습 완료 진도"></progress>'+storageNotice()+
     '<div class="lesson-group"><h2>01 · 금융 기초 <small>1~10강</small></h2><ol class="lesson-list">'+curriculum.slice(0,10).map(lessonRow).join('')+'</ol></div>'+
-    '<div class="lesson-group"><h2>02 · 부동산 투자 실무 입문 <small>11~20강</small></h2><ol class="lesson-list">'+curriculum.slice(10).map(lessonRow).join('')+'</ol></div><p class="asset-footnote">현재 1~10강을 학습할 수 있어요. 11~20강은 2-C에서 추가돼요. 학습 완료는 스스로 읽고 정리한 기록이며, 퀴즈 점수나 승급을 의미하지 않아요.</p>';
+    '<div class="lesson-group"><h2>02 · 부동산 투자 실무 입문 <small>11~20강</small></h2><ol class="lesson-list">'+curriculum.slice(10).map(lessonRow).join('')+'</ol></div><p class="asset-footnote">1~20강이 모두 준비됐어요. 이전 강을 완료하면 다음 강이 열려요. 학습 완료는 스스로 읽고 정리한 기록이며, 퀴즈 점수나 승급을 의미하지 않아요.</p>';
 }
 function renderEasy(explanation){
   if(!explanation)return '';
@@ -101,7 +104,7 @@ learningView.addEventListener('click',event=>{
   if(action==='complete'&&progress.complete(activeLesson.id)){
     updateProgressUI();const next=LearningProgress.nextLesson(curriculum,progress.state);
     const title=activeLesson.title;
-    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강이 열렸어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
+    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강이 열렸어요.':progress.state.completed.length===curriculum.length?'20강을 모두 마쳤어요. 헷갈린 수업은 언제든 복습할 수 있어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
     history.replaceState(null,'','#learn');showView('learn');
   }
 });
