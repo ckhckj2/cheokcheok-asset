@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FBFCFE"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-5aq+dxsLkb7CQpllmUWq2nnJNk4FVJ6Ws1IvHoCYjb0='; style-src 'sha256-nPS0pNDubl/4viUm796xG0wQeMyJiuAyvQyertWSA3s='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="description" content="척척 에셋: 기초학습에서 모의투자와 투자 판단까지 이어지는 부동산 자산운용 교육 프로그램."><title>척척 에셋</title><style>/* Reused from ckhckj2/Project-context: v2.css */
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FBFCFE"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-HUs6P61DF4k4m3SJy0hbDwy3HUjQ3NYUh5AoEyawWgw='; style-src 'sha256-K5g+JvJB2YIuWTlGROa5PZplwdRM5xlB2orYi7ic26E='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="description" content="척척 에셋: 기초학습에서 모의투자와 투자 판단까지 이어지는 부동산 자산운용 교육 프로그램."><title>척척 에셋</title><style>/* Reused from ckhckj2/Project-context: v2.css */
 :root{--bg:#F6F7FB;--surface:#fff;--ink:#26324A;--muted:#77819A;--line:#E5E9F2;--primary:#4C6FFF;--primarySoft:#EEF2FF;--green:#159A73;--greenSoft:#EAF8F3;--amber:#C98218;--amberSoft:#FFF6E6;--coral:#E77373;--coralSoft:#FFF0F0;--shadow:0 10px 30px rgba(42,58,91,.065)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(76,111,255,.18);outline-offset:2px}.hidden{display:none!important}
 #masterBar{display:none;margin:8px 10px 0;padding:10px 12px;border:1px solid #E5D69F;border-radius:16px;background:linear-gradient(90deg,#FFFBEB,#F7F2FF);box-shadow:0 8px 24px rgba(119,92,24,.06);align-items:center;gap:10px;flex-wrap:wrap}.certified #masterBar{display:flex}.master-copy{min-width:150px;margin-right:auto}.master-copy small{display:block;font-size:8.5px;letter-spacing:.11em;font-weight:950;color:#9B8140;margin-bottom:3px}.master-copy b{font-size:11.5px;color:#725C25}.master-levels{display:flex;gap:6px;flex-wrap:wrap}.master-levels button{border:1px solid #E6E1D3;background:#fff;color:#766F62;border-radius:999px;padding:8px 11px;font-size:10.5px;font-weight:900}.master-levels button.active{background:#5A62D7;color:#fff;border-color:#5A62D7}.master-levels button[data-level="5"].active{background:linear-gradient(135deg,#705BD2,#B58A2D);border-color:transparent}.master-note{width:100%;font-size:9.5px;color:#9A8E72;line-height:1.45}
@@ -74,29 +74,151 @@ html,body{background:var(--cc-bg)!important;color:var(--cc-navy)}body{font-famil
 @media(max-width:1000px) and (min-width:701px){.main{padding:24px!important}.asset-grid{grid-template-columns:1fr}.asset-card .ico{margin-bottom:12px}.asset-journey{grid-template-columns:repeat(2,1fr)}.asset-next{align-items:flex-start;flex-direction:column}.hero h1{font-size:30px!important}}
 @media(max-width:700px){.asset-topline{padding:4px 0 19px;font-size:11px}.stage-chip{padding:6px 9px;font-size:10px}.hero h1{font-size:28px!important}.hero>.lead{font-size:13px!important}.asset-next{padding:21px;margin:22px 0;flex-direction:column;align-items:stretch;gap:18px}.asset-next h2{font-size:19px}.asset-grid{grid-template-columns:1fr;gap:12px}.asset-card{padding:19px;display:grid;grid-template-columns:44px 1fr;column-gap:15px}.asset-card .ico{grid-row:1/4;margin:0}.asset-card p,.asset-card b,.asset-card small{grid-column:2}.asset-card small{margin-top:10px}.asset-card b{font-size:16px;margin-bottom:6px}.asset-card p{font-size:12px}.asset-journey{grid-template-columns:repeat(2,1fr)}.asset-panel{padding:21px}.page-head{margin:12px 0 23px}.page-head h1{font-size:26px}.asset-tabs{gap:7px}.asset-tabs button{padding:11px 12px;font-size:12px}.flow-list{grid-template-columns:1fr}.roadmap-list li{align-items:flex-start;font-size:12px}.roadmap-list em{white-space:nowrap}.main{padding-bottom:100px!important}.level-motto{font-size:17px!important}}
 @media(prefers-reduced-motion:reduce){.asset-card{transition:none}.asset-card:hover{transform:none}}
+/* Stage 2-A: quiet lesson list, one focused section at a time. */
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #2563eb;outline-offset:4px}button:disabled{cursor:default;opacity:.62;transform:none}.primary{background:#2563eb!important;color:white!important;border:0;border-radius:12px;padding:13px 18px;font-weight:800;font-size:13px}.secondary{background:#f2f6ff;color:#2563eb;border:1px solid #cfdcf4;border-radius:12px;padding:12px 15px;font-size:13px;font-weight:800}.learning-overview{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#fff;border:1px solid #e3e9f2;padding:24px;border-radius:18px}.learning-overview h2{margin:0 0 8px;font-size:22px}.learning-overview p{font-size:13px;color:#64748b;margin:0}.learning-progress{display:block;width:100%;height:6px;margin:16px 0 0;appearance:none;border:none;border-radius:10px;background:#e3e9f2;overflow:hidden}.learning-progress::-webkit-progress-bar{background:#e3e9f2}.learning-progress::-webkit-progress-value{background:#2563eb}.learning-progress::-moz-progress-bar{background:#2563eb}.storage-note{font-size:11px;color:#64748b;line-height:1.7;margin:13px 0 24px}.lesson-group{margin-top:32px}.lesson-group>h2{font-size:18px;margin:0 0 14px;letter-spacing:-.5px}.lesson-group>h2 small{font-size:12px;color:#64748b;font-weight:500;margin-left:8px}.lesson-list{list-style:none;padding:0;margin:0;display:grid;gap:9px}.lesson-row{display:flex;align-items:center;gap:16px;width:100%;border:1px solid #e3e9f2;background:#fff;border-radius:14px;padding:17px;text-align:left;color:#10234a}.lesson-row.open{border-color:#a7c3f7;background:#f5f8ff}.lesson-row.completed{border-color:#e3e9f2}.lesson-row:not(:disabled):hover{border-color:#2563eb}.lesson-number{display:grid;place-items:center;flex:0 0 36px;height:36px;background:#eef3fc;border-radius:10px;font-size:13px;font-weight:800;color:#52627e}.lesson-row.open .lesson-number{color:#2563eb;background:#e1ebff}.lesson-row.completed .lesson-number{background:#fff9d9;color:#785b00}.lesson-row-copy{flex:1;min-width:0}.lesson-row-copy b{display:block;font-size:14px;line-height:1.5}.lesson-row-copy small{display:block;font-size:12px;line-height:1.7;color:#64748b;margin-top:5px}.lesson-state{font-size:11px;font-weight:750;white-space:nowrap;color:#64748b}.lesson-row.open .lesson-state{color:#2563eb}.text-button{background:none;border:0;padding:8px 0;color:#52627e;font-size:13px;font-weight:750}.lesson-head{margin-top:20px}.lesson-steps{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}.lesson-steps span{font-size:11px;padding:8px 11px;border:1px solid #e3e9f2;border-radius:9px;color:#64748b}.lesson-steps .current{background:#eaf2ff;border-color:#afc7f6;color:#2563eb;font-weight:800}.lesson-steps .passed{background:#fff9d9;color:#785b00}.lesson-body{max-width:850px;padding:30px}.lesson-body h2{margin-bottom:20px;line-height:1.5}.lesson-body p{font-size:15px;line-height:1.95;color:#52627e;margin:17px 0}.lesson-body p b{color:#10234a}.concept-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}.concept-pair>div{background:#f6f9ff;border:1px solid #e3e9f2;padding:20px;border-radius:13px}.concept-pair small{font-size:12px;color:#2563eb}.concept-pair b{display:block;font-size:17px;margin:10px 0}.concept-pair p{font-size:13px;margin:0}.calc-line{background:#eaf2ff;color:#1e4d9c;padding:19px 21px;border-radius:13px;font-size:17px;line-height:1.9;font-weight:800;margin:24px 0;overflow-wrap:anywhere}.lesson-note{background:#fff9d9;border:1px solid #f2e6ab;padding:18px 20px;border-radius:13px;color:#785b00;font-size:13px;line-height:1.9;margin:22px 0}.understanding-check{border-top:1px solid #e3e9f2;margin-top:26px;padding-top:22px}.understanding-check small{font-size:11px;color:#64748b}.understanding-check>p{font-weight:750;color:#10234a}.lesson-body details{margin-top:15px}.lesson-body summary{cursor:pointer;color:#2563eb;font-size:13px;font-weight:800;line-height:1.7;padding:9px 0}.lesson-body details p{font-size:13px}.summary-lines{padding-left:23px!important;margin:20px 0}.summary-lines li{font-size:15px;line-height:1.9;margin:12px 0;color:#10234a}.lesson-sources{border-top:1px solid #e3e9f2;padding-top:15px;margin-top:25px!important}.lesson-sources a{color:#2563eb;font-size:12px;overflow-wrap:anywhere}.lesson-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:850px;margin:22px 0 0}.lesson-controls>span{font-size:12px;color:#64748b}.lesson-head h1{line-height:1.45;overflow-wrap:anywhere}.roadmap-list li:nth-child(2){background:#f1f6ff;border-color:#b0c8f6}.roadmap-list em{white-space:nowrap}
+@media(max-width:700px){.learning-overview{padding:20px;align-items:flex-start;flex-direction:column;gap:16px}.learning-overview .primary{width:100%}.lesson-row{padding:15px 12px;gap:11px;flex-wrap:wrap}.lesson-row-copy{flex-basis:calc(100% - 47px)}.lesson-state{margin-left:47px}.lesson-row-copy b{font-size:14px}.lesson-row-copy small{font-size:11px}.lesson-group>h2{font-size:17px}.lesson-head h1{font-size:23px!important}.lesson-body{padding:21px}.lesson-body p{font-size:14px}.concept-pair{grid-template-columns:1fr}.calc-line{font-size:15px;padding:15px}.summary-lines li{font-size:14px}.lesson-steps span{font-size:10px;padding:7px 9px}.lesson-controls button{font-size:12px;padding:12px}.lesson-controls>span{font-size:11px}.storage-note{font-size:11px}.lesson-body h2{font-size:19px}}
 </style></head>
-<body><a class="skip-link" href="#mainContent">본문으로 이동</a><div class="shell"><aside class="side"><div class="cc-side-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div><div class="cc-tagline">부동산 자산운용, 차근차근 <b>척척</b></div><span class="version">v0.1 · 기본 구성</span></div>
-<nav class="nav" aria-label="주 메뉴"><button type="button" data-nav="home" data-view="home"><span data-icon="home"></span>홈</button><button type="button" data-nav="learn" data-view="learn"><span data-icon="learn"></span>기초학습</button><button type="button" data-nav="quiz" data-view="quiz"><span data-icon="quiz"></span>퀴즈</button><button type="button" data-nav="invest" data-view="invest"><span data-icon="invest"></span>모의투자</button><button type="button" data-nav="level" data-view="level"><span data-icon="level"></span>내 레벨</button></nav><div class="cc-side-divider"></div><div class="cc-side-subnav"><button type="button" data-view="roadmap">업데이트 안내 →</button></div><div class="level-mini"><small>CURRENT LEVEL</small><b>LV.1 · 신입사원</b><p>학습 시작 전 · 진도 0<br>승급 기능은 준비 중이에요.</p><button type="button" data-view="level">4레벨 구성 보기 →</button></div></aside>
-<main class="main" id="mainContent"><div class="inner"><div class="mobile-head"><div class="mobile-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div></div><span class="version">v0.1</span></div><div class="asset-topline"><span>부동산 자산운용 학습</span><span class="stage-chip">LV.1 · 신입사원 / 학습 시작 전</span></div>
-<section id="view-home" class="view active"><div class="hero"><span class="eyebrow">CHEOKCHEOK ASSET</span><h1 tabindex="-1">배운 개념을,<br>내 투자 판단으로.</h1><p class="lead">기초를 익히고, 가정을 세우고, 선택의 결과를 비교해요.<br>척척 에셋에서 자산운용을 차근차근 연습하세요.</p></div><div class="asset-next"><div><span class="eyebrow">지금 할 일</span><h2>학습 구성부터 살펴보세요</h2><p>먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.</p></div><button type="button" class="primary" data-view="learn">기초학습 구성 보기 →</button></div>
-<div class="asset-grid"><button type="button" class="asset-card" data-view="learn"><span data-icon="learn"></span><b>학습하기</b><p>개념과 용어를 익히고<br>숫자 예시로 이해해요.</p><small>신입사원 · 수업 준비 중 →</small></button><button type="button" class="asset-card" data-view="quiz"><span data-icon="quiz"></span><b>퀴즈 풀기</b><p>이해한 내용을 확인하고<br>틀린 이유를 복습해요.</p><small>신입사원 · 문제 준비 중 →</small></button><button type="button" class="asset-card" data-view="invest"><span data-icon="invest"></span><b>모의투자</b><p>직접 선택하고<br>결과와 위험을 비교해요.</p><small>대리부터 · 실습 준비 중 →</small></button></div>
-<h2 class="section-caption">차근차근 넓어지는 판단의 범위</h2><div class="asset-journey"><button type="button" class="journey-btn" data-view="level" data-level="0"><small>LEVEL 01</small><b>신입사원</b><span>기초학습·퀴즈</span></button><button type="button" class="journey-btn" data-view="level" data-level="1"><small>LEVEL 02</small><b>대리</b><span>선택·결과 비교·복기</span></button><button type="button" class="journey-btn" data-view="level" data-level="2"><small>LEVEL 03</small><b>과장</b><span>시장자료·가정 수립</span></button><button type="button" class="journey-btn" data-view="level" data-level="3"><small>LEVEL 04</small><b>팀장</b><span>시나리오·투자 전략</span></button></div><p class="asset-footnote">지금은 기본 화면을 둘러볼 수 있어요. 수업·퀴즈·투자 계산은 다음 업데이트에서 순차적으로 추가됩니다.</p></section>
+<body><a class="skip-link" href="#mainContent">본문으로 이동</a><div class="shell"><aside class="side"><div class="cc-side-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div><div class="cc-tagline">부동산 자산운용, 차근차근 <b>척척</b></div><span class="version">v0.2-A · 학습 시작</span></div>
+<nav class="nav" aria-label="주 메뉴"><button type="button" data-nav="home" data-view="home"><span data-icon="home"></span>홈</button><button type="button" data-nav="learn" data-view="learn"><span data-icon="learn"></span>기초학습</button><button type="button" data-nav="quiz" data-view="quiz"><span data-icon="quiz"></span>퀴즈</button><button type="button" data-nav="invest" data-view="invest"><span data-icon="invest"></span>모의투자</button><button type="button" data-nav="level" data-view="level"><span data-icon="level"></span>내 레벨</button></nav><div class="cc-side-divider"></div><div class="cc-side-subnav"><button type="button" data-view="roadmap">업데이트 안내 →</button></div><div class="level-mini"><small>CURRENT LEVEL</small><b>LV.1 · 신입사원</b><p id="miniProgress">학습 시작 전 · 0 / 20강<br>승급 기능은 준비 중이에요.</p><button type="button" data-view="level">4레벨 구성 보기 →</button></div></aside>
+<main class="main" id="mainContent"><div class="inner"><div class="mobile-head"><div class="mobile-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div></div><span class="version">v0.2-A</span></div><div class="asset-topline"><span>부동산 자산운용 학습</span><span class="stage-chip" id="stageProgress">LV.1 · 신입사원 / 학습 시작 전</span></div>
+<section id="view-home" class="view active"><div class="hero"><span class="eyebrow">CHEOKCHEOK ASSET</span><h1 tabindex="-1">배운 개념을,<br>내 투자 판단으로.</h1><p class="lead">기초를 익히고, 가정을 세우고, 선택의 결과를 비교해요.<br>척척 에셋에서 자산운용을 차근차근 연습하세요.</p></div><div class="asset-next"><div><span class="eyebrow">지금 할 일</span><h2 id="homeNextTitle">1강부터 차근차근 시작해요</h2><p>먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.</p></div><button type="button" class="primary" data-view="learn">학습 시작하기 →</button></div>
+<div class="asset-grid"><button type="button" class="asset-card" data-view="learn"><span data-icon="learn"></span><b>학습하기</b><p>개념과 용어를 익히고<br>숫자 예시로 이해해요.</p><small>신입사원 · 1~4강 학습 가능 →</small></button><button type="button" class="asset-card" data-view="quiz"><span data-icon="quiz"></span><b>퀴즈 풀기</b><p>이해한 내용을 확인하고<br>틀린 이유를 복습해요.</p><small>신입사원 · 문제 준비 중 →</small></button><button type="button" class="asset-card" data-view="invest"><span data-icon="invest"></span><b>모의투자</b><p>직접 선택하고<br>결과와 위험을 비교해요.</p><small>대리부터 · 실습 준비 중 →</small></button></div>
+<h2 class="section-caption">차근차근 넓어지는 판단의 범위</h2><div class="asset-journey"><button type="button" class="journey-btn" data-view="level" data-level="0"><small>LEVEL 01</small><b>신입사원</b><span>기초학습·퀴즈</span></button><button type="button" class="journey-btn" data-view="level" data-level="1"><small>LEVEL 02</small><b>대리</b><span>선택·결과 비교·복기</span></button><button type="button" class="journey-btn" data-view="level" data-level="2"><small>LEVEL 03</small><b>과장</b><span>시장자료·가정 수립</span></button><button type="button" class="journey-btn" data-view="level" data-level="3"><small>LEVEL 04</small><b>팀장</b><span>시나리오·투자 전략</span></button></div><p class="asset-footnote">1~4강을 공부할 수 있어요. 5~20강과 정식 퀴즈·모의투자는 순차적으로 추가됩니다.</p></section>
 <section id="view-learn" class="view" hidden></section><section id="view-quiz" class="view" hidden></section>
 <section id="view-invest" class="view" hidden><header class="page-head"><span class="eyebrow">INVESTMENT PRACTICE</span><h1 tabindex="-1">모의투자</h1><p>내 판단을 기록하고, 그 판단이 결과에 미친 영향을 확인해요.</p></header><div class="asset-panel"><span class="status-label">준비 중 · 대리부터 시작</span><h2>직접 판단하는 투자 연습</h2><p>가상 부동산의 조건을 읽고 투자 여부와 운영 전략을 정할 거예요.<br>선택에 따른 좋은 영향과 나쁜 영향을 함께 비교하고 복기합니다.</p><div class="flow-list"><div><small>01 · 판단</small><b>선택과 이유 남기기</b></div><div><small>02 · 결과</small><b>현금흐름·수익률·위험 비교</b></div><div><small>03 · 복기</small><b>놓친 위험과 다른 선택 검토</b></div></div><ul><li>대리: 주어진 조건으로 매입·대출·운영·매각 판단</li><li>과장: 비교 자료를 근거로 임대료·공실률·운영비 설정</li><li>팀장: 금리·공실·공사비·매각 조건 변화에 따른 전략 검토</li></ul><button type="button" class="secondary" data-view="level" data-level="1">레벨별 연습 구성 보기 →</button><p class="asset-footnote">4단계 업데이트부터 투자 계산과 실습이 추가됩니다. 초기 실습은 가상 사례를 사용합니다.</p></div></section>
-<section id="view-level" class="view" hidden><header class="page-head"><span class="eyebrow">LEVEL PATH</span><h1 tabindex="-1">내 레벨</h1><p>현재는 LV.1 · 신입사원, 학습 시작 전이에요.</p></header><div class="level-note">아래 버튼은 레벨별 구성 미리보기예요. 상위 레벨을 살펴봐도 실제 레벨이나 진도는 바뀌지 않아요.</div><div class="asset-tabs" role="group" aria-label="레벨별 구성 미리보기"><button type="button" data-preview-level="0" aria-pressed="true">신입사원</button><button type="button" data-preview-level="1" aria-pressed="false">대리</button><button type="button" data-preview-level="2" aria-pressed="false">과장</button><button type="button" data-preview-level="3" aria-pressed="false">팀장</button></div><div class="asset-panel" aria-live="polite"><div class="level-heading"><span class="level-number" id="levelNumber">01</span><h2 id="levelName">LV.1 · 신입사원</h2></div><p id="levelMotto" class="level-motto"></p><p id="levelPurpose"></p><ul id="levelFeatures"></ul><span class="status-label">기능 준비 중</span><br><button type="button" class="secondary" id="levelCta">기초학습 구성 보기</button><p class="asset-footnote">승급 후에도 하위 레벨의 수업과 도구를 다시 이용할 수 있도록 구성합니다.</p></div></section>
-<section id="view-roadmap" class="view" hidden><header class="page-head"><span class="eyebrow">UPDATES</span><h1 tabindex="-1">업데이트 안내</h1><p>작동하는 단위로 완성하고, 확인하면서 넓혀가요.</p></header><div class="asset-panel"><h2>첫 버전까지 7단계</h2><ol class="roadmap-list"><li><strong>1</strong><span>기본 화면·블루와 옐로우·4레벨 메뉴</span><em>현재 버전</em></li><li><strong>2</strong><span>수준에 맞춘 기초학습 10단계·용어사전</span><em>예정</em></li><li><strong>3</strong><span>퀴즈·해설·진도·승급·오답 복습</span><em>예정</em></li><li><strong>4</strong><span>대리: 모의투자·선택과 결과 비교·복기</span><em>예정</em></li><li><strong>5</strong><span>과장: 비교 사례·가정과 근거 수립</span><em>예정</em></li><li><strong>6</strong><span>팀장: 시나리오·민감도 분석·투자 판단</span><em>예정</em></li><li><strong>7</strong><span>계산·저장·승급·모바일 통합 검증</span><em>예정</em></li></ol><p class="asset-footnote">모의투자 학습의 ‘가정 → 계산 → 민감도 분석·투자 판단’ 3단계와 개발 업데이트 번호는 별개입니다.</p></div></section>
+<section id="view-level" class="view" hidden><header class="page-head"><span class="eyebrow">LEVEL PATH</span><h1 tabindex="-1">내 레벨</h1><p>현재는 LV.1 · 신입사원이에요. 학습 진도와 승급은 별개예요.</p></header><div class="level-note">아래 버튼은 레벨별 구성 미리보기예요. 상위 레벨을 살펴봐도 실제 레벨이나 진도는 바뀌지 않아요.</div><div class="asset-tabs" role="group" aria-label="레벨별 구성 미리보기"><button type="button" data-preview-level="0" aria-pressed="true">신입사원</button><button type="button" data-preview-level="1" aria-pressed="false">대리</button><button type="button" data-preview-level="2" aria-pressed="false">과장</button><button type="button" data-preview-level="3" aria-pressed="false">팀장</button></div><div class="asset-panel" aria-live="polite"><div class="level-heading"><span class="level-number" id="levelNumber">01</span><h2 id="levelName">LV.1 · 신입사원</h2></div><p id="levelMotto" class="level-motto"></p><p id="levelPurpose"></p><ul id="levelFeatures"></ul><span class="status-label">기능 준비 중</span><br><button type="button" class="secondary" id="levelCta">기초학습 구성 보기</button><p class="asset-footnote">승급 후에도 하위 레벨의 수업과 도구를 다시 이용할 수 있도록 구성합니다.</p></div></section>
+<section id="view-roadmap" class="view" hidden><header class="page-head"><span class="eyebrow">UPDATES</span><h1 tabindex="-1">업데이트 안내</h1><p>작동하는 단위로 완성하고, 확인하면서 넓혀가요.</p></header><div class="asset-panel"><h2>첫 버전까지 7단계</h2><ol class="roadmap-list"><li><strong>1</strong><span>기본 화면·블루와 옐로우·4레벨 메뉴</span><em>완료</em></li><li><strong>2</strong><span>20강 학습·요약·저장·순차 해금·복습</span><em>2-A 완료</em></li><li><strong>3</strong><span>퀴즈·해설·승급·오답 복습</span><em>예정</em></li><li><strong>4</strong><span>대리: 모의투자·선택과 결과 비교·복기</span><em>예정</em></li><li><strong>5</strong><span>과장: 비교 사례·가정과 근거 수립</span><em>예정</em></li><li><strong>6</strong><span>팀장: 시나리오·민감도 분석·투자 판단</span><em>예정</em></li><li><strong>7</strong><span>계산·저장·승급·모바일 통합 검증</span><em>예정</em></li></ol><p class="asset-footnote">2-A: 학습 화면과 1~4강 · 2-B: 1~10강 전체 · 2-C: 11~20강 전체</p><p class="asset-footnote">모의투자 학습의 ‘가정 → 계산 → 민감도 분석·투자 판단’ 3단계와 개발 업데이트 번호는 별개입니다.</p></div></section>
 </div></main></div><nav class="bottom-nav" aria-label="모바일 주 메뉴"><button type="button" data-nav="home" data-view="home"><span data-icon="home"></span>홈</button><button type="button" data-nav="learn" data-view="learn"><span data-icon="learn"></span>학습</button><button type="button" data-nav="quiz" data-view="quiz"><span data-icon="quiz"></span>퀴즈</button><button type="button" data-nav="invest" data-view="invest"><span data-icon="invest"></span>모의투자</button><button type="button" data-nav="level" data-view="level"><span data-icon="level"></span>내 레벨</button></nav><noscript>화면 이동을 이용하려면 JavaScript를 허용해 주세요.</noscript><script>'use strict';
-// Stage 1 navigation only. Previewing levels never changes earned progress.
+// Stable lesson IDs are independent of presentation order and completion records.
+const curriculum = [
+  ['basics-equity','주식·채권·Equity·Debt','누가 먼저 돈을 받고, 누가 남은 이익과 손실을 가져갈까요?'],
+  ['basics-nav','펀드·ETF·NAV','건물 가격과 투자자의 몫을 구분해요.'],
+  ['basics-debt','금리·LTV·LTC·리파이낸싱','대출의 크기와 만기 때 갚을 방법을 살펴봐요.'],
+  ['basics-returns','NOI·Cap Rate·IRR','건물의 운영 수익과 투자자의 수익률을 구분해요.'],
+  ['basics-dcf','현금흐름·현재가치·DCF','돈을 받는 시점이 가치에 미치는 영향을 배워요.'],
+  ['basics-pf','PF와 개발사업 금융구조','토지 매입부터 준공까지 필요한 돈을 따라가요.'],
+  ['basics-vehicles','부동산펀드·리츠·신탁의 차이','돈을 모으고 자산을 관리하는 역할을 비교해요.'],
+  ['basics-process','자산운용사의 투자·운용·매각 과정','투자 과정에서 해야 할 일을 연결해요.'],
+  ['basics-market','경제지표와 부동산 투자시장','지표가 임대수요·비용·가격에 영향을 주는 경로를 읽어요.'],
+  ['basics-review','기초 종합평가 및 투자안 분석','간단한 투자안의 구조와 위험을 설명해요.'],
+  ['practice-budget','사업수지표의 구성과 작성','사업 전체 손익과 투자자 회수금을 구분해요.'],
+  ['practice-model','엑셀로 부동산 현금흐름 모델 만들기','가정과 계산을 나누고 기간별 돈의 흐름을 연결해요.'],
+  ['practice-operations','임대수익·공실률·운영비 분석','비교 사례에서 가정의 근거를 찾아요.'],
+  ['practice-price','실제 부동산 매입가격 산정','가격의 근거와 감당 가능한 매입가격을 검토해요.'],
+  ['practice-ve','사업비·공사비·VE와 투자수익률','비용·품질·일정의 변화가 투자 결과에 미치는 영향을 봐요.'],
+  ['practice-tranches','PF 구조와 선순위·중순위·후순위','회수 순서와 손실 부담을 비교해요.'],
+  ['practice-dd','투자심사·실사(DD)·투자위원회','사실·가정·미확인 사항을 구분해요.'],
+  ['practice-sensitivity','금리·공실·공사비 민감도 분석','조건 변화와 여러 악재가 겹치는 상황을 비교해요.'],
+  ['practice-im','IM(투자제안서) 및 투자 논리 구성','숫자와 근거로 투자 이유를 설명해요.'],
+  ['practice-review','모의 투자심사 및 실전 퀴즈','투자·조건부 투자·보류·포기의 근거를 검토해요.']
+].map(([id,title,goal],i)=>({id,title,goal,number:i+1,sections:[],summary:[],sources:[]}));
+const sources = {
+  nav:['NAV 정의 · 미국 SEC Investor.gov','https://www.investor.gov/introduction-investing/investing-basics/glossary/net-asset-value'],
+  etf:['ETF의 NAV와 거래가격 · 미국 SEC Investor.gov','https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-24'],
+  cre:['부동산 대출·가치평가 · 미국 OCC','https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/commercial-real-estate-lending/pub-ch-commercial-real-estate.pdf'],
+  refinance:['리파이낸싱 위험 · 미국 OCC','https://occ.treas.gov/news-issuances/bulletins/2024/bulletin-2024-29.html'],
+  irr:['IRR 함수와 현금흐름 · Microsoft','https://support.microsoft.com/ko-kr/excel/functions/irr-function']
+};
+Object.assign(curriculum[0],{
+  sections:[
+    {title:'먼저 감 잡기',html:'<p>친구와 건물을 산다고 생각해봐요. 한 사람은 <b>돈을 빌려주고 약속한 이자와 원금을 받는 사람</b>, 다른 사람은 <b>자기 돈을 넣고 남은 이익과 손실을 가져가는 사람</b>이에요.</p><div class="concept-pair"><div><small>Debt · 타인자본</small><b>빌린 돈</b><p>채권자에게 계약에 따른 상환 의무가 있어요.</p></div><div><small>Equity · 자기자본</small><b>투자자의 지분</b><p>채무 등을 갚고 남는 가치에 대한 몫이에요.</p></div></div><p>주식은 회사의 지분, 채권은 돈을 빌려줬다는 권리를 나타내요. 부동산 투자에서도 이 구분을 쓸 수 있지만, 펀드·대출마다 계약 구조는 달라요.</p>'},
+    {title:'1,000억짜리 건물의 돈 나누기',html:'<p>가상 건물을 <b>자기자본 300억 + 대출 700억</b>으로 샀어요. 매각 때 다른 비용·현금·부채는 없고 대출 원금도 그대로라고 가정할게요.</p><div class="calc-line">1,100억 매각 → 700억 상환 → 지분에 400억</div><p>처음 넣은 300억보다 100억이 늘었어요. 반대로 900억에 팔면 대출 상환 후 200억이 남아 자기자본에서 100억 손실이 생겨요.</p><p>이 단순 사례에서 대출 원금을 먼저 갚는다고 해서 채권자가 항상 전액을 회수한다는 뜻은 아니에요. 자산 가치가 부족하면 채권자도 손실을 볼 수 있어요.</p>',check:{question:'다른 비용 없이 900억에 팔고 대출 700억을 갚으면, 지분에 남는 돈은 얼마일까요?',answer:'200억이에요. 처음 넣은 자기자본 300억과 비교하면 100억 손실이에요.'}},
+    {title:'미래 가치가 선반영된다는 뜻',html:'<p>“앞으로 임대료가 오를 것 같다”는 기대가 있으면 투자자가 지금 더 높은 가격을 제시할 수 있어요. 회사 주식도 부동산 지분도 미래 수익과 위험에 대한 기대가 가격에 영향을 줘요.</p><p>하지만 <b>기대가 가격에 들어갔다고 수익이 확정되는 건 아니에요.</b> 기대한 성장이 나오지 않거나 너무 비싸게 사면 손실을 볼 수 있어요.</p><div class="lesson-note">건물 전체 가격, 지분 투자 가격, 장부상 순자산은 서로 다른 숫자예요. 다음 강에서 NAV를 통해 구분해볼게요.</div>'}
+  ],
+  summary:['Debt는 빌린 돈이고, Equity는 채무 등을 갚고 남는 가치에 대한 지분이에요.','같은 건물의 가격 변화라도 대출을 이용하면 자기자본의 손익 비율이 커질 수 있어요.','채권자도 손실을 볼 수 있으므로 상환 순서와 계약을 확인해야 해요.','미래 수익에 대한 기대는 가격에 반영될 수 있지만, 기대한 수익을 보장하지 않아요.'],sources:[sources.nav]
+});
+Object.assign(curriculum[1],{
+  sections:[
+    {title:'펀드는 돈을 모으는 그릇',html:'<p>여러 투자자가 돈을 모아 함께 투자하는 그릇이 펀드예요. 그 돈으로 주식·채권·부동산 등 약속한 대상에 투자해요.</p><p><b>ETF는 거래소에서 지분을 사고팔 수 있는 펀드</b>예요. 부동산펀드라고 모두 ETF처럼 실시간 거래되는 것은 아니에요. 투자 대상, 상장 여부, 환매 조건을 따로 확인해야 해요.</p><p>상장 부동산 관련 ETF가 부동산 회사나 리츠의 증권에 투자하는 경우와, 개별 건물을 직접 보유하는 펀드도 구분해야 해요.</p>'},
+    {title:'NAV는 현재 순자산',html:'<p>펀드가 가진 자산에서 부채를 뺀 금액이 <b>NAV(순자산가치)</b>예요. 지분 한 단위의 NAV는 순자산을 발행 지분 수로 나눠요.</p><div class="calc-line">자산 1,100억 − 부채 700억 = NAV 400억</div><p>건물 평가액이 1,100억이고 다른 자산·부채가 없다면 NAV는 400억이에요. 아직 건물을 팔지 않았어도 적용하는 평가 기준에 따라 가치를 산정할 수 있어요. 평가액은 실제 매각가격과 다를 수 있어요.</p><p>매각 후에도 현금이 펀드에 남아 있고 대출을 갚았다면, 비용을 제외하기 전 순자산은 400억으로 이어져요. 투자자에게 분배하면 펀드 안의 현금과 순자산은 줄어들어요.</p><p><b>400억 전부가 이익은 아니에요.</b> 처음 넣은 300억을 포함한 잔여 가치예요. 누적 분배금·추가 출자·비용을 고려해야 전체 투자 손익을 알 수 있어요.</p>',check:{question:'건물 평가액 1,100억, 별도 현금 20억, 대출 700억, 미지급 비용 5억이면 NAV는?',answer:'1,100 + 20 − 700 − 5 = 415억이에요. 건물 가격만 보고 계산하면 현금과 다른 부채를 놓쳐요.'}},
+    {title:'NAV와 거래가격은 다를 수 있어요',html:'<p>ETF 지분의 거래가격은 장중 수요와 공급에 따라 움직여요. 공식 NAV와 항상 같은 것은 아니에요. <b>한 단위 NAV가 100인데 거래가격이 102</b>라면, 순자산보다 비싼 가격으로 거래되는 상황이에요.</p><p>건물은 주식처럼 매 순간 시장가격이 찍히지 않아요. 평가 기준·평가 시점·시장 자료를 확인해야 해요. 실시간으로 거래되는 상품이라고 그 안의 모든 자산 가치가 실시간으로 확정되는 것도 아니에요.</p><div class="lesson-note">평가액이 늘어난 것과 임대료가 현금으로 들어온 것은 별개예요. 가치와 현금을 나눠서 보세요.</div>'}
+  ],summary:['펀드는 공동 투자 구조이고, ETF는 거래소에서 지분을 거래하는 펀드예요.','NAV는 전체 자산에서 전체 부채를 뺀 순자산가치예요.','NAV에는 투자 원금에 해당하는 가치도 포함되므로 NAV 전체가 이익은 아니에요.','평가액·거래가격·현금 회수금은 다르며, 평가 기준과 시점을 확인해야 해요.'],sources:[sources.nav,sources.etf]
+});
+Object.assign(curriculum[2],{
+  sections:[
+    {title:'금리는 빌린 돈의 사용료',html:'<p>대출 700억의 연 금리가 4%라면, 원금이 1년 내내 그대로일 때 연 이자는 <b>28억</b>이에요. 금리가 5%면 <b>35억</b>으로 7억 늘어나요.</p><div class="calc-line">700억 × 4% = 연 이자 28억</div><p>이자만 낸다고 원금이 줄어드는 건 아니에요. 만기일에는 남은 원금을 갚을 방법이 필요해요. 고정금리 대출은 시장 금리가 올라도 계약 금리가 바로 바뀌지 않고, 변동금리는 약정에 따라 바뀌어요.</p>'},
+    {title:'LTV와 LTC는 분모가 달라요',html:'<p><b>LTV</b>는 대출을 자산 가치와 비교하고, <b>LTC</b>는 대출을 사업비와 비교해요. 아래 숫자는 개념을 익히기 위한 별도 개발사업 사례예요.</p><div class="calc-line">대출 600억 ÷ 자산 가치 1,000억 = LTV 60%<br>대출 600억 ÷ 총사업비 800억 = LTC 75%</div><p>같은 대출도 분모가 다르면 비율이 달라져요. 실제 계약에서는 가치·사업비·포함 대출의 범위를 먼저 확인해야 해요.</p>',check:{question:'대출 700억이 그대로인데 건물 평가액이 1,000억에서 900억으로 내려가면 LTV는?',answer:'70%에서 약 77.8%로 올라가요. 빚이 늘지 않아도 자산 가치가 줄면 대출 비율이 높아져요.'}},
+    {title:'리파이낸싱은 새 대출로 기존 대출 갚기',html:'<p>대출 만기에 새 대출을 받아 기존 대출을 갚는 것이 리파이낸싱이에요. 모든 투자가 반드시 리파이낸싱을 하는 건 아니에요. 매각하거나 보유 현금으로 갚을 수도 있어요.</p><p>기존 대출이 700억이고, 만기 때 자산 가치가 900억으로 내려갔다고 해볼게요. 새 대출의 가정상 LTV 한도가 70%면 가능한 금액은 <b>630억</b>이에요. 부족한 <b>70억</b>을 별도로 마련해야 해요.</p><p>이 70%는 수업용 가정이며 실제 한도가 아니에요. 새 대출은 가치뿐 아니라 임대수익·상환능력·금리·은행 심사에 영향을 받아요.</p><div class="lesson-note">건물이 장기 투자 자산이어도 대출 만기는 먼저 올 수 있어요. 수익성뿐 아니라 “그때 갚을 수 있나?”를 확인하세요.</div>'}
+  ],summary:['이자 비용은 대출 잔액과 금리에 영향을 받고, 이자를 내도 원금은 별도로 남을 수 있어요.','LTV는 자산 가치, LTC는 사업비를 분모로 대출 규모를 비교해요.','리파이낸싱은 새 대출로 기존 대출을 갚는 방법이며 반드시 하는 것은 아니에요.','가치 하락과 대출 조건 변화는 만기 때 추가 자금 필요로 이어질 수 있어요.'],sources:[sources.cre,sources.refinance]
+});
+Object.assign(curriculum[3],{
+  sections:[
+    {title:'NOI · 건물 운영으로 남는 돈',html:'<p>건물도 작은 사업처럼 생각하면 쉬워요. 임대료 등 운영 수입에서 건물을 운영하는 비용을 빼면 <b>NOI(순영업소득)</b>가 남아요.</p><div class="calc-line">연 운영 수입 60억 − 운영비 10억 = NOI 50억</div><p>이 사례의 60억은 공실·미수 등을 반영한 실제 가정 수입이고, 모든 숫자는 연간 기준이에요. NOI는 통상 대출 이자·원금 상환·소득세·감가상각·CAPEX를 빼기 전 운영 지표예요. 실제 분석에서는 비용의 포함 범위를 맞춰야 해요.</p><p>대출 700억, 금리 4%라면 이자 28억을 뺀 22억이 남아요. 하지만 원금 상환·공사 지출·세금·펀드 비용 등이 추가될 수 있어 <b>22억이 그대로 분배금이라고 확정할 수는 없어요.</b></p>',check:{question:'다른 조건은 같고 금리만 오르면 NOI도 줄어들까요?',answer:'이 사례에서 NOI는 50억으로 같아요. 이자는 NOI 밖에서 처리하므로 투자자에게 남는 현금이 줄어요. 운영 수입·비용도 변했다면 NOI는 따로 바뀔 수 있어요.'}},
+    {title:'Cap Rate · 운영 수익과 가격의 관계',html:'<p>같은 연 NOI를 얼마의 건물 가격과 비교하는지 나타내는 비율이 <b>Cap Rate(자본환원율)</b>예요. 이 수업에서는 연 NOI와 자산 가격을 같은 기준으로 비교해요.</p><div class="calc-line">NOI 50억 ÷ 가격 1,000억 = Cap Rate 5%</div><p>거꾸로 안정적인 연 NOI와 적용 Cap Rate를 가정하면, 직접환원 방식으로 가치를 추정할 수 있어요.</p><div class="calc-line">50억 ÷ 5% = 1,000억<br>50억 ÷ 6% ≈ 833.3억</div><p><b>같은 NOI라면 적용 Cap Rate가 높아질수록 추정 가치는 낮아져요.</b> 투자자가 같은 운영 수익에 더 높은 수익 비율을 요구하기 때문이에요.</p><div class="lesson-note">Cap Rate는 대출 금리도, 내 자기자본의 전체 수익률도 아니에요. 높은 Cap Rate만으로 좋은 투자라고 판단하지 않아요. 성장성·공실·수선 위험과 NOI의 기준을 함께 봐야 해요.</div>',check:{question:'NOI 50억이 그대로인데 Cap Rate를 5%에서 6%로 높여 평가하면 가치는 어떻게 될까요?',answer:'1,000억에서 약 833.3억으로 내려가요. 운영 수익은 같아도 평가에 적용하는 비율이 달라지면 가치가 바뀔 수 있어요.'}},
+    {title:'IRR · 돈을 받는 시점까지 보는 수익률',html:'<p><b>IRR(내부수익률)</b>은 돈을 넣고 돌려받는 시점을 반영한 수익률이에요. 정확히는 현금흐름의 순현재가치를 0으로 만드는 할인율이고, 할인 개념은 5강에서 이어 배워요.</p><div class="concept-pair"><div><small>1년 투자</small><b>100 투자 → 110 회수</b><p>중간 현금흐름이 없으면 연 IRR 10%예요.</p></div><div><small>2년 투자</small><b>100 투자 → 121 회수</b><p>중간 현금흐름이 없으면 연 IRR도 10%예요.</p></div></div><p>두 번째 사례의 총 이익은 21%지만, 2년에 걸쳐 받았어요. 그래서 총수익률 21%와 연 IRR 10%는 다른 숫자예요. 계산은 100 × 1.1 × 1.1 = 121이에요.</p><p>실제 부동산 투자에서는 처음 출자한 돈, 추가 출자, 중간 분배, 매각 후 회수금을 시점별로 넣어 계산해요. 자산 전체 IRR과 대출을 반영한 지분 IRR도 구분해야 해요.</p><div class="lesson-note">수업의 사례는 1년 간격이에요. Excel IRR은 일정한 기간 간격을 전제로 하고, 날짜가 불규칙하면 XIRR 등을 사용해요. 복잡한 현금흐름에서는 IRR이 여러 개이거나 없을 수 있어요.</div>',check:{question:'중간 분배 없이 100을 넣고 2년 뒤 121을 받으면 연 IRR은 21%일까요?',answer:'아니에요. 총수익률은 21%, 연 IRR은 10%예요. 받은 총액뿐 아니라 기간을 함께 봐야 해요.'}}
+  ],summary:['NOI는 건물 운영 수입에서 운영비를 뺀 지표이며, 이자 등을 뺀 투자자 현금과 달라요.','Cap Rate는 연 NOI와 자산 가격을 비교하는 비율이에요.','같은 NOI에 더 높은 Cap Rate를 적용하면 직접환원 방식의 추정 가치는 낮아져요.','IRR은 출자와 회수의 시점을 반영하며, 총수익률이나 Cap Rate와 구분해야 해요.'],sources:[sources.cre,sources.irr]
+});
+if (typeof module !== 'undefined') module.exports = curriculum;
+
+'use strict';
+// Learning gates guide study; they are not authentication or proof of competence.
+const LearningProgress = (() => {
+  const KEY = 'cheokcheok.asset.learning.v1';
+  function empty(){return {version:1,completed:[],positions:{},resume:{},last:null};}
+  function normalize(raw,lessons){
+    if(!raw || raw.version!==1 || !Array.isArray(raw.completed) || !raw.positions || typeof raw.positions!=='object') throw new Error('Invalid progress');
+    const result=empty();
+    for(const lesson of lessons){
+      if(!lesson.sections.length || !raw.completed.includes(lesson.id)) break;
+      result.completed.push(lesson.id);
+    }
+    for(const lesson of lessons){
+      const n=raw.positions[lesson.id];
+      if(lesson.sections.length && Number.isInteger(n) && n>=0) result.positions[lesson.id]=Math.min(n,lesson.sections.length);
+      const cursor=raw.resume?.[lesson.id];
+      if(Number.isInteger(cursor)&&cursor>=0&&cursor<=(result.positions[lesson.id]||0))result.resume[lesson.id]=cursor;
+    }
+    if(lessons.some(l=>l.id===raw.last)) result.last=raw.last;
+    return result;
+  }
+  function status(lesson,lessons,state){
+    if(!lesson.sections.length) return 'pending';
+    if(state.completed.includes(lesson.id)) return 'completed';
+    const index=lessons.indexOf(lesson);
+    return index===0 || lessons.slice(0,index).every(l=>state.completed.includes(l.id)) ? 'open' : 'locked';
+  }
+  function nextLesson(lessons,state){return lessons.find(l=>status(l,lessons,state)==='open') || null;}
+  function merge(a,b,lessons){
+    const positions={...a.positions};
+    for(const [id,n] of Object.entries(b.positions)) positions[id]=Math.max(n,positions[id]||0);
+    return normalize({version:1,completed:[...new Set([...a.completed,...b.completed])],positions,resume:{...a.resume,...b.resume},last:b.last||a.last},lessons);
+  }
+  function create(storage,lessons){
+    let state=empty(),writable=true,message='';
+    function read(){const raw=storage.getItem(KEY);return raw===null?empty():normalize(JSON.parse(raw),lessons);}
+    try{state=read();}catch(error){writable=false;message='저장된 진도를 읽을 수 없어 이번 방문의 진도만 유지해요. 기존 기록은 덮어쓰지 않아요.';}
+    function save(next){
+      if(writable){
+        try{next=merge(read(),next,lessons);storage.setItem(KEY,JSON.stringify(next));}
+        catch(error){writable=false;message='진도를 저장하지 못했어요. 이번 방문에서는 계속 공부할 수 있지만, 새로고침하면 기록이 사라질 수 있어요.';}
+      }
+      state=next;return state;
+    }
+    return {
+      get state(){return state;},get message(){return message;},
+      sync(){if(writable){try{state=merge(state,read(),lessons);}catch(error){writable=false;message='진도 저장소가 변경되어 이번 방문의 기록만 유지해요. 기존 기록은 덮어쓰지 않아요.';}}return state;},
+      visit(id,position){this.sync();const lesson=lessons.find(l=>l.id===id);if(!lesson||!['open','completed'].includes(status(lesson,lessons,state)))return false;
+        const max=state.positions[id]||0;if(!Number.isInteger(position)||position<0||position>lesson.sections.length||position>max+1)return false;
+        save({...state,positions:{...state.positions,[id]:Math.max(max,position)},resume:{...state.resume,[id]:position},last:id});return true;},
+      complete(id){this.sync();const lesson=lessons.find(l=>l.id===id);if(!lesson||status(lesson,lessons,state)==='locked'||!lesson.sections.length||(state.positions[id]||0)<lesson.sections.length)return false;
+        save({...state,completed:[...new Set([...state.completed,id])],last:id});return true;}
+    };
+  }
+  return {KEY,empty,normalize,status,nextLesson,create};
+})();
+if(typeof module!=='undefined')module.exports=LearningProgress;
+
+'use strict';
+// Shared navigation and level previews. Earned learning progress stays separate.
 const icons={home:'<path d="M3 10 12 3l9 7v10H3z"/><path d="M9 20v-7h6v7"/>',learn:'<path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3z"/><path d="M12 6v15"/>',quiz:'<path d="M8 4h8v3H8z"/><path d="M8 5H5v16h14V5h-3"/><path d="m8 13 2 2 5-5"/>',invest:'<path d="M3 21h18M6 17v-4m6 4V9m6 8V5"/><path d="m4 8 6-4 5 2 5-4"/>',level:'<path d="M4 20h5v-5h5v-5h6V4M4 20V4"/>'};
 const levels=[
-{name:'신입사원',motto:'개념을 이해하고, 내 말로 설명하기',purpose:'금융·부동산 자산운용의 기초를 익히는 단계예요.',items:['기초학습 10단계','용어사전과 숫자 예시','퀴즈·해설·오답 복습'],view:'learn',cta:'기초학습 구성 보기'},
+{name:'신입사원',motto:'개념을 이해하고, 내 말로 설명하기',purpose:'금융·부동산 자산운용의 기초를 익히는 단계예요.',items:['금융 기초·투자 실무 입문 20강','용어사전과 숫자 예시','퀴즈·해설·오답 복습'],view:'learn',cta:'기초학습 구성 보기'},
 {name:'대리',motto:'내 선택이 결과를 어떻게 바꾸는지 확인하기',purpose:'주어진 조건에서 투자 결정을 내리고, 선택 전후의 결과를 비교해요.',items:['매입·대출·운영·매각 조건 선택','현금흐름·수익률·위험 비교','판단 이유와 결과 복기'],view:'invest',cta:'모의투자 구성 보기'},
 {name:'과장',motto:'자료를 비교하고, 가정의 근거 세우기',purpose:'비교 건물 자료를 읽고 임대료·공실률·운영비 가정을 직접 정해요.',items:['유사 건물의 비교 가능성 판단','가정과 선택 근거 입력','가정 변경에 따른 결과 비교'],view:'invest',cta:'가정 수립 구성 보기'},
 {name:'팀장',motto:'전망이 달라져도 투자 판단이 타당한지 검토하기',purpose:'금리·공실·공사비·매각 조건이 달라지는 상황에서 투자 전략을 비교해요.',items:['금리 하락·유지·상승 시나리오','공실 증가·공사비 상승 민감도 분석','투자 여부·대출·보유·매각 전략 복기'],view:'invest',cta:'시나리오 구성 보기'}
 ];
 const descriptions={
-learn:{title:'기초학습',lead:'개념부터 숫자 예시, 부동산 사례까지 차근차근.',subtitle:'10단계 수업을 준비하고 있어요',copy:'먼저 채팅에서 학습을 마친 뒤, 실제 이해 수준에 맞춰 수업 순서와 난이도를 확정할 예정이에요.',items:['한 번에 핵심 개념 하나씩 학습','어려운 용어는 짧은 정의로 확인','숫자 예시를 부동산 사례에 연결'],next:'2단계 업데이트에서 수업이 추가됩니다.'},
-quiz:{title:'퀴즈',lead:'내가 이해한 내용을 확인하고, 틀린 이유를 돌아봐요.',subtitle:'퀴즈와 복습 기능을 준비하고 있어요',copy:'확정된 수업에 맞춰 문제·정답·해설을 함께 구성할 예정이에요. 현재는 점수나 승급 기록을 생성하지 않아요.',items:['객관식·단답형·간단한 계산 문제','정답뿐 아니라 판단 근거 확인','오답 복습과 실제 학습 진도 저장'],next:'3단계 업데이트에서 퀴즈·진도·승급이 추가됩니다.'}
+quiz:{title:'퀴즈',lead:'내가 이해한 내용을 확인하고, 틀린 이유를 돌아봐요.',subtitle:'퀴즈와 복습 기능을 준비하고 있어요',copy:'확정된 수업에 맞춰 문제·정답·해설을 함께 구성할 예정이에요. 현재는 점수나 승급 기록을 생성하지 않아요.',items:['객관식·단답형·간단한 계산 문제','정답뿐 아니라 판단 근거 확인','오답 복습과 실제 학습 진도 저장'],next:'3단계 업데이트에서 정식 퀴즈·승급·오답 복습이 추가됩니다.'}
 };
 function svg(key){return '<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">'+icons[key]+'</svg></span>';}
 document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon);});
@@ -106,7 +228,83 @@ function showView(name,focus=true){const allowed=['home','learn','quiz','invest'
 document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.level!==undefined)setLevel(Number(btn.dataset.level));location.hash=btn.dataset.view;}));
 document.querySelectorAll('[data-preview-level]').forEach(btn=>btn.addEventListener('click',()=>setLevel(Number(btn.dataset.previewLevel))));
 document.getElementById('levelCta').addEventListener('click',()=>{location.hash=levels[previewLevel].view;});
-for(const [name,data] of Object.entries(descriptions)){const section=document.getElementById('view-'+name);section.innerHTML='<header class="page-head"><span class="eyebrow">'+(name==='learn'?'LEARNING':'QUIZ')+'</span><h1 tabindex="-1">'+data.title+'</h1><p>'+data.lead+'</p></header><div class="asset-panel"><span class="status-label">준비 중</span><h2>'+data.subtitle+'</h2><p>'+data.copy+'</p><ul>'+data.items.map(t=>'<li>'+t+'</li>').join('')+'</ul><p class="asset-footnote">'+data.next+'</p><button class="secondary" type="button">4레벨 구성 보기 →</button></div>';section.querySelector('button').addEventListener('click',()=>{setLevel(0);location.hash='level';});}
-window.addEventListener('hashchange',()=>showView(location.hash.slice(1)));
-setLevel(0);showView(location.hash.slice(1)||'home',false);
+for(const [name,data] of Object.entries(descriptions)){const section=document.getElementById('view-'+name);section.innerHTML='<header class="page-head"><span class="eyebrow">QUIZ</span><h1 tabindex="-1">'+data.title+'</h1><p>'+data.lead+'</p></header><div class="asset-panel"><span class="status-label">준비 중</span><h2>'+data.subtitle+'</h2><p>'+data.copy+'</p><ul>'+data.items.map(t=>'<li>'+t+'</li>').join('')+'</ul><p class="asset-footnote">'+data.next+'</p><button class="secondary" type="button">4레벨 구성 보기 →</button></div>';section.querySelector('button').addEventListener('click',()=>{setLevel(0);location.hash='level';});}
+
+const progress=LearningProgress.create({getItem:key=>window.localStorage.getItem(key),setItem:(key,value)=>window.localStorage.setItem(key,value)},curriculum);
+const learningView=document.getElementById('view-learn');
+let activeLesson=null,activeStep=0;
+function escapeText(value){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));}
+function lessonStatus(lesson){return LearningProgress.status(lesson,curriculum,progress.state);}
+function updateProgressUI(){
+  const count=progress.state.completed.length;
+  document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · 승급 준비 중';
+  document.getElementById('stageProgress').textContent='LV.1 · 신입사원 / '+count+'강 완료';
+  const next=LearningProgress.nextLesson(curriculum,progress.state);
+  document.getElementById('homeNextTitle').textContent=next?next.number+'강 · '+next.title:'다음 수업을 준비하고 있어요';
+}
+function storageNotice(){return '<p class="storage-note" role="status">'+escapeText(progress.message||'진도는 이 기기·브라우저에 저장돼요. 브라우저 데이터를 지우면 기록도 사라져요.')+'</p>';}
+function lessonRow(lesson){
+  const status=lessonStatus(lesson),available=status==='open'||status==='completed';
+  const label={completed:'복습하기',open:(progress.state.positions[lesson.id]||0)>0?'이어서 학습':'학습하기',locked:'이전 강 완료 후',pending:'수업 준비 중'}[status];
+  return '<li><button type="button" class="lesson-row '+status+'" data-lesson="'+lesson.id+'" '+(available?'':'disabled')+'><span class="lesson-number">'+String(lesson.number).padStart(2,'0')+'</span><span class="lesson-row-copy"><b>'+escapeText(lesson.title)+'</b><small>'+escapeText(lesson.goal)+'</small></span><span class="lesson-state">'+label+'</span></button></li>';
+}
+function renderLearningList(notice=''){
+  activeLesson=null;updateProgressUI();
+  const next=LearningProgress.nextLesson(curriculum,progress.state);
+  const completed=progress.state.completed.length;
+  learningView.innerHTML='<header class="page-head"><span class="eyebrow">LEARNING</span><h1 tabindex="-1">기초학습</h1><p>쉽게 이해하고, 숫자로 확인하고, 내 말로 정리해요.</p></header>'+
+    (notice?'<p class="lesson-note" role="status">'+escapeText(notice)+'</p>':'')+
+    '<div class="learning-overview"><div><span class="eyebrow">나의 학습</span><h2>'+completed+' / 20강 완료</h2><p>완료한 수업은 언제든 다시 볼 수 있어요.</p></div>'+(next?'<button type="button" class="primary" data-lesson="'+next.id+'">'+next.number+'강 '+((progress.state.positions[next.id]||0)>0?'이어서 학습':'시작하기')+' →</button>':'<span class="status-label">다음 수업 준비 중</span>')+'</div><progress class="learning-progress" max="20" value="'+completed+'" aria-label="20강 학습 완료 진도"></progress>'+storageNotice()+
+    '<div class="lesson-group"><h2>01 · 금융 기초 <small>1~10강</small></h2><ol class="lesson-list">'+curriculum.slice(0,10).map(lessonRow).join('')+'</ol></div>'+
+    '<div class="lesson-group"><h2>02 · 부동산 투자 실무 입문 <small>11~20강</small></h2><ol class="lesson-list">'+curriculum.slice(10).map(lessonRow).join('')+'</ol></div><p class="asset-footnote">현재 1~4강을 학습할 수 있어요. 5~10강은 2-B, 11~20강은 2-C에서 추가돼요. 학습 완료는 스스로 읽고 정리한 기록이며, 퀴즈 점수나 승급을 의미하지 않아요.</p>';
+}
+function renderLesson(lesson,step,focus=true){
+  if(!['open','completed'].includes(lessonStatus(lesson))){renderLearningList('이전 강을 완료한 뒤 학습할 수 있어요.');return;}
+  activeLesson=lesson;activeStep=step;
+  const done=lessonStatus(lesson)==='completed',summary=step===lesson.sections.length;
+  const section=lesson.sections[step];
+  learningView.innerHTML='<button class="text-button" type="button" data-action="list">← 전체 수업</button><header class="page-head lesson-head"><span class="eyebrow">'+(done?'REVIEW · 복습':'LESSON '+String(lesson.number).padStart(2,'0'))+'</span><h1 tabindex="-1">'+lesson.number+'강 · '+escapeText(lesson.title)+'</h1><p>'+escapeText(lesson.goal)+'</p></header><div class="lesson-steps" aria-label="수업 진행">'+lesson.sections.map((s,i)=>'<span class="'+(i===step?'current':i<step?'passed':'')+'">'+(i+1)+' · '+escapeText(s.title.split(' · ')[0])+'</span>').join('')+'<span class="'+(summary?'current':'')+'">정리</span></div>'+
+    '<article class="lesson-body asset-panel"><span class="status-label">'+(summary?'핵심 요약':(step+1)+' / '+lesson.sections.length+' 소단원')+'</span><h2 tabindex="-1">'+escapeText(summary?'배운 내용, 네 줄로 정리':section.title)+'</h2>'+
+    (summary?'<ul class="summary-lines">'+lesson.summary.map(line=>'<li>'+escapeText(line)+'</li>').join('')+'</ul><p>각 문장을 네 말로 설명할 수 있는지 떠올려보세요. 헷갈린 내용은 이전으로 돌아가 다시 읽어도 좋아요.</p>':section.html)+
+    (!summary&&section.check?'<div class="understanding-check"><small>잠깐 생각해보기 · 채점하지 않아요</small><p>'+escapeText(section.check.question)+'</p><details><summary>설명 확인하기</summary><p>'+escapeText(section.check.answer)+'</p></details></div>':'')+
+    (summary?'<details class="lesson-sources"><summary>개념 참고 자료</summary><ul>'+lesson.sources.map(([title,url])=>'<li><a href="'+url+'" target="_blank" rel="noopener noreferrer">'+escapeText(title)+'</a></li>').join('')+'</ul><p>교육용 가상 사례예요. 자료의 개념을 참고해 직접 설명했으며, 실제 거래의 계약·평가 기준은 별도로 확인해야 해요.</p></details>':'')+'</article>'+
+    '<div class="lesson-controls"><button class="secondary" type="button" data-action="previous" '+(step===0?'disabled':'')+'>← 이전</button><span>'+(step+1)+' / '+(lesson.sections.length+1)+'</span>'+(summary?'<button class="primary" type="button" data-action="'+(done?'review-done':'complete')+'">'+(done?'복습 마치기':'학습 완료하기')+' →</button>':'<button class="primary" type="button" data-action="next">'+(step===lesson.sections.length-1?'핵심 요약 보기':'다음')+' →</button>')+'</div>'+storageNotice();
+  document.title=lesson.number+'강 · '+lesson.title+' · 척척 에셋';
+  if(focus){window.scrollTo({top:0,behavior:'instant'});learningView.querySelector('.lesson-body h2').focus({preventScroll:true});}
+}
+function route(focus=true){
+  progress.sync();const parts=location.hash.slice(1).split('/');
+  if(parts[0]==='learn'){
+    const lesson=curriculum.find(l=>l.id===parts[1]);
+    if(lesson&&['open','completed'].includes(lessonStatus(lesson))){
+      const step=lessonStatus(lesson)==='completed'?0:progress.state.resume[lesson.id]??progress.state.positions[lesson.id]??0;
+      progress.visit(lesson.id,step);renderLesson(lesson,step,false);
+    }else renderLearningList(parts[1]?'이 수업은 아직 열리지 않았어요. 이전 강을 먼저 완료해 주세요.':'');
+  }else if(!learningView.querySelector('h1'))renderLearningList();
+  showView(parts[0],focus);updateProgressUI();
+  if(activeLesson&&parts[0]==='learn')document.title=activeLesson.number+'강 · '+activeLesson.title+' · 척척 에셋';
+}
+learningView.addEventListener('click',event=>{
+  const button=event.target.closest('button');if(!button||button.disabled)return;
+  if(button.dataset.lesson){location.hash='learn/'+button.dataset.lesson;return;}
+  if(!button.dataset.action)return;
+  const action=button.dataset.action;
+  if(action==='list'||action==='review-done'){location.hash='learn';return;}
+  if(!activeLesson)return;
+  if(action==='next'||action==='previous'){
+    const step=activeStep+(action==='next'?1:-1);
+    if(progress.visit(activeLesson.id,step)){renderLesson(activeLesson,step);updateProgressUI();}
+    else route();
+  }
+  if(action==='complete'&&progress.complete(activeLesson.id)){
+    updateProgressUI();const next=LearningProgress.nextLesson(curriculum,progress.state);
+    const title=activeLesson.title;
+    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강이 열렸어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
+    history.replaceState(null,'','#learn');showView('learn');
+  }
+});
+window.addEventListener('hashchange',()=>route());
+window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY){route(false);}});
+setLevel(0);route(false);
+
 </script></body></html>
