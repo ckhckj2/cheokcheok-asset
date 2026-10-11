@@ -12,3 +12,6 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #25
 /* Optional explanations stay separate from the main lesson and never gate completion. */
 .easy-help{margin:25px 0}.easy-toggle{border:1px solid #e8d36f;border-radius:11px;background:#fff9d9;color:#785b00;padding:12px 17px;font-size:13px;font-weight:800;min-height:44px}.easy-toggle:hover{background:#fff1ac}.easy-explanation{margin-top:15px;border:1px solid #f0dfa0;background:#fffdf3;border-radius:15px;padding:24px}.easy-explanation>.eyebrow{color:#785b00}.easy-explanation h3{font-size:19px;color:#10234a;line-height:1.6;margin:0 0 16px}.easy-explanation>p{color:#354766;font-size:15px;line-height:2;margin:15px 0}.easy-limit{border-top:1px solid #eadfaf;padding-top:17px;margin-top:23px}.easy-limit>b{font-size:12px;color:#785b00}.easy-limit>p{font-size:12px;color:#667085;margin:8px 0 0;line-height:1.9}.easy-toggle[aria-expanded=true]{background:#fef3b8}
 @media(max-width:700px){.easy-explanation{padding:19px}.easy-explanation h3{font-size:17px}.easy-explanation>p{font-size:14px}.easy-toggle{width:100%}.easy-limit>p{font-size:12px}}
+
+/* Long Excel references remain readable on narrow screens. */
+.lesson-body{overflow-wrap:anywhere}
