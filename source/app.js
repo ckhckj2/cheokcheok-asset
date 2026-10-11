@@ -46,7 +46,11 @@ function renderLearningList(notice=''){
     (notice?'<p class="lesson-note" role="status">'+escapeText(notice)+'</p>':'')+
     '<div class="learning-overview"><div><span class="eyebrow">나의 학습</span><h2>'+completed+' / 20강 완료</h2><p>완료한 수업은 언제든 다시 볼 수 있어요.</p></div>'+(next?'<button type="button" class="primary" data-lesson="'+next.id+'">'+next.number+'강 '+((progress.state.positions[next.id]||0)>0?'이어서 학습':'시작하기')+' →</button>':'<span class="status-label">다음 수업 준비 중</span>')+'</div><progress class="learning-progress" max="20" value="'+completed+'" aria-label="20강 학습 완료 진도"></progress>'+storageNotice()+
     '<div class="lesson-group"><h2>01 · 금융 기초 <small>1~10강</small></h2><ol class="lesson-list">'+curriculum.slice(0,10).map(lessonRow).join('')+'</ol></div>'+
-    '<div class="lesson-group"><h2>02 · 부동산 투자 실무 입문 <small>11~20강</small></h2><ol class="lesson-list">'+curriculum.slice(10).map(lessonRow).join('')+'</ol></div><p class="asset-footnote">현재 1~4강을 학습할 수 있어요. 5~10강은 2-B, 11~20강은 2-C에서 추가돼요. 학습 완료는 스스로 읽고 정리한 기록이며, 퀴즈 점수나 승급을 의미하지 않아요.</p>';
+    '<div class="lesson-group"><h2>02 · 부동산 투자 실무 입문 <small>11~20강</small></h2><ol class="lesson-list">'+curriculum.slice(10).map(lessonRow).join('')+'</ol></div><p class="asset-footnote">현재 1~10강을 학습할 수 있어요. 11~20강은 2-C에서 추가돼요. 학습 완료는 스스로 읽고 정리한 기록이며, 퀴즈 점수나 승급을 의미하지 않아요.</p>';
+}
+function renderEasy(explanation){
+  if(!explanation)return '';
+  return '<div class="easy-help"><button type="button" class="easy-toggle" data-action="easy" aria-expanded="false" aria-controls="easyExplanation">더 쉽게 설명해줘</button><div id="easyExplanation" class="easy-explanation" hidden><span class="eyebrow">아주 쉬운 예시</span><h3>'+escapeText(explanation.title)+'</h3>'+explanation.paragraphs.map(line=>'<p>'+escapeText(line)+'</p>').join('')+'<div class="easy-limit"><b>실제 개념과 연결하면</b><p>'+escapeText(explanation.note)+'</p></div></div></div>';
 }
 function renderLesson(lesson,step,focus=true){
   if(!['open','completed'].includes(lessonStatus(lesson))){renderLearningList('이전 강을 완료한 뒤 학습할 수 있어요.');return;}
@@ -56,6 +60,7 @@ function renderLesson(lesson,step,focus=true){
   learningView.innerHTML='<button class="text-button" type="button" data-action="list">← 전체 수업</button><header class="page-head lesson-head"><span class="eyebrow">'+(done?'REVIEW · 복습':'LESSON '+String(lesson.number).padStart(2,'0'))+'</span><h1 tabindex="-1">'+lesson.number+'강 · '+escapeText(lesson.title)+'</h1><p>'+escapeText(lesson.goal)+'</p></header><div class="lesson-steps" aria-label="수업 진행">'+lesson.sections.map((s,i)=>'<span class="'+(i===step?'current':i<step?'passed':'')+'">'+(i+1)+' · '+escapeText(s.title.split(' · ')[0])+'</span>').join('')+'<span class="'+(summary?'current':'')+'">정리</span></div>'+
     '<article class="lesson-body asset-panel"><span class="status-label">'+(summary?'핵심 요약':(step+1)+' / '+lesson.sections.length+' 소단원')+'</span><h2 tabindex="-1">'+escapeText(summary?'배운 내용, 네 줄로 정리':section.title)+'</h2>'+
     (summary?'<ul class="summary-lines">'+lesson.summary.map(line=>'<li>'+escapeText(line)+'</li>').join('')+'</ul><p>각 문장을 네 말로 설명할 수 있는지 떠올려보세요. 헷갈린 내용은 이전으로 돌아가 다시 읽어도 좋아요.</p>':section.html)+
+    renderEasy(summary?lesson.easySummary:section.easy)+
     (!summary&&section.check?'<div class="understanding-check"><small>잠깐 생각해보기 · 채점하지 않아요</small><p>'+escapeText(section.check.question)+'</p><details><summary>설명 확인하기</summary><p>'+escapeText(section.check.answer)+'</p></details></div>':'')+
     (summary?'<details class="lesson-sources"><summary>개념 참고 자료</summary><ul>'+lesson.sources.map(([title,url])=>'<li><a href="'+url+'" target="_blank" rel="noopener noreferrer">'+escapeText(title)+'</a></li>').join('')+'</ul><p>교육용 가상 사례예요. 자료의 개념을 참고해 직접 설명했으며, 실제 거래의 계약·평가 기준은 별도로 확인해야 해요.</p></details>':'')+'</article>'+
     '<div class="lesson-controls"><button class="secondary" type="button" data-action="previous" '+(step===0?'disabled':'')+'>← 이전</button><span>'+(step+1)+' / '+(lesson.sections.length+1)+'</span>'+(summary?'<button class="primary" type="button" data-action="'+(done?'review-done':'complete')+'">'+(done?'복습 마치기':'학습 완료하기')+' →</button>':'<button class="primary" type="button" data-action="next">'+(step===lesson.sections.length-1?'핵심 요약 보기':'다음')+' →</button>')+'</div>'+storageNotice();
@@ -79,6 +84,13 @@ learningView.addEventListener('click',event=>{
   if(button.dataset.lesson){location.hash='learn/'+button.dataset.lesson;return;}
   if(!button.dataset.action)return;
   const action=button.dataset.action;
+  if(action==='easy'){
+    const expanded=button.getAttribute('aria-expanded')==='true';
+    button.setAttribute('aria-expanded',String(!expanded));
+    button.textContent=expanded?'더 쉽게 설명해줘':'쉬운 설명 접기';
+    document.getElementById('easyExplanation').hidden=expanded;
+    return;
+  }
   if(action==='list'||action==='review-done'){location.hash='learn';return;}
   if(!activeLesson)return;
   if(action==='next'||action==='previous'){
