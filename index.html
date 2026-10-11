@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FBFCFE"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-89GyYtk4565/DZmNgC1MIgnrPQnZ92yAXGjMG5RzTp8='; style-src 'sha256-wqQdFYvf1wB/1KtlnOBvlRk9mLIYwSF7odukybmnt0E='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="description" content="척척 에셋: 기초학습에서 모의투자와 투자 판단까지 이어지는 부동산 자산운용 교육 프로그램."><title>척척 에셋</title><style>/* Reused from ckhckj2/Project-context: v2.css */
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FBFCFE"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-YPisQxhOO+RB0+LI8XFYoLz9iUA9axy0fvv994TFYWI='; style-src 'sha256-+opFPmWbtWHYnnOOKHmcGA+CbOZ3AzWFiCWHgMA2tvs='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="description" content="척척 에셋: 기초학습에서 모의투자와 투자 판단까지 이어지는 부동산 자산운용 교육 프로그램."><title>척척 에셋</title><style>/* Reused from ckhckj2/Project-context: v2.css */
 :root{--bg:#F6F7FB;--surface:#fff;--ink:#26324A;--muted:#77819A;--line:#E5E9F2;--primary:#4C6FFF;--primarySoft:#EEF2FF;--green:#159A73;--greenSoft:#EAF8F3;--amber:#C98218;--amberSoft:#FFF6E6;--coral:#E77373;--coralSoft:#FFF0F0;--shadow:0 10px 30px rgba(42,58,91,.065)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(76,111,255,.18);outline-offset:2px}.hidden{display:none!important}
 #masterBar{display:none;margin:8px 10px 0;padding:10px 12px;border:1px solid #E5D69F;border-radius:16px;background:linear-gradient(90deg,#FFFBEB,#F7F2FF);box-shadow:0 8px 24px rgba(119,92,24,.06);align-items:center;gap:10px;flex-wrap:wrap}.certified #masterBar{display:flex}.master-copy{min-width:150px;margin-right:auto}.master-copy small{display:block;font-size:8.5px;letter-spacing:.11em;font-weight:950;color:#9B8140;margin-bottom:3px}.master-copy b{font-size:11.5px;color:#725C25}.master-levels{display:flex;gap:6px;flex-wrap:wrap}.master-levels button{border:1px solid #E6E1D3;background:#fff;color:#766F62;border-radius:999px;padding:8px 11px;font-size:10.5px;font-weight:900}.master-levels button.active{background:#5A62D7;color:#fff;border-color:#5A62D7}.master-levels button[data-level="5"].active{background:linear-gradient(135deg,#705BD2,#B58A2D);border-color:transparent}.master-note{width:100%;font-size:9.5px;color:#9A8E72;line-height:1.45}
@@ -83,17 +83,20 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #25
 
 /* Long Excel references remain readable on narrow screens. */
 .lesson-body{overflow-wrap:anywhere}
+/* Stage 3: one question at a time; answers and reasons stay readable. */
+.quiz-summary{display:flex;gap:24px;align-items:center;padding:23px;background:#fff9d9;border:1px solid #f0dfa0;border-radius:16px;margin:20px 0}.quiz-summary>div{flex:1}.quiz-summary small{font-size:12px;color:#785b00;display:block;margin-bottom:9px}.quiz-summary b{font-size:21px;color:#10234a}.quiz-list{margin-top:18px}.quiz-question{margin:25px 0 0;min-width:0;width:100%;box-sizing:border-box}.quiz-question legend{padding:0 6px}.quiz-question h2{line-height:1.7;font-size:21px;overflow-wrap:anywhere;margin-bottom:25px}.quiz-question .status-label{margin:0}.quiz-options{display:grid;gap:12px}.quiz-option{display:flex;align-items:flex-start;gap:12px;border:1px solid #dbe4f3;border-radius:13px;padding:16px;cursor:pointer;color:#354766;line-height:1.8;font-size:14px}.quiz-option:has(input:checked){background:#eaf2ff;border-color:#2563eb;color:#123e8b}.quiz-option:focus-within{outline:3px solid #2563eb;outline-offset:3px}.quiz-option input{width:19px;height:19px;accent-color:#2563eb;flex:0 0 19px;margin-top:3px}.quiz-option small{display:inline-block;margin-right:12px;font-weight:800;color:#2563eb}.quiz-result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.quiz-result h2{font-size:29px;line-height:1.5}.quiz-explanation{margin-top:24px;overflow-wrap:anywhere}.quiz-explanation h2{font-size:18px;line-height:1.8}.quiz-explanation h3{font-size:14px;color:#10234a;margin-top:24px}.quiz-explanation p{margin:12px 0;font-size:14px;line-height:1.9}.quiz-explanation details{border-top:1px solid #e3e9f2;margin-top:20px;padding-top:16px}.quiz-explanation summary{font-size:13px;color:#2563eb;font-weight:750;cursor:pointer}.quiz-answer{background:#eaf2ff;border-radius:12px;padding:17px;font-size:14px;line-height:1.9;color:#164489;margin-top:20px}.choice-reason{background:#fff9d9;padding:13px 16px;border-radius:11px;color:#785b00!important}.quiz-lesson-link{display:inline-block;color:#2563eb;font-size:13px;font-weight:800;margin-top:20px;padding:8px 0;line-height:1.8}.is-correct>.status-label{background:#eaf2ff;color:#2563eb}.promotion-panel h2{line-height:1.6}
+@media(max-width:700px){.quiz-summary{gap:16px;flex-wrap:wrap;padding:20px}.quiz-summary button{flex-basis:100%}.quiz-question h2{font-size:18px}.quiz-option{padding:14px 12px;font-size:13px}.quiz-result h2{font-size:24px}.quiz-result-actions{flex-direction:column}.quiz-result-actions button{width:100%}.quiz-explanation h2{font-size:17px}}
 </style></head>
-<body><a class="skip-link" href="#mainContent">본문으로 이동</a><div class="shell"><aside class="side"><div class="cc-side-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div><div class="cc-tagline">부동산 자산운용, 차근차근 <b>척척</b></div><span class="version">v0.2-C · 학습 시작</span></div>
-<nav class="nav" aria-label="주 메뉴"><button type="button" data-nav="home" data-view="home"><span data-icon="home"></span>홈</button><button type="button" data-nav="learn" data-view="learn"><span data-icon="learn"></span>기초학습</button><button type="button" data-nav="quiz" data-view="quiz"><span data-icon="quiz"></span>퀴즈</button><button type="button" data-nav="invest" data-view="invest"><span data-icon="invest"></span>모의투자</button><button type="button" data-nav="level" data-view="level"><span data-icon="level"></span>내 레벨</button></nav><div class="cc-side-divider"></div><div class="cc-side-subnav"><button type="button" data-view="roadmap">업데이트 안내 →</button></div><div class="level-mini"><small>CURRENT LEVEL</small><b>LV.1 · 신입사원</b><p id="miniProgress">학습 시작 전 · 0 / 20강<br>승급 기능은 준비 중이에요.</p><button type="button" data-view="level">4레벨 구성 보기 →</button></div></aside>
-<main class="main" id="mainContent"><div class="inner"><div class="mobile-head"><div class="mobile-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div></div><span class="version">v0.2-C</span></div><div class="asset-topline"><span>부동산 자산운용 학습</span><span class="stage-chip" id="stageProgress">LV.1 · 신입사원 / 학습 시작 전</span></div>
+<body><a class="skip-link" href="#mainContent">본문으로 이동</a><div class="shell"><aside class="side"><div class="cc-side-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div><div class="cc-tagline">부동산 자산운용, 차근차근 <b>척척</b></div><span class="version">v0.3 · 학습 시작</span></div>
+<nav class="nav" aria-label="주 메뉴"><button type="button" data-nav="home" data-view="home"><span data-icon="home"></span>홈</button><button type="button" data-nav="learn" data-view="learn"><span data-icon="learn"></span>기초학습</button><button type="button" data-nav="quiz" data-view="quiz"><span data-icon="quiz"></span>퀴즈</button><button type="button" data-nav="invest" data-view="invest"><span data-icon="invest"></span>모의투자</button><button type="button" data-nav="level" data-view="level"><span data-icon="level"></span>내 레벨</button></nav><div class="cc-side-divider"></div><div class="cc-side-subnav"><button type="button" data-view="roadmap">업데이트 안내 →</button></div><div class="level-mini"><small>CURRENT LEVEL</small><b id="currentLevel">LV.1 · 신입사원</b><p id="miniProgress">학습 시작 전 · 0 / 20강<br>종합 퀴즈로 승급할 수 있어요.</p><button type="button" data-view="level">4레벨 구성 보기 →</button></div></aside>
+<main class="main" id="mainContent"><div class="inner"><div class="mobile-head"><div class="mobile-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div></div><span class="version">v0.3</span></div><div class="asset-topline"><span>부동산 자산운용 학습</span><span class="stage-chip" id="stageProgress">LV.1 · 신입사원 / 학습 시작 전</span></div>
 <section id="view-home" class="view active"><div class="hero"><span class="eyebrow">CHEOKCHEOK ASSET</span><h1 tabindex="-1">배운 개념을,<br>내 투자 판단으로.</h1><p class="lead">기초를 익히고, 가정을 세우고, 선택의 결과를 비교해요.<br>척척 에셋에서 자산운용을 차근차근 연습하세요.</p></div><div class="asset-next"><div><span class="eyebrow">지금 할 일</span><h2 id="homeNextTitle">1강부터 차근차근 시작해요</h2><p id="homeNextCopy">먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.</p></div><button type="button" class="primary" id="homeLearningCta" data-view="learn">학습 시작하기 →</button></div>
-<div class="asset-grid"><button type="button" class="asset-card" data-view="learn"><span data-icon="learn"></span><b>학습하기</b><p>개념과 용어를 익히고<br>숫자 예시로 이해해요.</p><small>신입사원 · 1~20강 순차 학습 →</small></button><button type="button" class="asset-card" data-view="quiz"><span data-icon="quiz"></span><b>퀴즈 풀기</b><p>이해한 내용을 확인하고<br>틀린 이유를 복습해요.</p><small>신입사원 · 문제 준비 중 →</small></button><button type="button" class="asset-card" data-view="invest"><span data-icon="invest"></span><b>모의투자</b><p>직접 선택하고<br>결과와 위험을 비교해요.</p><small>대리부터 · 실습 준비 중 →</small></button></div>
-<h2 class="section-caption">차근차근 넓어지는 판단의 범위</h2><div class="asset-journey"><button type="button" class="journey-btn" data-view="level" data-level="0"><small>LEVEL 01</small><b>신입사원</b><span>기초학습·퀴즈</span></button><button type="button" class="journey-btn" data-view="level" data-level="1"><small>LEVEL 02</small><b>대리</b><span>선택·결과 비교·복기</span></button><button type="button" class="journey-btn" data-view="level" data-level="2"><small>LEVEL 03</small><b>과장</b><span>시장자료·가정 수립</span></button><button type="button" class="journey-btn" data-view="level" data-level="3"><small>LEVEL 04</small><b>팀장</b><span>시나리오·투자 전략</span></button></div><p class="asset-footnote">1~20강과 각 강의 요약·쉬운 설명·복습을 이용할 수 있어요. 정식 퀴즈·승급·모의투자는 다음 단계에서 추가됩니다.</p></section>
+<div class="asset-grid"><button type="button" class="asset-card" data-view="learn"><span data-icon="learn"></span><b>학습하기</b><p>개념과 용어를 익히고<br>숫자 예시로 이해해요.</p><small>신입사원 · 1~20강 순차 학습 →</small></button><button type="button" class="asset-card" data-view="quiz"><span data-icon="quiz"></span><b>퀴즈 풀기</b><p>이해한 내용을 확인하고<br>틀린 이유를 복습해요.</p><small>단원 퀴즈·오답 복습 →</small></button><button type="button" class="asset-card" data-view="invest"><span data-icon="invest"></span><b>모의투자</b><p>직접 선택하고<br>결과와 위험을 비교해요.</p><small>대리부터 · 실습 준비 중 →</small></button></div>
+<h2 class="section-caption">차근차근 넓어지는 판단의 범위</h2><div class="asset-journey"><button type="button" class="journey-btn" data-view="level" data-level="0"><small>LEVEL 01</small><b>신입사원</b><span>기초학습·퀴즈</span></button><button type="button" class="journey-btn" data-view="level" data-level="1"><small>LEVEL 02</small><b>대리</b><span>선택·결과 비교·복기</span></button><button type="button" class="journey-btn" data-view="level" data-level="2"><small>LEVEL 03</small><b>과장</b><span>시장자료·가정 수립</span></button><button type="button" class="journey-btn" data-view="level" data-level="3"><small>LEVEL 04</small><b>팀장</b><span>시나리오·투자 전략</span></button></div><p class="asset-footnote">1~20강과 각 강의 요약·쉬운 설명·복습을 이용할 수 있어요. 단원 퀴즈·해설·오답 복습과 대리 승급을 이용할 수 있어요. 모의투자는 4단계에서 추가됩니다.</p></section>
 <section id="view-learn" class="view" hidden></section><section id="view-quiz" class="view" hidden></section>
 <section id="view-invest" class="view" hidden><header class="page-head"><span class="eyebrow">INVESTMENT PRACTICE</span><h1 tabindex="-1">모의투자</h1><p>내 판단을 기록하고, 그 판단이 결과에 미친 영향을 확인해요.</p></header><div class="asset-panel"><span class="status-label">준비 중 · 대리부터 시작</span><h2>직접 판단하는 투자 연습</h2><p>가상 부동산의 조건을 읽고 투자 여부와 운영 전략을 정할 거예요.<br>선택에 따른 좋은 영향과 나쁜 영향을 함께 비교하고 복기합니다.</p><div class="flow-list"><div><small>01 · 판단</small><b>선택과 이유 남기기</b></div><div><small>02 · 결과</small><b>현금흐름·수익률·위험 비교</b></div><div><small>03 · 복기</small><b>놓친 위험과 다른 선택 검토</b></div></div><ul><li>대리: 주어진 조건으로 매입·대출·운영·매각 판단</li><li>과장: 비교 자료를 근거로 임대료·공실률·운영비 설정</li><li>팀장: 금리·공실·공사비·매각 조건 변화에 따른 전략 검토</li></ul><button type="button" class="secondary" data-view="level" data-level="1">레벨별 연습 구성 보기 →</button><p class="asset-footnote">4단계 업데이트부터 투자 계산과 실습이 추가됩니다. 초기 실습은 가상 사례를 사용합니다.</p></div></section>
-<section id="view-level" class="view" hidden><header class="page-head"><span class="eyebrow">LEVEL PATH</span><h1 tabindex="-1">내 레벨</h1><p>현재는 LV.1 · 신입사원이에요. 학습 진도와 승급은 별개예요.</p></header><div class="level-note">아래 버튼은 레벨별 구성 미리보기예요. 상위 레벨을 살펴봐도 실제 레벨이나 진도는 바뀌지 않아요.</div><div class="asset-tabs" role="group" aria-label="레벨별 구성 미리보기"><button type="button" data-preview-level="0" aria-pressed="true">신입사원</button><button type="button" data-preview-level="1" aria-pressed="false">대리</button><button type="button" data-preview-level="2" aria-pressed="false">과장</button><button type="button" data-preview-level="3" aria-pressed="false">팀장</button></div><div class="asset-panel" aria-live="polite"><div class="level-heading"><span class="level-number" id="levelNumber">01</span><h2 id="levelName">LV.1 · 신입사원</h2></div><p id="levelMotto" class="level-motto"></p><p id="levelPurpose"></p><ul id="levelFeatures"></ul><span class="status-label">기능 준비 중</span><br><button type="button" class="secondary" id="levelCta">기초학습 구성 보기</button><p class="asset-footnote">승급 후에도 하위 레벨의 수업과 도구를 다시 이용할 수 있도록 구성합니다.</p></div></section>
-<section id="view-roadmap" class="view" hidden><header class="page-head"><span class="eyebrow">UPDATES</span><h1 tabindex="-1">업데이트 안내</h1><p>작동하는 단위로 완성하고, 확인하면서 넓혀가요.</p></header><div class="asset-panel"><h2>첫 버전까지 7단계</h2><ol class="roadmap-list"><li><strong>1</strong><span>기본 화면·블루와 옐로우·4레벨 메뉴</span><em>완료</em></li><li><strong>2</strong><span>20강 학습·요약·저장·순차 해금·복습</span><em>2-C 완료</em></li><li><strong>3</strong><span>퀴즈·해설·승급·오답 복습</span><em>예정</em></li><li><strong>4</strong><span>대리: 모의투자·선택과 결과 비교·복기</span><em>예정</em></li><li><strong>5</strong><span>과장: 비교 사례·가정과 근거 수립</span><em>예정</em></li><li><strong>6</strong><span>팀장: 시나리오·민감도 분석·투자 판단</span><em>예정</em></li><li><strong>7</strong><span>계산·저장·승급·모바일 통합 검증</span><em>예정</em></li></ol><p class="asset-footnote">2-A: 학습 화면과 1~4강 완료 · 2-B: 1~10강·같은 사례로 설명 개선 완료 · 2-C: 11~20강·20강 완료 후 복습 안내 완료</p><p class="asset-footnote">모의투자 학습의 ‘가정 → 계산 → 민감도 분석·투자 판단’ 3단계와 개발 업데이트 번호는 별개입니다.</p></div></section>
+<section id="view-level" class="view" hidden><header class="page-head"><span class="eyebrow">LEVEL PATH</span><h1 tabindex="-1">내 레벨</h1><p id="levelCurrentCopy">현재는 LV.1 · 신입사원이에요.</p><a class="quiz-lesson-link" href="#quiz">내 퀴즈 기록·승급 조건 보기 →</a></header><div class="level-note">아래 버튼은 레벨별 구성 미리보기예요. 상위 레벨을 살펴봐도 실제 레벨이나 진도는 바뀌지 않아요.</div><div class="asset-tabs" role="group" aria-label="레벨별 구성 미리보기"><button type="button" data-preview-level="0" aria-pressed="true">신입사원</button><button type="button" data-preview-level="1" aria-pressed="false">대리</button><button type="button" data-preview-level="2" aria-pressed="false">과장</button><button type="button" data-preview-level="3" aria-pressed="false">팀장</button></div><div class="asset-panel" aria-live="polite"><div class="level-heading"><span class="level-number" id="levelNumber">01</span><h2 id="levelName">LV.1 · 신입사원</h2></div><p id="levelMotto" class="level-motto"></p><p id="levelPurpose"></p><ul id="levelFeatures"></ul><span class="status-label">신입사원 학습·퀴즈 제공 · 상위 실습 준비 중</span><br><button type="button" class="secondary" id="levelCta">기초학습 구성 보기</button><p class="asset-footnote">대리 승급 조건은 20강 학습 완료와 종합 퀴즈 80점 이상이에요. 과장·팀장 승급은 해당 실습 업데이트에서 연결됩니다.</p></div></section>
+<section id="view-roadmap" class="view" hidden><header class="page-head"><span class="eyebrow">UPDATES</span><h1 tabindex="-1">업데이트 안내</h1><p>작동하는 단위로 완성하고, 확인하면서 넓혀가요.</p></header><div class="asset-panel"><h2>첫 버전까지 7단계</h2><ol class="roadmap-list"><li><strong>1</strong><span>기본 화면·블루와 옐로우·4레벨 메뉴</span><em>완료</em></li><li><strong>2</strong><span>20강 학습·요약·저장·순차 해금·복습</span><em>2-C 완료</em></li><li><strong>3</strong><span>퀴즈·해설·승급·오답 복습</span><em>완료</em></li><li><strong>4</strong><span>대리: 모의투자·선택과 결과 비교·복기</span><em>예정</em></li><li><strong>5</strong><span>과장: 비교 사례·가정과 근거 수립</span><em>예정</em></li><li><strong>6</strong><span>팀장: 시나리오·민감도 분석·투자 판단</span><em>예정</em></li><li><strong>7</strong><span>계산·저장·승급·모바일 통합 검증</span><em>예정</em></li></ol><p class="asset-footnote">2-A: 학습 화면과 1~4강 완료 · 2-B: 1~10강·같은 사례로 설명 개선 완료 · 2-C: 11~20강·20강 완료 후 복습 안내 완료</p><p class="asset-footnote">모의투자 학습의 ‘가정 → 계산 → 민감도 분석·투자 판단’ 3단계와 개발 업데이트 번호는 별개입니다.</p></div></section>
 </div></main></div><nav class="bottom-nav" aria-label="모바일 주 메뉴"><button type="button" data-nav="home" data-view="home"><span data-icon="home"></span>홈</button><button type="button" data-nav="learn" data-view="learn"><span data-icon="learn"></span>학습</button><button type="button" data-nav="quiz" data-view="quiz"><span data-icon="quiz"></span>퀴즈</button><button type="button" data-nav="invest" data-view="invest"><span data-icon="invest"></span>모의투자</button><button type="button" data-nav="level" data-view="level"><span data-icon="level"></span>내 레벨</button></nav><noscript>화면 이동을 이용하려면 JavaScript를 허용해 주세요.</noscript><script>'use strict';
 // Stable lesson IDs are independent of presentation order and completion records.
 const curriculum = [
@@ -1592,6 +1595,1979 @@ const LearningProgress = (() => {
 if(typeof module!=='undefined')module.exports=LearningProgress;
 
 'use strict';
+// Authored from the existing synthetic lesson cases; amounts use the same units as the lessons.
+const quizQuestions = [
+  {
+    "lesson": 1,
+    "stem": "건물을 1,000에 사고, 내 돈 300과 대출 700을 넣었어요. 여기서 Equity는 무엇일까요?",
+    "options": [
+      {
+        "text": "내 돈 300",
+        "why": "내가 넣은 돈이 자기자본이에요."
+      },
+      {
+        "text": "대출 700",
+        "why": "빌린 돈은 Debt예요. 갚을 의무가 있어요."
+      },
+      {
+        "text": "건물 가격 1,000",
+        "why": "건물 전체와 내 몫은 달라요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "건물을 사는 돈 1,000을 두 주머니에서 꺼낸 거예요.",
+      "내 주머니 300은 Equity, 은행에서 빌린 700은 Debt예요.",
+      "건물 가격 전체를 내 몫이라고 생각하면 대출을 놓치게 돼요."
+    ],
+    "id": "lesson-1-1",
+    "quizId": "lesson-1"
+  },
+  {
+    "lesson": 1,
+    "stem": "이 건물을 1,100에 팔고 대출 원금 700을 갚으면, 내게 남는 돈은? 이자·세금·비용은 빼고 생각해요.",
+    "options": [
+      {
+        "text": "1,100",
+        "why": "판매대금 전체를 가져가기 전에 대출을 갚아야 해요."
+      },
+      {
+        "text": "400",
+        "why": "1,100에서 대출 700을 빼면 400이에요."
+      },
+      {
+        "text": "100",
+        "why": "100은 처음 넣은 300을 제외한 이익이에요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "1,100이 들어오면 먼저 빌린 700을 돌려줘요.",
+      "남은 400에는 처음 넣은 300과 이익 100이 같이 있어요.",
+      "회수금 400과 이익 100을 구분해요."
+    ],
+    "id": "lesson-1-2",
+    "quizId": "lesson-1"
+  },
+  {
+    "lesson": 1,
+    "stem": "주식과 채권의 차이를 가장 잘 설명한 것은?",
+    "options": [
+      {
+        "text": "둘 다 약속한 수익을 반드시 받아요",
+        "why": "채권도 돈을 못 받을 위험이 있고 주식 수익은 확정되지 않아요."
+      },
+      {
+        "text": "주식은 항상 먼저 돈을 받아요",
+        "why": "계약과 권리 순서를 봐야 해요. 주주가 잔여 몫을 가지는 구조를 배웠어요."
+      },
+      {
+        "text": "주식은 남은 몫을, 채권은 약속한 상환을 요구하는 권리를 가져요",
+        "why": "이익에 참여하는 권리와 돈을 돌려받는 권리를 구분해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "주주는 사업의 남은 이익과 손실에 참여해요.",
+      "채권자는 정해진 조건으로 이자와 원금을 받기로 한 사람이에요.",
+      "약속이 있다는 것과 실제로 반드시 받는다는 것은 달라요."
+    ],
+    "id": "lesson-1-3",
+    "quizId": "lesson-1"
+  },
+  {
+    "lesson": 2,
+    "stem": "건물 평가액 1,100, 대출 700, 다른 자산·부채는 없어요. 순자산가치(NAV)는?",
+    "options": [
+      {
+        "text": "400",
+        "why": "1,100−700=400이에요."
+      },
+      {
+        "text": "1,100",
+        "why": "이 값은 부채를 빼기 전 자산가치예요."
+      },
+      {
+        "text": "700",
+        "why": "대출은 투자자의 순자산이 아니에요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "건물이 1,100으로 평가돼도 700은 갚아야 해요.",
+      "갚을 돈을 빼고 남는 몫 400이 NAV예요.",
+      "아직 팔지 않았다면 이 400이 전부 현금으로 들어온 것은 아니에요."
+    ],
+    "id": "lesson-2-1",
+    "quizId": "lesson-2"
+  },
+  {
+    "lesson": 2,
+    "stem": "ETF의 시장가격과 NAV에 대한 올바른 설명은?",
+    "options": [
+      {
+        "text": "언제나 정확히 같아요",
+        "why": "거래 가격과 계산한 순자산가치는 차이가 날 수 있어요."
+      },
+      {
+        "text": "거래 가격은 NAV와 차이가 날 수 있어요",
+        "why": "시장에서 매매하는 가격과 자산에서 부채를 뺀 값은 구분해요."
+      },
+      {
+        "text": "NAV는 대출 총액이에요",
+        "why": "NAV는 부채를 뺀 순자산가치예요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "NAV는 보유 자산과 부채로 계산한 값이에요.",
+      "시장가격은 사람들이 지금 거래하는 가격이에요.",
+      "따라서 두 숫자가 항상 같다고 단정하면 안 돼요."
+    ],
+    "id": "lesson-2-2",
+    "quizId": "lesson-2"
+  },
+  {
+    "lesson": 2,
+    "stem": "펀드 안의 건물 평가액이 올랐어요. 이를 어떻게 이해해야 할까요?",
+    "options": [
+      {
+        "text": "바로 그만큼 현금이 입금돼요",
+        "why": "평가와 실제 매각·분배는 서로 다른 일이에요."
+      },
+      {
+        "text": "대출이 자동으로 사라져요",
+        "why": "건물 가격이 올라도 대출 상환은 별도예요."
+      },
+      {
+        "text": "평가상 내 몫은 늘 수 있지만 현금 회수와는 달라요",
+        "why": "장부상의 가치와 실제 들어온 돈을 나눠 봐요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "아직 팔지 않은 건물의 평가액이 오른 상황이에요.",
+      "가치가 올라 NAV가 늘어도 현금이 들어온 것은 아니에요.",
+      "분배나 매각이 일어났는지 따로 확인해요."
+    ],
+    "id": "lesson-2-3",
+    "quizId": "lesson-2"
+  },
+  {
+    "lesson": 3,
+    "stem": "건물 가격 1,000, 대출 700이면 LTV는?",
+    "options": [
+      {
+        "text": "70%",
+        "why": "대출 700을 담보가치 1,000으로 나눠요."
+      },
+      {
+        "text": "30%",
+        "why": "30%는 이 사례의 자기자본 비율이에요."
+      },
+      {
+        "text": "700%",
+        "why": "비율은 대출을 담보가치로 나눈 뒤 100을 곱해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "LTV는 건물 가치에 비해 얼마나 빌렸는지를 보는 비율이에요.",
+      "700 ÷ 1,000 = 0.7, 즉 70%예요.",
+      "LTC는 담보가치 대신 사업비를 분모로 써요."
+    ],
+    "id": "lesson-3-1",
+    "quizId": "lesson-3"
+  },
+  {
+    "lesson": 3,
+    "stem": "대출 700에 연 금리 4%를 적용하면 1년 이자는? 원금은 그대로예요.",
+    "options": [
+      {
+        "text": "4",
+        "why": "4%는 이자 금액이 아닌 비율이에요."
+      },
+      {
+        "text": "28",
+        "why": "700×0.04=28이에요."
+      },
+      {
+        "text": "728",
+        "why": "728은 원금과 1년 이자를 합한 값이에요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "빌린 돈 700의 4%를 1년 사용료로 내는 거예요.",
+      "700 × 4% = 28이에요.",
+      "이자를 내도 원금 700은 따로 남아 있어요."
+    ],
+    "id": "lesson-3-2",
+    "quizId": "lesson-3"
+  },
+  {
+    "lesson": 3,
+    "stem": "만기 때 건물 가치가 900, 새 대출 한도가 LTV 70%예요. 기존 대출 700을 갚는 데 부족한 돈은?",
+    "options": [
+      {
+        "text": "0",
+        "why": "새 대출은 900 전부가 아닌 70%만 가능해요."
+      },
+      {
+        "text": "630",
+        "why": "630은 새로 빌릴 수 있는 돈이에요."
+      },
+      {
+        "text": "70",
+        "why": "새 대출 630과 기존 대출 700의 차이가 70이에요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "새 은행이 빌려줄 수 있는 돈은 900 × 70% = 630이에요.",
+      "기존 은행에는 700을 갚아야 하니 70이 모자라요.",
+      "재대출이 가능하다는 말만으로 상환 문제가 해결되지는 않아요."
+    ],
+    "id": "lesson-3-3",
+    "quizId": "lesson-3"
+  },
+  {
+    "lesson": 4,
+    "stem": "연 임대수입 60, 운영비 10, 이자 28이에요. 이 수업의 NOI는?",
+    "options": [
+      {
+        "text": "50",
+        "why": "임대수입에서 운영비를 빼요."
+      },
+      {
+        "text": "22",
+        "why": "22는 NOI에서 이자까지 뺀 값이에요."
+      },
+      {
+        "text": "60",
+        "why": "운영비 10을 빼야 해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "건물 운영으로 번 돈부터 따로 봐요.",
+      "60 − 10 = 50이 NOI예요.",
+      "대출 이자 28은 그 다음에 빼므로 NOI에 섞지 않아요."
+    ],
+    "id": "lesson-4-1",
+    "quizId": "lesson-4"
+  },
+  {
+    "lesson": 4,
+    "stem": "NOI 50, 건물 가격 1,000이면 Cap Rate는?",
+    "options": [
+      {
+        "text": "50%",
+        "why": "50을 1,000으로 나누면 0.05예요."
+      },
+      {
+        "text": "5%",
+        "why": "50÷1,000=5%예요."
+      },
+      {
+        "text": "약 16.7%",
+        "why": "이 값은 50을 자기자본 300으로 나눈 값이고 Cap Rate가 아니에요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "건물 전체 가격에 비해 운영 수익이 어느 정도인지 봐요.",
+      "50 ÷ 1,000 = 5%예요.",
+      "자기자본 수익률이나 IRR과는 계산 기준이 달라요."
+    ],
+    "id": "lesson-4-2",
+    "quizId": "lesson-4"
+  },
+  {
+    "lesson": 4,
+    "stem": "100을 넣고 중간 회수 없이 2년 뒤 121을 받았어요. 연간 IRR은?",
+    "options": [
+      {
+        "text": "21%",
+        "why": "21%는 2년 전체 증가율이에요."
+      },
+      {
+        "text": "10.5%",
+        "why": "전체 증가율을 단순히 2로 나누는 계산과 복리는 달라요."
+      },
+      {
+        "text": "10%",
+        "why": "100×1.1×1.1=121이에요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "첫해 100이 110, 둘째 해 110이 121이 되는 속도예요.",
+      "같은 연 수익률을 두 번 적용하면 10%예요.",
+      "이 예시는 중간 현금흐름이 없는 별도의 작은 사례예요."
+    ],
+    "id": "lesson-4-3",
+    "quizId": "lesson-4"
+  },
+  {
+    "lesson": 5,
+    "stem": "할인율을 연 10%로 가정할 때, 1년 뒤 받을 110의 현재가치는?",
+    "options": [
+      {
+        "text": "100",
+        "why": "110÷1.1=100이에요."
+      },
+      {
+        "text": "110",
+        "why": "이 값은 미래에 받는 금액이에요."
+      },
+      {
+        "text": "121",
+        "why": "현재로 가져올 때는 곱하지 않고 나눠요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "지금 100이 연 10%로 늘면 1년 뒤 110이에요.",
+      "거꾸로 1년 뒤 110을 지금 기준으로 바꾸면 100이에요.",
+      "할인율 10%는 이 사례의 가정이지 확정 수익률이 아니에요."
+    ],
+    "id": "lesson-5-1",
+    "quizId": "lesson-5"
+  },
+  {
+    "lesson": 5,
+    "stem": "같은 미래 현금흐름에 할인율만 더 높이면, 현재가치는 보통 어떻게 될까요? 미래 유입금은 양수예요.",
+    "options": [
+      {
+        "text": "더 커져요",
+        "why": "더 큰 수로 나눠야 하므로 현재가치는 작아져요."
+      },
+      {
+        "text": "작아져요",
+        "why": "미래의 돈을 더 크게 할인하는 거예요."
+      },
+      {
+        "text": "항상 같아요",
+        "why": "할인율도 현재가치 계산에 영향을 줘요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "미래에 받을 돈은 같아요.",
+      "그 돈을 현재로 가져올 때 적용하는 기준만 높아졌어요.",
+      "더 많이 할인하므로 지금의 가치는 작아져요."
+    ],
+    "id": "lesson-5-2",
+    "quizId": "lesson-5"
+  },
+  {
+    "lesson": 5,
+    "stem": "DCF를 읽을 때 가장 먼저 함께 확인할 것은?",
+    "options": [
+      {
+        "text": "결과 숫자 하나만 봐요",
+        "why": "임대수입·비용·매각가·할인율 가정을 놓치게 돼요."
+      },
+      {
+        "text": "건물 이름만 봐요",
+        "why": "이름만으로 현금흐름 가정을 확인할 수 없어요."
+      },
+      {
+        "text": "현금흐름과 매각가·할인율 가정의 근거를 봐요",
+        "why": "결과가 어떤 가정에서 나왔는지 확인해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "DCF는 미래의 돈을 현재 기준으로 더하는 계산이에요.",
+      "입력한 미래 임대료와 매각가가 달라지면 결과도 달라져요.",
+      "계산이 정확해도 가정의 근거가 약하면 판단을 다시 해야 해요."
+    ],
+    "id": "lesson-5-3",
+    "quizId": "lesson-5"
+  },
+  {
+    "lesson": 6,
+    "stem": "개발사업은 건물을 짓는 동안 공사비가 먼저 나가요. PF에서 중요한 질문은?",
+    "options": [
+      {
+        "text": "돈이 언제 필요하고, 어디서 마련하고, 어떻게 갚을까?",
+        "why": "지출과 회수의 시점을 연결하는 질문이에요."
+      },
+      {
+        "text": "준공 후 수입만 얼마일까?",
+        "why": "준공 전에 필요한 돈을 놓쳐요."
+      },
+      {
+        "text": "건물 이름을 무엇으로 정할까?",
+        "why": "자금 조달과 상환을 설명하지 못해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "공사비는 지금 나가는데 분양·매각 돈은 나중에 들어올 수 있어요.",
+      "그 사이 필요한 돈을 조달하고 만기에 갚을 방법을 정해요.",
+      "전체 이익뿐 아니라 중간에 현금이 끊기는지도 봐야 해요."
+    ],
+    "id": "lesson-6-1",
+    "quizId": "lesson-6"
+  },
+  {
+    "lesson": 6,
+    "stem": "사업비 800을 자기자본 200과 대출 600으로 마련했어요. 대출 600은 무엇인가요?",
+    "options": [
+      {
+        "text": "추가 이익 600",
+        "why": "빌린 돈은 이익이 아니고 나중에 갚아야 해요."
+      },
+      {
+        "text": "사업비를 마련하는 자금의 일부",
+        "why": "사업비 800과 조달 자금 800을 나눠 봐요."
+      },
+      {
+        "text": "사업비에 다시 더할 비용 600",
+        "why": "대출 원금을 사업비에 또 더하면 이 사례에서는 중복 계산이에요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "800을 어디에 쓸지는 사업비표가 설명해요.",
+      "그 800을 어디서 마련할지는 자금조달표가 설명해요.",
+      "대출 원금과 대출 이자·수수료는 구분해요."
+    ],
+    "id": "lesson-6-2",
+    "quizId": "lesson-6"
+  },
+  {
+    "lesson": 6,
+    "stem": "공사가 늦어졌을 때 가장 적절한 확인은?",
+    "options": [
+      {
+        "text": "준공만 하면 비용은 그대로예요",
+        "why": "지연 기간에 이자나 다른 비용이 늘 수 있어요."
+      },
+      {
+        "text": "대출이 자동으로 연장돼요",
+        "why": "만기 연장은 약속된 사실인지 확인해야 해요."
+      },
+      {
+        "text": "추가 비용·회수 지연·대출 만기를 함께 확인해요",
+        "why": "일정 변화가 자금 흐름에 미치는 영향을 봐요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "공사가 늦으면 들어올 돈도 늦어질 수 있어요.",
+      "그동안 이자를 더 내고 대출 만기가 먼저 올 수도 있어요.",
+      "일정표와 자금표를 함께 다시 봐요."
+    ],
+    "id": "lesson-6-3",
+    "quizId": "lesson-6"
+  },
+  {
+    "lesson": 7,
+    "stem": "펀드·리츠·신탁을 비교할 때 좋은 출발점은?",
+    "options": [
+      {
+        "text": "누가 돈을 모으고, 보유하고, 관리하는지 구분해요",
+        "why": "이름보다 역할과 구조를 먼저 봐요."
+      },
+      {
+        "text": "모두 수익이 보장돼요",
+        "why": "투자 구조가 달라도 손실 위험은 확인해야 해요."
+      },
+      {
+        "text": "모두 똑같은 법적 형태예요",
+        "why": "역할과 법적 구조의 차이를 배웠어요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "세 이름을 단순한 동의어로 외우지 않아요.",
+      "돈을 모으는 구조, 자산을 보유하는 주체, 관리 역할을 나눠 봐요.",
+      "실제 상품은 계약과 구조를 따로 확인해야 해요."
+    ],
+    "id": "lesson-7-1",
+    "quizId": "lesson-7"
+  },
+  {
+    "lesson": 7,
+    "stem": "리츠라는 이름만 보고 확정할 수 없는 것은?",
+    "options": [
+      {
+        "text": "부동산 투자 구조를 살펴볼 필요가 있다는 것",
+        "why": "상품을 살펴보는 출발점으로 적절해요."
+      },
+      {
+        "text": "원금과 배당이 반드시 보장된다는 것",
+        "why": "이름만으로 수익 보장을 결론낼 수 없어요."
+      },
+      {
+        "text": "자산과 부채를 확인해야 한다는 것",
+        "why": "자산과 부채 확인은 투자 구조를 이해하는 데 필요해요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "상품 이름은 구조를 이해하는 시작점이에요.",
+      "배당 재원과 부채, 자산의 운영 상태를 더 봐야 해요.",
+      "리츠라는 말 자체가 원금 보장 약속은 아니에요."
+    ],
+    "id": "lesson-7-2",
+    "quizId": "lesson-7"
+  },
+  {
+    "lesson": 7,
+    "stem": "신탁 구조를 이해할 때 확인할 질문은?",
+    "options": [
+      {
+        "text": "부동산 가격이 무조건 오를까?",
+        "why": "신탁의 역할과 권리를 설명하지 못해요."
+      },
+      {
+        "text": "수탁자가 자기 돈으로 수익을 보장할까?",
+        "why": "수익 보장을 이름만으로 가정하면 안 돼요."
+      },
+      {
+        "text": "무엇을 맡기고, 누가 관리하며, 누가 이익을 받는가?",
+        "why": "재산·관리·수익의 역할을 구분해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "재산을 맡기는 사람과 관리하는 사람의 역할을 나눠요.",
+      "이익을 받을 사람과 계약 조건도 확인해요.",
+      "자세한 권리와 책임은 실제 신탁 계약에 따라 살펴봐요."
+    ],
+    "id": "lesson-7-3",
+    "quizId": "lesson-7"
+  },
+  {
+    "lesson": 8,
+    "stem": "투자 검토 단계에서 먼저 할 일은?",
+    "options": [
+      {
+        "text": "가격·임대수입·비용·위험과 자료 근거를 확인해요",
+        "why": "매입 전에 투자 판단에 필요한 조건을 살펴봐요."
+      },
+      {
+        "text": "자료를 확인하기 전에 매각 수익부터 확정해요",
+        "why": "미래 매각 수익은 확정된 사실이 아니에요."
+      },
+      {
+        "text": "임대 계약은 매입 후에만 봐요",
+        "why": "매입 전에도 주요 계약과 위험을 확인해야 해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "건물을 사기 전에 수입과 비용이 어떤 자료에서 나왔는지 봐요.",
+      "가격이 적절한지, 어떤 위험이 있는지도 검토해요.",
+      "운용과 매각 계획은 이 검토와 연결돼요."
+    ],
+    "id": "lesson-8-1",
+    "quizId": "lesson-8"
+  },
+  {
+    "lesson": 8,
+    "stem": "운용 중 공실이 늘었어요. 자산운용의 대응으로 적절한 것은?",
+    "options": [
+      {
+        "text": "건물을 샀으니 더 볼 일이 없어요",
+        "why": "운용 중에도 상태와 돈의 흐름을 계속 확인해요."
+      },
+      {
+        "text": "원인과 임대 전략·비용·현금흐름을 다시 검토해요",
+        "why": "공실의 원인과 대응이 투자 결과에 미치는 영향을 봐요."
+      },
+      {
+        "text": "매각 가격이 반드시 올라요",
+        "why": "공실 증가가 매각 가격 상승을 보장하지 않아요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "예상보다 수입이 줄어드는 이유를 먼저 찾아요.",
+      "임대 조건이나 시설·비용을 조정할지 검토해요.",
+      "조정한 전략이 현금흐름과 위험을 어떻게 바꾸는지 비교해요."
+    ],
+    "id": "lesson-8-2",
+    "quizId": "lesson-8"
+  },
+  {
+    "lesson": 8,
+    "stem": "매각 검토에서 건물 판매대금과 함께 확인할 것은?",
+    "options": [
+      {
+        "text": "판매대금 전부가 이익이에요",
+        "why": "대출·비용과 처음 넣은 돈을 구분해야 해요."
+      },
+      {
+        "text": "대출은 새 주인이 무조건 대신 갚아요",
+        "why": "그렇게 계약됐는지 확인 없이 가정하면 안 돼요."
+      },
+      {
+        "text": "대출 상환·거래 비용을 뺀 투자자 회수금",
+        "why": "판매대금과 실제 내게 남는 돈은 달라요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "판매대금이 들어와도 갚을 돈과 거래 비용이 있어요.",
+      "이를 빼야 투자자가 얼마를 회수하는지 보여요.",
+      "처음 넣은 돈과 중간에 받은 돈까지 연결해서 성과를 봐요."
+    ],
+    "id": "lesson-8-3",
+    "quizId": "lesson-8"
+  },
+  {
+    "lesson": 9,
+    "stem": "금리가 올랐다는 뉴스가 나왔어요. 가장 적절한 접근은?",
+    "options": [
+      {
+        "text": "내 대출 조건과 이자·가격 가정에 미치는 영향을 확인해요",
+        "why": "뉴스를 내 투자 조건에 연결해요."
+      },
+      {
+        "text": "모든 건물 가격이 같은 비율로 즉시 내려요",
+        "why": "지역·수요·계약과 다른 요인도 있어요."
+      },
+      {
+        "text": "임대료가 반드시 같은 비율로 올라요",
+        "why": "금리 상승이 임대료 상승을 보장하지 않아요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "뉴스 한 줄로 투자 결과를 확정하지 않아요.",
+      "내 대출이 고정인지 변동인지, 만기가 언제인지 먼저 봐요.",
+      "수요와 매각 가격 가정도 함께 검토해요."
+    ],
+    "id": "lesson-9-1",
+    "quizId": "lesson-9"
+  },
+  {
+    "lesson": 9,
+    "stem": "고용 증가를 건물 투자에 연결하려면 무엇을 더 볼까요?",
+    "options": [
+      {
+        "text": "기사 제목만 외워요",
+        "why": "실제 지역과 자산의 수요를 알기 어려워요."
+      },
+      {
+        "text": "그 지역·업종의 임대 수요로 이어지는지 확인해요",
+        "why": "지표가 내 건물에 영향을 주는 경로를 봐요."
+      },
+      {
+        "text": "공실률이 자동으로 0%가 돼요",
+        "why": "수요 증가 가능성과 실제 공실은 같지 않아요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "경제지표는 임대 수요를 생각할 단서예요.",
+      "어느 지역과 업종에 변화가 생겼는지 봐요.",
+      "내 건물의 입지와 이용 목적에 연결되는지 확인해요."
+    ],
+    "id": "lesson-9-2",
+    "quizId": "lesson-9"
+  },
+  {
+    "lesson": 9,
+    "stem": "금리 전망이 불확실할 때 적절한 방법은?",
+    "options": [
+      {
+        "text": "한 전망만 사실로 입력해요",
+        "why": "전망이 빗나갔을 때의 위험을 놓쳐요."
+      },
+      {
+        "text": "모든 가정을 지워요",
+        "why": "가정을 없애기보다 근거와 여러 경우를 비교해요."
+      },
+      {
+        "text": "상승·유지·하락의 경우를 나눠 결과를 비교해요",
+        "why": "예측이 틀려도 버틸 수 있는지 살펴봐요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "앞날을 하나로 맞히는 것만 목표로 삼지 않아요.",
+      "금리가 다른 경우에 이자와 현금흐름이 어떻게 달라지는지 봐요.",
+      "각 경우에서 감당 가능한 선택을 검토해요."
+    ],
+    "id": "lesson-9-3",
+    "quizId": "lesson-9"
+  },
+  {
+    "lesson": 10,
+    "stem": "가격 1,000, 대출 700, 연 수입 60, 운영비 10, 금리 4%예요. 이자 후 남는 연 현금은? 다른 지출은 없어요.",
+    "options": [
+      {
+        "text": "22",
+        "why": "60−10−700×4%=22예요."
+      },
+      {
+        "text": "50",
+        "why": "이 값은 이자 전 NOI예요."
+      },
+      {
+        "text": "300",
+        "why": "300은 처음 넣은 자기자본이에요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "운영으로 남는 돈은 60 − 10 = 50이에요.",
+      "대출 이자 28을 내면 22가 남아요.",
+      "이 사례에서는 세금·추가 수선·원금 상환 등을 생략했어요."
+    ],
+    "id": "lesson-10-1",
+    "quizId": "lesson-10"
+  },
+  {
+    "lesson": 10,
+    "stem": "위 사례를 평가할 때 22만 보고 안전하다고 할 수 없는 이유는?",
+    "options": [
+      {
+        "text": "NOI가 무조건 음수라서",
+        "why": "이 사례의 NOI는 50으로 양수예요."
+      },
+      {
+        "text": "공실·수선·만기 상환 등 다른 위험도 확인해야 해서",
+        "why": "당장의 양수 현금흐름이 모든 위험을 없애지는 않아요."
+      },
+      {
+        "text": "자기자본이 0이라서",
+        "why": "가격 1,000에서 대출 700을 뺀 자기자본은 300이에요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "현재 남는 22는 주어진 가정의 결과예요.",
+      "임대수입이 줄거나 수선비가 생기면 달라질 수 있어요.",
+      "대출 만기 때 원금을 어떻게 갚을지도 별도 문제예요."
+    ],
+    "id": "lesson-10-2",
+    "quizId": "lesson-10"
+  },
+  {
+    "lesson": 10,
+    "stem": "투자안의 숫자를 읽는 좋은 순서는?",
+    "options": [
+      {
+        "text": "수익률 하나만 고르기",
+        "why": "구조와 현금흐름을 놓쳐요."
+      },
+      {
+        "text": "가격이 싸 보이면 바로 결정하기",
+        "why": "수입·비용·위험의 근거를 확인해야 해요."
+      },
+      {
+        "text": "가격·자금 구조 → 운영 현금 → 매각·상환 → 위험",
+        "why": "돈의 흐름을 순서대로 연결해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "처음 얼마를 넣고 얼마나 빌리는지 봐요.",
+      "보유 중 남는 돈과 마지막에 회수하는 돈을 연결해요.",
+      "그 돈이 줄어들 수 있는 경우를 함께 확인해요."
+    ],
+    "id": "lesson-10-3",
+    "quizId": "lesson-10"
+  },
+  {
+    "lesson": 11,
+    "stem": "사업비 800, 예상 매각 수입 1,000이에요. 사업의 세전 이익은? 다른 비용은 없어요.",
+    "options": [
+      {
+        "text": "200",
+        "why": "1,000−800=200이에요."
+      },
+      {
+        "text": "400",
+        "why": "400은 대출 600 상환 후 자기자본 투자자 회수금이에요."
+      },
+      {
+        "text": "1,000",
+        "why": "매각 수입에서 사업비를 빼야 해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "전체 사업에서 들어오는 돈 1,000을 봐요.",
+      "전체 사업비 800을 빼면 이익은 200이에요.",
+      "세금 등 생략한 항목이 있으면 실제 손익은 달라져요."
+    ],
+    "id": "lesson-11-1",
+    "quizId": "lesson-11"
+  },
+  {
+    "lesson": 11,
+    "stem": "사업비 800에 이자·수수료가 이미 포함됐고 대출 원금은 600이에요. 사업 이익 계산은?",
+    "options": [
+      {
+        "text": "1,000−800−600",
+        "why": "대출 원금을 사업비에 다시 빼면 중복돼요."
+      },
+      {
+        "text": "1,000−800",
+        "why": "사업비와 자금 조달을 구분해요."
+      },
+      {
+        "text": "1,000+600−800",
+        "why": "빌린 돈을 사업 수익으로 더하면 안 돼요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "800은 토지·공사·기타 비용으로 나가는 돈이에요.",
+      "600은 그 비용을 마련하기 위해 빌린 돈이에요.",
+      "사업 손익표와 투자자 회수금 계산을 섞지 않아요."
+    ],
+    "id": "lesson-11-2",
+    "quizId": "lesson-11"
+  },
+  {
+    "lesson": 11,
+    "stem": "자기자본 200, 대출 600으로 사업비 800을 마련했어요. 1,000 회수 후 대출 600을 갚으면 투자자에게 남는 것은?",
+    "options": [
+      {
+        "text": "200 전부가 회수금",
+        "why": "200은 사업 이익이고 회수금은 400이에요."
+      },
+      {
+        "text": "400 전부가 새 이익",
+        "why": "400에는 처음 넣은 200도 들어 있어요."
+      },
+      {
+        "text": "400 회수금 = 원금 200 + 이익 200",
+        "why": "처음 넣은 돈을 이익과 분리해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "1,000에서 빌린 600을 갚으면 400이 남아요.",
+      "처음 내 돈 200을 넣었으니 순증가분은 200이에요.",
+      "회수금 400 전체를 이익이라 부르면 성과가 부풀려져요."
+    ],
+    "id": "lesson-11-3",
+    "quizId": "lesson-11"
+  },
+  {
+    "lesson": 12,
+    "stem": "엑셀에서 처음 투자한 300은 현금흐름으로 어떻게 표시할까요?",
+    "options": [
+      {
+        "text": "−300",
+        "why": "내 주머니에서 나가는 돈은 음수로 표시해요."
+      },
+      {
+        "text": "+300",
+        "why": "투자자가 받는 돈과 넣는 돈의 방향을 구분해요."
+      },
+      {
+        "text": "0",
+        "why": "처음 넣은 돈을 누락하면 수익률을 계산할 수 없어요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "투자자 입장에서 돈의 방향을 정해요.",
+      "처음 내는 돈은 −300, 나중에 받는 돈은 양수예요.",
+      "같은 기준을 모든 기간에 적용해요."
+    ],
+    "id": "lesson-12-1",
+    "quizId": "lesson-12"
+  },
+  {
+    "lesson": 12,
+    "stem": "연 수입 60, 운영비 10, 대출 700, 금리 4%이고 원금은 3년 말 상환해요. 1년 말 현금흐름은?",
+    "options": [
+      {
+        "text": "−300",
+        "why": "−300은 처음 투자한 시점의 현금흐름이에요."
+      },
+      {
+        "text": "22",
+        "why": "60−10−28=22이고 이 해에는 원금을 갚지 않아요."
+      },
+      {
+        "text": "−678",
+        "why": "이 해에 원금 700까지 갚는 조건이 아니에요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "1년 말 운영에서 50이 남아요.",
+      "이자 28을 내면 투자자에게 22가 남아요.",
+      "원금 700을 갚는 시점은 3년 말로 따로 넣어요."
+    ],
+    "id": "lesson-12-2",
+    "quizId": "lesson-12"
+  },
+  {
+    "lesson": 12,
+    "stem": "엑셀 NPV로 연말 유입금을 할인하고, 오늘 넣은 돈 D11은 별도로 더해요. 올바른 식은?",
+    "options": [
+      {
+        "text": "=NPV(B9,D11:G11)",
+        "why": "오늘의 투자금까지 미래 기간으로 할인하게 돼요."
+      },
+      {
+        "text": "=NPV(B9,E11:G11)−D11",
+        "why": "D11이 음수이므로 빼면 투자금을 오히려 더해요."
+      },
+      {
+        "text": "=NPV(B9,E11:G11)+D11",
+        "why": "미래 유입만 할인하고 오늘의 음수 투자금을 더해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "D11은 오늘 넣은 −300이에요.",
+      "E11:G11은 앞으로 각 연말에 받을 돈이에요.",
+      "미래 돈을 할인한 합계에 오늘의 −300을 더해 순현재가치를 구해요."
+    ],
+    "id": "lesson-12-3",
+    "quizId": "lesson-12"
+  },
+  {
+    "lesson": 13,
+    "stem": "잠재 임대수입 60, 수입 기준 공실 손실 10%, 운영비 10이에요. NOI는?",
+    "options": [
+      {
+        "text": "44",
+        "why": "60×90%−10=44예요."
+      },
+      {
+        "text": "50",
+        "why": "공실로 못 받는 임대수입 6을 빠뜨렸어요."
+      },
+      {
+        "text": "54",
+        "why": "54는 공실을 반영한 수입이고 운영비를 더 빼야 해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "모두 찼을 때 받을 돈은 60이에요.",
+      "10%를 못 받으면 실제 가정 수입은 54예요.",
+      "운영비 10을 내고 44가 남아요."
+    ],
+    "id": "lesson-13-1",
+    "quizId": "lesson-13"
+  },
+  {
+    "lesson": 13,
+    "stem": "인근 건물의 호가를 보고 내 건물 임대료를 정하려 해요. 적절한 방법은?",
+    "options": [
+      {
+        "text": "호가를 그대로 실제 계약 임대료로 입력해요",
+        "why": "호가와 계약 조건은 다를 수 있어요."
+      },
+      {
+        "text": "면적 기준·입지·시설·계약 혜택을 비교해 가정을 세워요",
+        "why": "비교 가능한 자료인지 먼저 확인해요."
+      },
+      {
+        "text": "가장 높은 호가만 골라요",
+        "why": "높은 값만 고르면 수입 가정이 부풀려질 수 있어요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "같은 동네라도 조건이 다르면 임대료가 달라요.",
+      "면적 단위와 실제 계약 여부, 무상 임대기간 등을 비교해요.",
+      "확인된 사실과 내 추정값을 나눠 기록해요."
+    ],
+    "id": "lesson-13-2",
+    "quizId": "lesson-13"
+  },
+  {
+    "lesson": 13,
+    "stem": "잠재 수입 60, 수입 공실 손실이 20%로 증가했지만 운영비는 10으로 고정이에요. NOI는?",
+    "options": [
+      {
+        "text": "44",
+        "why": "44는 공실 손실 10%일 때의 NOI예요."
+      },
+      {
+        "text": "48",
+        "why": "48에서 운영비 10을 더 빼야 해요."
+      },
+      {
+        "text": "38",
+        "why": "60×80%−10=38이에요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "공실 손실이 20%면 수입은 48이에요.",
+      "이 가정에서는 운영비가 함께 줄지 않아요.",
+      "48 − 10 = 38이 남아요."
+    ],
+    "id": "lesson-13-3",
+    "quizId": "lesson-13"
+  },
+  {
+    "lesson": 14,
+    "stem": "NOI 44에 Cap Rate 5.5%를 적용한 단순 추정 가격은?",
+    "options": [
+      {
+        "text": "800",
+        "why": "44÷0.055=800이에요."
+      },
+      {
+        "text": "2.42",
+        "why": "가격을 구할 때는 곱하지 않고 나눠요."
+      },
+      {
+        "text": "880",
+        "why": "880은 Cap Rate 5%를 적용한 값이에요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "가격 × 5.5% = NOI 44인 관계를 거꾸로 풀어요.",
+      "44 ÷ 5.5% = 800이에요.",
+      "이 숫자는 가정에 따른 단순 추정이지 실제 거래 가격 보장이 아니에요."
+    ],
+    "id": "lesson-14-1",
+    "quizId": "lesson-14"
+  },
+  {
+    "lesson": 14,
+    "stem": "총투입 예산 800, 거래비 20, 즉시 수선비 30이면 예산 안의 최대 매입가격은?",
+    "options": [
+      {
+        "text": "800",
+        "why": "거래비와 수선비를 위한 돈도 남겨야 해요."
+      },
+      {
+        "text": "750",
+        "why": "800−20−30=750이에요."
+      },
+      {
+        "text": "850",
+        "why": "비용을 더하면 예산을 넘어요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "건물 가격만 내고 끝나는 것이 아니에요.",
+      "거래비 20과 수선비 30도 같은 예산에서 내요.",
+      "건물값에 쓸 수 있는 돈은 750이에요."
+    ],
+    "id": "lesson-14-2",
+    "quizId": "lesson-14"
+  },
+  {
+    "lesson": 14,
+    "stem": "비교 거래 가격이 750과 850이에요. 합리적인 판단은?",
+    "options": [
+      {
+        "text": "평균 800이 무조건 정답이에요",
+        "why": "거래 시점과 조건이 다르면 단순 평균은 부족해요."
+      },
+      {
+        "text": "850으로만 정해요",
+        "why": "높은 사례만 선택할 근거가 없어요."
+      },
+      {
+        "text": "시점·입지·임대 조건 등을 비교해 적용 근거를 정해요",
+        "why": "숫자가 비교 가능한지부터 봐요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "두 건물이 내 건물과 얼마나 비슷한지 확인해요.",
+      "면적·시설·임대 조건과 거래 시점이 다를 수 있어요.",
+      "왜 그 가격을 참고했는지 설명할 수 있어야 해요."
+    ],
+    "id": "lesson-14-3",
+    "quizId": "lesson-14"
+  },
+  {
+    "lesson": 15,
+    "stem": "공사비를 450에서 420으로 줄였어요. 다른 조건이 같을 때 절감액은?",
+    "options": [
+      {
+        "text": "30",
+        "why": "450−420=30이에요."
+      },
+      {
+        "text": "420",
+        "why": "420은 변경 후 공사비예요."
+      },
+      {
+        "text": "70",
+        "why": "절감 전후의 차이는 30이에요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "이전에는 공사비로 450을 썼어요.",
+      "바뀐 안에서는 420을 쓰니 30을 아껴요.",
+      "같은 기능·품질과 일정을 유지하는지도 확인해야 해요."
+    ],
+    "id": "lesson-15-1",
+    "quizId": "lesson-15"
+  },
+  {
+    "lesson": 15,
+    "stem": "30을 절감했지만 6개월 지연돼 대출 600, 연 금리 6%의 추가 이자가 발생해요. 다른 변화가 없으면 순개선액은?",
+    "options": [
+      {
+        "text": "30",
+        "why": "추가 이자를 빼야 해요."
+      },
+      {
+        "text": "12",
+        "why": "추가 이자 600×6%×0.5=18, 30−18=12예요."
+      },
+      {
+        "text": "48",
+        "why": "추가 이자는 이익이 아니라 비용이에요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "공사비에서 30을 아꼈어요.",
+      "지연으로 이자 18을 더 내요.",
+      "결국 좋아진 금액은 30 − 18 = 12예요."
+    ],
+    "id": "lesson-15-2",
+    "quizId": "lesson-15"
+  },
+  {
+    "lesson": 15,
+    "stem": "VE를 검토할 때 적절한 기준은?",
+    "options": [
+      {
+        "text": "비용만 낮으면 품질은 상관없어요",
+        "why": "필요 기능·품질·안전과 운영 영향을 놓쳐요."
+      },
+      {
+        "text": "초기 공사비만 봐요",
+        "why": "유지관리 비용과 일정 영향도 봐야 해요."
+      },
+      {
+        "text": "필요 기능을 유지하며 비용·품질·일정을 함께 비교해요",
+        "why": "단순한 싼 자재 선택과 구분해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "처음 돈을 덜 쓰는 것만으로 좋은 대안은 아니에요.",
+      "사용에 필요한 기능과 품질을 유지하는지 봐요.",
+      "나중에 드는 유지비와 일정까지 비교해요."
+    ],
+    "id": "lesson-15-3",
+    "quizId": "lesson-15"
+  },
+  {
+    "lesson": 16,
+    "stem": "별도 PF 사례: 선순위 500·중순위 100·후순위 대출 100·자기자본 100이에요. 수업의 가정된 회수 순서는?",
+    "options": [
+      {
+        "text": "선순위 → 중순위 → 후순위 대출 → 자기자본",
+        "why": "이 사례의 계약상 가정 순서예요."
+      },
+      {
+        "text": "자기자본 → 후순위 → 중순위 → 선순위",
+        "why": "남은 몫을 받는 자기자본을 먼저 두면 안 돼요."
+      },
+      {
+        "text": "무조건 모두 같은 비율",
+        "why": "이 사례에서는 회수 우선순위를 가정했어요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "여기서는 회수 순서가 정해진 가상 계약을 써요.",
+      "먼저 받을 사람을 채우고 다음 순서로 넘어가요.",
+      "실제 우선순위와 권리는 계약·담보 등에 따라 확인해야 해요."
+    ],
+    "id": "lesson-16-1",
+    "quizId": "lesson-16"
+  },
+  {
+    "lesson": 16,
+    "stem": "같은 사례에서 총 회수금이 650이고 이자·비용은 없어요. 후순위 대출이 받는 돈은?",
+    "options": [
+      {
+        "text": "100",
+        "why": "선순위와 중순위를 채우면 50만 남아요."
+      },
+      {
+        "text": "50",
+        "why": "650−500−100=50이에요."
+      },
+      {
+        "text": "0",
+        "why": "선순위와 중순위 상환 뒤 50이 남아 후순위에 가요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "먼저 선순위에 500을 줘요.",
+      "남은 150에서 중순위에 100을 줘요.",
+      "마지막 50은 후순위 대출로 가고 자기자본에는 남지 않아요."
+    ],
+    "id": "lesson-16-2",
+    "quizId": "lesson-16"
+  },
+  {
+    "lesson": 16,
+    "stem": "후순위 대출과 자기자본에 대한 올바른 설명은?",
+    "options": [
+      {
+        "text": "둘은 같은 권리예요",
+        "why": "둘 다 위험이 크다고 같은 권리가 되지는 않아요."
+      },
+      {
+        "text": "후순위의 약속 금리가 높으면 실제 회수가 보장돼요",
+        "why": "약속 금리와 실제 받을 수 있는 돈은 달라요."
+      },
+      {
+        "text": "후순위도 대출이며 자기자본과 권리·상환 구조를 구분해요",
+        "why": "회수 순위와 권리의 성격을 따로 봐요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "후순위라는 말은 다른 채권보다 뒤에 받는다는 의미예요.",
+      "그래도 대출과 자기자본의 권리는 달라요.",
+      "높은 금리만 보고 안전성을 판단하지 않아요."
+    ],
+    "id": "lesson-16-3",
+    "quizId": "lesson-16"
+  },
+  {
+    "lesson": 17,
+    "stem": "임대수입을 실사할 때 좋은 확인 방법은?",
+    "options": [
+      {
+        "text": "계약서와 실제 입금·미납 기록을 연결해요",
+        "why": "계약상 금액과 실제 돈의 흐름을 비교해요."
+      },
+      {
+        "text": "매도인의 말만 확정 사실로 적어요",
+        "why": "근거 자료 확인이 필요해요."
+      },
+      {
+        "text": "계약서가 있으니 입금은 볼 필요 없어요",
+        "why": "미납이나 다른 조건을 놓칠 수 있어요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "계약서에는 받을 돈이 적혀 있어요.",
+      "입금 내역에는 실제 받은 돈이 보여요.",
+      "두 자료가 다르면 이유와 위험을 확인해요."
+    ],
+    "id": "lesson-17-1",
+    "quizId": "lesson-17"
+  },
+  {
+    "lesson": 17,
+    "stem": "시설 수선비 30이 예상되지만 견적을 확인하지 못했어요. 어떻게 기록할까요?",
+    "options": [
+      {
+        "text": "확정 비용 30으로만 표시해요",
+        "why": "확인되지 않은 추정임을 밝혀야 해요."
+      },
+      {
+        "text": "추정 30, 견적 확인 필요와 지급 시점을 함께 적어요",
+        "why": "가정과 미확인 사항을 나눠요."
+      },
+      {
+        "text": "확인 못 했으니 위험 목록에서 지워요",
+        "why": "중요한 미확인 위험을 숨기게 돼요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "지금의 30은 확인된 계약 금액이 아니에요.",
+      "추정값이라는 표시와 확인할 자료를 남겨요.",
+      "언제 돈이 나가고 운영에 영향이 있는지도 봐요."
+    ],
+    "id": "lesson-17-2",
+    "quizId": "lesson-17"
+  },
+  {
+    "lesson": 17,
+    "stem": "투자위원회에 제시할 내용으로 적절한 것은?",
+    "options": [
+      {
+        "text": "장점만 보여줘요",
+        "why": "판단에 필요한 위험과 조건을 놓치게 돼요."
+      },
+      {
+        "text": "모든 미확인 사항을 확정된 것으로 말해요",
+        "why": "자료의 신뢰도를 오해하게 해요."
+      },
+      {
+        "text": "투자 근거·주요 위험·미확인 사항·실행 조건을 함께 보여줘요",
+        "why": "판단과 승인 조건을 연결해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "결론만 제시하면 무엇을 믿고 투자하는지 알기 어려워요.",
+      "위험과 아직 확인하지 못한 사항도 함께 보여요.",
+      "어떤 확인이나 조건이 갖춰져야 실행할지 정리해요."
+    ],
+    "id": "lesson-17-3",
+    "quizId": "lesson-17"
+  },
+  {
+    "lesson": 18,
+    "stem": "NOI 44, 대출 700, 금리 4%예요. 이자 후 연 현금은? 다른 지출은 없어요.",
+    "options": [
+      {
+        "text": "16",
+        "why": "44−700×4%=16이에요."
+      },
+      {
+        "text": "22",
+        "why": "22는 다른 사례에서 NOI가 50일 때의 값이에요."
+      },
+      {
+        "text": "44",
+        "why": "이자 28을 더 빼야 해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "이번 사례의 NOI는 44예요.",
+      "이자 28을 내면 16이 남아요.",
+      "기초 사례의 NOI 50과 섞지 않도록 입력 조건부터 봐요."
+    ],
+    "id": "lesson-18-1",
+    "quizId": "lesson-18"
+  },
+  {
+    "lesson": 18,
+    "stem": "잠재 수입 60, 수입 공실 손실 20%, 운영비 10, 대출 700, 금리 5%예요. 다른 지출을 제외한 현금은?",
+    "options": [
+      {
+        "text": "9",
+        "why": "9는 공실 손실 10%에 금리 5%인 경우예요."
+      },
+      {
+        "text": "3",
+        "why": "60×80%−10−700×5%=3이에요."
+      },
+      {
+        "text": "38",
+        "why": "38은 이자를 빼기 전 NOI예요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "공실을 반영하면 수입 48, 운영비를 빼면 NOI 38이에요.",
+      "금리 5%의 이자는 35예요.",
+      "두 악재가 함께 생기면 38 − 35 = 3만 남아요."
+    ],
+    "id": "lesson-18-2",
+    "quizId": "lesson-18"
+  },
+  {
+    "lesson": 18,
+    "stem": "공사비 450이 10% 상승했어요. 추가 공사비는?",
+    "options": [
+      {
+        "text": "80",
+        "why": "80은 사업비 전체 800의 10%예요."
+      },
+      {
+        "text": "10",
+        "why": "10%를 금액 10으로 바꾸면 안 돼요."
+      },
+      {
+        "text": "45",
+        "why": "450×10%=45예요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "오른 항목은 사업비 전체가 아닌 공사비예요.",
+      "공사비 450에 10%를 적용해요.",
+      "추가 45가 사업비에 들어가므로 어떤 항목이 변했는지 구분해요."
+    ],
+    "id": "lesson-18-3",
+    "quizId": "lesson-18"
+  },
+  {
+    "lesson": 19,
+    "stem": "IM에 임대료 가정을 적을 때 필요한 내용은?",
+    "options": [
+      {
+        "text": "자료 출처·시점·단위·적용 근거",
+        "why": "숫자가 어디서 왔는지 추적할 수 있어야 해요."
+      },
+      {
+        "text": "가장 높은 임대료 숫자만",
+        "why": "조건을 비교하고 근거를 밝혀야 해요."
+      },
+      {
+        "text": "확인 전에도 실제 계약이라고 표시",
+        "why": "추정과 확인된 사실을 혼동하게 해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "월 임대료인지 연 임대료인지, 어떤 면적 기준인지 적어요.",
+      "자료의 날짜와 실제 계약인지 호가인지도 구분해요.",
+      "내 건물에 적용한 이유를 설명해요."
+    ],
+    "id": "lesson-19-1",
+    "quizId": "lesson-19"
+  },
+  {
+    "lesson": 19,
+    "stem": "투자 논리의 연결로 가장 적절한 것은?",
+    "options": [
+      {
+        "text": "결론 → 장점만 나열",
+        "why": "근거·가정·위험의 연결이 부족해요."
+      },
+      {
+        "text": "근거 → 가정 → 계산 → 악화 경우 → 결정 조건",
+        "why": "자료부터 실행 판단까지 이어져요."
+      },
+      {
+        "text": "높은 수익률 → 무조건 투자",
+        "why": "결과 숫자 하나로 위험을 판단할 수 없어요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "자료를 바탕으로 가정을 세워요.",
+      "그 가정의 계산 결과와 나쁜 경우도 비교해요.",
+      "그래서 어떤 조건에서 투자할지 결론을 연결해요."
+    ],
+    "id": "lesson-19-2",
+    "quizId": "lesson-19"
+  },
+  {
+    "lesson": 19,
+    "stem": "예상 수익률이 높게 나왔어요. IM에서 적절한 표현은?",
+    "options": [
+      {
+        "text": "확정 수익률이라고 적어요",
+        "why": "가정의 결과를 보장으로 바꾸면 안 돼요."
+      },
+      {
+        "text": "가정은 숨기고 숫자만 강조해요",
+        "why": "다른 사람이 결과를 검토하기 어려워져요."
+      },
+      {
+        "text": "사용한 가정과 결과이며 조건이 바뀌면 달라진다고 적어요",
+        "why": "계산 결과와 확정 사실을 구분해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "모델 숫자는 입력한 가정에서 나온 결과예요.",
+      "임대료나 매각가가 바뀌면 수익률도 바뀌어요.",
+      "좋은 숫자만 강조하기보다 그 숫자의 조건을 보여줘요."
+    ],
+    "id": "lesson-19-3",
+    "quizId": "lesson-19"
+  },
+  {
+    "lesson": 20,
+    "stem": "투자안에 대해 자료가 부족하고 만기 상환 계획도 확인되지 않았어요. 가장 적절한 답은?",
+    "options": [
+      {
+        "text": "미확인 자료와 상환 계획을 확인한 뒤 판단하겠어요",
+        "why": "보류 이유와 필요한 확인을 구체적으로 남겨요."
+      },
+      {
+        "text": "현금흐름이 양수면 바로 투자해요",
+        "why": "당장의 현금과 만기 원금 상환은 별개예요."
+      },
+      {
+        "text": "이름이 유명하니 확인을 생략해요",
+        "why": "이름이 자료 검증을 대신하지 못해요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "투자 여부를 급하게 한 단어로 정하지 않아도 돼요.",
+      "지금 모르는 것이 결정에 어떤 영향을 주는지 적어요.",
+      "확인할 자료와 다음 판단 조건을 남기는 것도 실전 판단이에요."
+    ],
+    "id": "lesson-20-1",
+    "quizId": "lesson-20"
+  },
+  {
+    "lesson": 20,
+    "stem": "만기 새 대출 630으로 기존 대출 700을 갚아야 해요. 과거 운영 현금 22는 모두 분배했어요. 부족액을 다룰 때?",
+    "options": [
+      {
+        "text": "과거 분배한 22가 현재 계좌에 남았다고 가정해요",
+        "why": "이미 지급한 돈은 보유 현금으로 다시 쓸 수 없어요."
+      },
+      {
+        "text": "부족한 70의 실제 조달·보유 현금 여부를 확인해요",
+        "why": "필요 자금과 지금 쓸 수 있는 돈을 구분해요."
+      },
+      {
+        "text": "과거 NOI 50을 부족액에서 바로 빼요",
+        "why": "NOI와 현재 보유 현금은 같지 않아요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "재대출로는 70이 모자라요.",
+      "과거에 돈을 벌었어도 분배했다면 계좌에 남아 있지 않아요.",
+      "현재 가진 현금이나 추가 출자 등 실제 마련할 방법을 확인해요."
+    ],
+    "id": "lesson-20-2",
+    "quizId": "lesson-20"
+  },
+  {
+    "lesson": 20,
+    "stem": "모의 투자심사 답변에서 가장 중요한 구성은?",
+    "options": [
+      {
+        "text": "투자라는 결론만",
+        "why": "왜 그런 결정을 했는지 알 수 없어요."
+      },
+      {
+        "text": "정답처럼 보이는 전문용어 많이 쓰기",
+        "why": "용어보다 근거와 조건의 연결이 중요해요."
+      },
+      {
+        "text": "결정·숫자 근거·주요 위험·결정이 바뀌는 조건",
+        "why": "자기 판단을 설명하고 다시 검토할 수 있어요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "투자·조건부 투자·보류 중 하나를 근거와 연결해요.",
+      "어떤 숫자와 위험이 중요했는지 설명해요.",
+      "조건이 달라질 때 결론도 바뀔 수 있는지 적어요."
+    ],
+    "id": "lesson-20-3",
+    "quizId": "lesson-20"
+  },
+  {
+    "lesson": 1,
+    "stem": "매입가 1,000 중 대출이 700이에요. 매각가 900에서 원금 700을 갚으면 자기자본 투자자의 회수금과 손익은? 다른 현금·비용은 없어요.",
+    "options": [
+      {
+        "text": "회수 200, 손실 100",
+        "why": "처음 넣은 300보다 회수금이 100 적어요."
+      },
+      {
+        "text": "회수 900, 이익 600",
+        "why": "대출 상환을 빠뜨렸어요."
+      },
+      {
+        "text": "회수 200, 이익 200",
+        "why": "회수금에서 처음 넣은 300을 빼야 손익이 나와요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "처음 내 돈은 1,000 − 700 = 300이에요.",
+      "팔고 남는 돈은 900 − 700 = 200이에요.",
+      "300을 넣고 200을 받으니 100 손실이에요."
+    ],
+    "id": "exam-1",
+    "quizId": "final"
+  },
+  {
+    "lesson": 3,
+    "stem": "재대출 가능액이 630인데 만기 원금이 700이에요. 가장 적절한 판단은?",
+    "options": [
+      {
+        "text": "재대출이 가능하니 상환 문제없어요",
+        "why": "가능액과 필요한 상환액이 달라요."
+      },
+      {
+        "text": "부족액 70과 마련할 방법을 확인해요",
+        "why": "두 금액의 차이와 실제 자금을 확인해요."
+      },
+      {
+        "text": "자산 가격 900을 현금으로 써요",
+        "why": "팔거나 자금을 조달하지 않은 평가액은 현금이 아니에요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "기존 대출을 갚으려면 700이 필요해요.",
+      "새 대출은 630만 가능해 70이 부족해요.",
+      "평가액이 아닌 실제 쓸 수 있는 자금으로 채울 방법이 있어야 해요."
+    ],
+    "id": "exam-2",
+    "quizId": "final"
+  },
+  {
+    "lesson": 4,
+    "stem": "같은 건물의 NOI는 50이에요. 대출 이자가 28에서 35로 늘어났다면?",
+    "options": [
+      {
+        "text": "NOI가 15로 줄어요",
+        "why": "NOI에는 대출 이자를 빼지 않아요."
+      },
+      {
+        "text": "NOI와 이자 후 현금이 모두 50이에요",
+        "why": "이자를 지급하면 투자자 현금은 줄어요."
+      },
+      {
+        "text": "NOI는 50, 이자 후 현금은 15예요",
+        "why": "건물 운영 수익과 자금 조달 비용을 구분해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "임대수입과 운영비는 그대로라 NOI는 50이에요.",
+      "대출 이자만 35로 커졌어요.",
+      "투자자에게 남는 현금은 50 − 35 = 15예요."
+    ],
+    "id": "exam-3",
+    "quizId": "final"
+  },
+  {
+    "lesson": 5,
+    "stem": "1년 뒤 받을 돈 110을 연 10% 할인하면 100이에요. 이를 가장 잘 설명한 말은?",
+    "options": [
+      {
+        "text": "미래 110을 오늘 기준의 가치 100으로 바꾼 거예요",
+        "why": "받는 시점이 다른 돈을 같은 기준으로 비교해요."
+      },
+      {
+        "text": "110 중 10이 반드시 손실 난 거예요",
+        "why": "현재가치 환산과 실제 손실은 달라요."
+      },
+      {
+        "text": "연 10% 수익을 보장한다는 뜻이에요",
+        "why": "할인율은 비교를 위한 가정이에요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "미래의 110과 오늘의 110은 받는 시점이 달라요.",
+      "가정한 할인율로 오늘 기준에 맞추면 100이에요.",
+      "이 계산이 실제 수익 보장이나 현금 손실을 뜻하지는 않아요."
+    ],
+    "id": "exam-4",
+    "quizId": "final"
+  },
+  {
+    "lesson": 11,
+    "stem": "사업비 800을 내 돈 200·대출 600으로 마련하고 매각으로 1,000을 회수했어요. 사업 이익과 대출 상환 후 회수금은?",
+    "options": [
+      {
+        "text": "사업 이익 −400, 회수금 400",
+        "why": "사업비에 대출 원금을 다시 빼면 중복돼요."
+      },
+      {
+        "text": "사업 이익 200, 회수금 400",
+        "why": "사업 손익과 투자자 회수금을 구분해요."
+      },
+      {
+        "text": "사업 이익 400, 회수금 200",
+        "why": "이익과 원금 포함 회수금을 거꾸로 읽었어요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "사업 이익은 1,000 − 800 = 200이에요.",
+      "대출을 갚고 내게 오는 돈은 1,000 − 600 = 400이에요.",
+      "그 400에는 처음 넣은 200이 포함돼요."
+    ],
+    "id": "exam-5",
+    "quizId": "final"
+  },
+  {
+    "lesson": 13,
+    "stem": "잠재 수입 60·수입 공실 손실 10%·운영비 10에서 공실 손실이 20%로 바뀌어요. 운영비가 같으면 NOI 변화는?",
+    "options": [
+      {
+        "text": "50 → 40",
+        "why": "처음과 나중 모두 공실 반영을 다시 확인해요."
+      },
+      {
+        "text": "54 → 48",
+        "why": "공실 반영 수입이고, 운영비를 아직 빼지 않았어요."
+      },
+      {
+        "text": "44 → 38",
+        "why": "54−10=44에서 48−10=38로 변해요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "처음 받을 수입은 60 × 90% = 54예요.",
+      "나중 수입은 60 × 80% = 48이에요.",
+      "운영비 10씩을 빼면 NOI가 44에서 38로 내려가요."
+    ],
+    "id": "exam-6",
+    "quizId": "final"
+  },
+  {
+    "lesson": 14,
+    "stem": "NOI 44가 같을 때 Cap Rate가 5%에서 5.5%로 바뀌면 단순 추정 가격은?",
+    "options": [
+      {
+        "text": "880 → 800",
+        "why": "같은 NOI를 더 높은 비율로 나누면 추정 가격은 내려가요."
+      },
+      {
+        "text": "800 → 880",
+        "why": "5% 적용 가격은 880, 5.5% 적용 가격은 800이에요."
+      },
+      {
+        "text": "44로 동일",
+        "why": "NOI 자체가 건물 가격은 아니에요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "44 ÷ 5% = 880이에요.",
+      "44 ÷ 5.5% = 800이에요.",
+      "같은 운영 수익에도 적용한 비율이 달라지면 추정 가격이 달라져요."
+    ],
+    "id": "exam-7",
+    "quizId": "final"
+  },
+  {
+    "lesson": 16,
+    "stem": "가정된 순서가 선순위 500 → 중순위 100 → 후순위 대출 100 → 자기자본 100이에요. 550만 회수하면 중순위는 얼마를 받나요? 이자·비용은 없어요.",
+    "options": [
+      {
+        "text": "100",
+        "why": "선순위에 500을 주면 50만 남아요."
+      },
+      {
+        "text": "50",
+        "why": "550−500=50이 중순위로 가요."
+      },
+      {
+        "text": "0",
+        "why": "중순위까지 50이 배분돼요."
+      }
+    ],
+    "answer": 1,
+    "explain": [
+      "선순위에 먼저 500을 줘요.",
+      "남은 50은 중순위에 가요.",
+      "중순위도 전액을 받지 못하고 그 뒤 순서에는 남지 않아요."
+    ],
+    "id": "exam-8",
+    "quizId": "final"
+  },
+  {
+    "lesson": 18,
+    "stem": "NOI 38, 대출 700, 금리 5%면 이자 후 현금은 3이에요. 이 결과를 어떻게 읽을까요? 다른 지출은 제외했어요.",
+    "options": [
+      {
+        "text": "3이 양수니 어떤 상황에서도 안전해요",
+        "why": "생략한 지출과 추가 악화 가능성을 놓쳐요."
+      },
+      {
+        "text": "금리가 반드시 5%가 된다는 예측이에요",
+        "why": "가정한 경우의 계산이지 확정 전망이 아니에요."
+      },
+      {
+        "text": "이 가정에서 3이 남으므로 추가 지출과 상환 부담을 더 확인해요",
+        "why": "작은 여유와 생략 항목을 함께 살펴봐요."
+      }
+    ],
+    "answer": 2,
+    "explain": [
+      "이 시나리오에서는 운영 수익에서 이자를 내고 3만 남아요.",
+      "수선비나 다른 지출이 생기면 부족해질 수 있어요.",
+      "원금 상환까지 해결됐다는 뜻도 아니에요."
+    ],
+    "id": "exam-9",
+    "quizId": "final"
+  },
+  {
+    "lesson": 19,
+    "stem": "임대료 근거가 호가 자료이고 실제 계약은 확인되지 않았어요. 투자 제안서에는?",
+    "options": [
+      {
+        "text": "호가 기반 가정임을 밝히고 계약 확인을 실행 조건으로 적어요",
+        "why": "근거의 한계와 확인할 조건을 함께 제시해요."
+      },
+      {
+        "text": "실제 계약 임대료라고 바꿔 적어요",
+        "why": "확인된 사실로 오해하게 만들어요."
+      },
+      {
+        "text": "높은 수익률이면 출처를 생략해요",
+        "why": "결과를 검토할 근거가 없어져요."
+      }
+    ],
+    "answer": 0,
+    "explain": [
+      "호가와 실제 계약은 구분해요.",
+      "지금은 호가에 근거한 가정이라고 적어요.",
+      "실제 계약과 조건을 확인하면 판단을 다시 검토할 수 있어요."
+    ],
+    "id": "exam-10",
+    "quizId": "final"
+  }
+];
+if(typeof module!=='undefined')module.exports=quizQuestions;
+
+'use strict';
+const QuizProgress=(()=>{
+  const KEY='cheokcheok.asset.quiz.v1';
+  const empty=()=>({version:1,results:{},responses:{},promotion:null});
+  const compare=(a,b)=>a.time-b.time||a.id.localeCompare(b.id);
+  function create(storage,questions){
+    const byId=new Map(questions.map(q=>[q.id,q])),groups=new Map();
+    for(const q of questions){if(!groups.has(q.quizId))groups.set(q.quizId,[]);groups.get(q.quizId).push(q);}
+    let state=empty(),writable=true,message='';
+    function response(raw,q){
+      if(!raw||!Number.isInteger(raw.choice)||raw.choice<0||raw.choice>=q.options.length||!Number.isSafeInteger(raw.time)||raw.time<0||typeof raw.id!=='string'||raw.id.length>100)return null;
+      return {choice:raw.choice,time:raw.time,id:raw.id};
+    }
+    function result(raw,id){
+      const qs=groups.get(id);if(!raw||!qs||!raw.answers||typeof raw.answers!=='object'||!Number.isSafeInteger(raw.time)||raw.time<0||typeof raw.id!=='string'||raw.id.length>100)return null;
+      const answers={};let correct=0;
+      for(const q of qs){const choice=raw.answers[q.id];if(!Number.isInteger(choice)||choice<0||choice>=q.options.length)return null;answers[q.id]=choice;if(choice===q.answer)correct++;}
+      return {id:raw.id,time:raw.time,answers,correct,total:qs.length};
+    }
+    function normalize(raw){
+      if(!raw||raw.version!==1||!raw.results||typeof raw.results!=='object'||Array.isArray(raw.results)||!raw.responses||typeof raw.responses!=='object'||Array.isArray(raw.responses))throw Error('Invalid quiz record');
+      const next=empty();
+      for(const id of groups.keys()){
+        const r=raw.results[id];if(!r)continue;
+        const latest=result(r.latest,id),best=result(r.best,id);
+        if(latest&&best){const winner=latest.correct>best.correct?latest:best;next.results[id]={latest,best:winner};}
+      }
+      for(const q of questions){const r=response(raw.responses[q.id],q);if(r)next.responses[q.id]=r;}
+      // A promotion record is meaningful only alongside a passing full exam.
+      if(raw.promotion&&response({choice:0,...raw.promotion},questions[0])&&next.results.final?.best.correct>=8)next.promotion={time:raw.promotion.time,id:raw.promotion.id};
+      return next;
+    }
+    function merge(a,b){
+      const merged=empty();
+      for(const id of groups.keys()){
+        const x=a.results[id],y=b.results[id];if(!x&&!y)continue;
+        if(!x||!y){merged.results[id]=x||y;continue;}
+        merged.results[id]={latest:compare(x.latest,y.latest)>0?x.latest:y.latest,best:x.best.correct>y.best.correct||x.best.correct===y.best.correct&&compare(x.best,y.best)>0?x.best:y.best};
+      }
+      for(const q of questions){const x=a.responses[q.id],y=b.responses[q.id];if(x||y)merged.responses[q.id]=!x?y:!y?x:compare(x,y)>0?x:y;}
+      const x=a.promotion,y=b.promotion;merged.promotion=!x?y:!y?x:compare(x,y)>0?x:y;
+      return normalize(merged);
+    }
+    const read=()=>{const value=storage.getItem(KEY);return value===null?empty():normalize(JSON.parse(value));};
+    try{state=read();}catch(error){writable=false;message='퀴즈 기록을 읽을 수 없어 이번 방문의 기록만 유지해요. 기존 기록은 덮어쓰지 않아요.';}
+    function sync(){if(writable){try{state=merge(state,read());}catch(error){writable=false;message='퀴즈 저장소를 읽지 못해 이번 방문의 기록만 유지해요. 기존 기록은 덮어쓰지 않아요.';}}return state;}
+    function save(next){if(writable){try{const old=read();next=merge(old,next);if(JSON.stringify(old)!==JSON.stringify(next))storage.setItem(KEY,JSON.stringify(next));}catch(error){writable=false;message='퀴즈 기록을 저장하지 못했어요. 새로고침하면 이번 방문의 기록이 사라질 수 있어요.';}}state=next;return next;}
+    function stamp(){const latest=Math.max(0,...Object.values(state.responses).map(r=>r.time),state.promotion?.time||0);return {time:Math.max(Date.now(),latest+1),id:typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2)};}
+    const allComplete=completed=>new Set(questions.map(q=>q.lessonId)).size===20&&questions.every(q=>completed.includes(q.lessonId));
+    function available(id,completed){return id==='final'?allComplete(completed):groups.has(id)&&completed.includes(questions.find(q=>q.quizId===id)?.lessonId);}
+    return {
+      get state(){return state;},get message(){return message;},sync,
+      available,
+      wrong(completed){sync();return questions.filter(q=>completed.includes(q.lessonId)&&state.responses[q.id]&&state.responses[q.id].choice!==q.answer);},
+      eligible(completed){sync();return allComplete(completed)&&(state.results.final?.best.correct||0)>=8;},
+      level(completed){sync();return state.promotion&&allComplete(completed)&&(state.results.final?.best.correct||0)>=8?2:1;},
+      submit(id,answers,completed,reviewIds=[]){
+        sync();let qs;
+        if(id==='review'){
+          const allowed=new Set(this.wrong(completed).map(q=>q.id));
+          if(!reviewIds.length||new Set(reviewIds).size!==reviewIds.length||reviewIds.some(q=>!allowed.has(q)))return null;
+          qs=reviewIds.map(q=>byId.get(q));
+        }else{if(!available(id,completed))return null;qs=groups.get(id);}
+        if(!answers||qs.some(q=>!Number.isInteger(answers[q.id])||answers[q.id]<0||answers[q.id]>=q.options.length))return null;
+        const tag=stamp(),chosen={},responses={...state.responses};let correct=0;
+        for(const q of qs){chosen[q.id]=answers[q.id];responses[q.id]={...tag,choice:answers[q.id]};if(answers[q.id]===q.answer)correct++;}
+        const graded={...tag,answers:chosen,correct,total:qs.length};const results={...state.results};
+        if(id!=='review'){const old=results[id];results[id]={latest:graded,best:!old||graded.correct>=old.best.correct?graded:old.best};}
+        save({...state,results,responses});return graded;
+      },
+      promote(completed){if(!this.eligible(completed))return false;if(!state.promotion)save({...state,promotion:stamp()});return true;}
+    };
+  }
+  return {KEY,create};
+})();
+if(typeof module!=='undefined')module.exports=QuizProgress;
+
+'use strict';
+// Question IDs, lesson completion and quiz records are independent of screen order.
+quizQuestions.forEach(q=>{q.lessonId=curriculum[q.lesson-1].id;});
+const quizProgress=QuizProgress.create({getItem:key=>window.localStorage.getItem(key),setItem:(key,value)=>window.localStorage.setItem(key,value)},quizQuestions);
+const quizView=document.getElementById('view-quiz');
+let quizSession=null;
+const quizTitle=id=>id==='final'?'종합 퀴즈 · 대리 승급':id==='review'?'오답 다시 풀기':Number(id.split('-')[1])+'강 · '+curriculum[Number(id.split('-')[1])-1].title;
+const quizNotice=()=>'<p class="storage-note" role="status">'+escapeText(quizProgress.message||'퀴즈 점수·오답·승급은 이 기기·브라우저에 저장돼요. 다른 기기와 자동 동기화되지 않아요.')+'</p>';
+function quizHeader(title,copy){return '<header class="page-head"><span class="eyebrow">QUIZ & REVIEW</span><h1 tabindex="-1">'+escapeText(title)+'</h1><p>'+escapeText(copy)+'</p></header>';}
+function promotionPanel(){
+  const completed=progress.state.completed.length,best=quizProgress.state.results.final?.best;
+  const earned=quizProgress.level(progress.state.completed)===2,ready=quizProgress.eligible(progress.state.completed);
+  return '<div class="asset-panel promotion-panel"><span class="status-label">'+(earned?'LV.2 · 대리':ready?'승급 조건 달성':'LV.1 · 신입사원')+'</span><h2>'+(earned?'대리로 승급했어요':ready?'이제 배운 것을 적용할 준비가 됐어요':'이해하고, 확인하고, 대리로 나아가요')+'</h2><ul><li>20강 학습 완료: '+completed+' / 20</li><li>종합 퀴즈 8개 이상 정답: '+(best?best.correct+' / 10 · 최고 기록':'아직 응시 전')+'</li></ul><p>'+(earned?'모의투자 실습은 다음 4단계 업데이트에서 추가돼요. 수업과 퀴즈는 계속 복습할 수 있어요.':'단원 퀴즈는 연습용이에요. 승급은 20강을 마치고 종합 퀴즈에서 80점 이상 받은 뒤 직접 눌러 진행해요.')+'</p>'+(earned?'<button class="secondary" data-quiz-action="invest">모의투자 구성 보기 →</button>':ready?'<button class="primary" data-quiz-action="promote">대리로 승급하기 →</button>':'<button class="primary" data-start-quiz="final" '+(completed===20?'':'disabled')+'>종합 퀴즈 '+(best?'다시 풀기':'시작하기')+' →</button>')+'</div>';
+}
+function renderQuizHub(notice=''){
+  quizProgress.sync();
+  const wrong=quizProgress.wrong(progress.state.completed),count=Object.keys(quizProgress.state.results).filter(id=>id!=='final').length;
+  quizView.innerHTML=quizHeader('퀴즈','수업에서 본 사례로 확인하고, 헷갈린 부분을 다시 풀어요.')+(notice?'<p class="lesson-note" role="status">'+escapeText(notice)+'</p>':'')+promotionPanel()+'<div class="quiz-summary"><div><small>단원 퀴즈 응시</small><b>'+count+' / 20강</b></div><div><small>남은 오답</small><b>'+wrong.length+'문제</b></div><button class="secondary" data-quiz-action="review" '+(wrong.length?'':'disabled')+'>오답 다시 풀기 →</button></div>'+quizNotice()+'<h2 class="section-caption">단원별 퀴즈 · 각 3문제</h2><p class="asset-footnote">해당 수업을 완료하면 열려요. 풀이와 해설을 반복해도 기존 학습 진도는 바뀌지 않아요.</p><ol class="lesson-list quiz-list">'+curriculum.map(l=>{
+    const id='lesson-'+l.number,open=quizProgress.available(id,progress.state.completed),r=quizProgress.state.results[id];
+    return '<li><button class="lesson-row '+(open?'open':'locked')+'" data-start-quiz="'+id+'" '+(open?'':'disabled')+'><span class="lesson-number">'+String(l.number).padStart(2,'0')+'</span><span class="lesson-row-copy"><b>'+escapeText(l.title)+'</b><small>'+(r?'최근 '+r.latest.correct+'/3 · 최고 '+r.best.correct+'/3':'수업의 개념·숫자·판단을 확인해요.')+'</small></span><span class="lesson-state">'+(open?r?'다시 풀기':'퀴즈 풀기':'수업 완료 후')+'</span></button></li>';
+  }).join('')+'</ol>';
+}
+function startQuiz(id,focus=true){
+  progress.sync();quizProgress.sync();
+  let questions;
+  if(id==='review')questions=quizProgress.wrong(progress.state.completed);
+  else if(quizProgress.available(id,progress.state.completed))questions=quizQuestions.filter(q=>q.quizId===id);
+  if(!questions?.length){quizSession=null;renderQuizHub(id==='review'?'남은 오답이 없어요. 다른 퀴즈로 이해를 확인해보세요.':'해당 수업을 완료한 뒤 풀 수 있어요. 종합 퀴즈는 20강 완료 후 열려요.');return;}
+  quizSession={id,questions,answers:{},step:0,result:null};renderQuizQuestion(focus);
+}
+function renderQuizQuestion(focus=true){
+  const s=quizSession,q=s.questions[s.step],chosen=s.answers[q.id];
+  quizView.innerHTML='<button class="text-button" data-quiz-action="exit">← 퀴즈 목록 · 풀이는 채점 후 저장</button>'+quizHeader(quizTitle(s.id),'교육용 가상 사례예요. 금액 단위는 해당 수업과 같고, 생략 조건은 문제에 표시했어요.')+'<progress class="learning-progress" max="'+s.questions.length+'" value="'+(s.step+1)+'" aria-label="퀴즈 문항 진행"></progress><form id="quizForm"><fieldset class="asset-panel quiz-question"><legend><span class="status-label">'+(s.step+1)+' / '+s.questions.length+' · '+q.lesson+'강 연결</span></legend><h2 id="questionTitle" tabindex="-1">'+escapeText(q.stem)+'</h2><div class="quiz-options">'+q.options.map((o,i)=>'<label class="quiz-option"><input type="radio" name="choice" value="'+i+'" '+(chosen===i?'checked':'')+' required><span><small>'+String.fromCharCode(65+i)+'</small>'+escapeText(o.text)+'</span></label>').join('')+'</div></fieldset><div class="lesson-controls"><button class="secondary" type="button" data-quiz-action="previous" '+(s.step?'':'disabled')+'>← 이전 문제</button><span>'+Object.keys(s.answers).length+' / '+s.questions.length+'개 선택</span><button class="primary" type="submit">'+(s.step===s.questions.length-1?'채점하기':'다음 문제')+' →</button></div></form>'+quizNotice();
+  if(focus){window.scrollTo({top:0,behavior:'instant'});document.getElementById('questionTitle').focus({preventScroll:true});}
+}
+function renderQuizResults(focus=true){
+  const s=quizSession,r=s.result,score=Math.round(r.correct/r.total*100),wrong=s.questions.filter(q=>r.answers[q.id]!==q.answer);
+  quizView.innerHTML='<button class="text-button" data-quiz-action="exit">← 퀴즈 목록</button>'+quizHeader('풀이 결과','맞힌 문제도 설명을 읽으며 네 말로 정리해보세요.')+'<div class="asset-panel quiz-result" role="status"><span class="eyebrow">'+escapeText(quizTitle(s.id))+'</span><h2 tabindex="-1" id="resultTitle">'+score+'점 · '+r.correct+' / '+r.total+'문제 정답</h2><p>'+(s.id==='final'?(r.correct>=8?'종합 퀴즈 기준을 달성했어요. 퀴즈 목록에서 대리로 승급할 수 있어요.':'8문제 이상 맞히면 승급 기준을 달성해요. 아래 해설을 보고 다시 도전해보세요.'):wrong.length?'헷갈린 '+wrong.length+'문제를 오답에 기록했어요. 정답을 다시 고르면 해당 오답이 해결돼요.':'이번 문제를 모두 맞혔어요. 왜 맞는지도 설명해보세요.')+'</p><div class="quiz-result-actions"><button class="primary" data-quiz-action="retry">'+(s.id==='review'?'남은 오답 다시 풀기':'같은 퀴즈 다시 풀기')+' →</button><button class="secondary" data-quiz-action="exit">퀴즈 목록·승급 보기 →</button></div></div>'+quizNotice()+s.questions.map((q,i)=>{
+    const chosen=r.answers[q.id],correct=chosen===q.answer;
+    return '<article class="asset-panel quiz-explanation '+(correct?'is-correct':'is-wrong')+'"><span class="status-label">'+(i+1)+' · '+(correct?'정답':'다시 이해하기')+'</span><h2>'+escapeText(q.stem)+'</h2><p><b>내 선택 '+String.fromCharCode(65+chosen)+':</b> '+escapeText(q.options[chosen].text)+'</p>'+(!correct?'<p class="choice-reason">'+escapeText(q.options[chosen].why)+'</p>':'')+'<div class="quiz-answer"><b>정답 '+String.fromCharCode(65+q.answer)+': '+escapeText(q.options[q.answer].text)+'</b></div><h3>차근차근 설명하면</h3>'+q.explain.map(t=>'<p>'+escapeText(t)+'</p>').join('')+'<details><summary>다른 보기는 왜 다를까?</summary>'+q.options.map((o,j)=>'<p><b>'+String.fromCharCode(65+j)+'. '+escapeText(o.text)+'</b><br>'+escapeText(o.why)+'</p>').join('')+'</details><a class="quiz-lesson-link" href="#learn/'+q.lessonId+'">'+q.lesson+'강 다시 읽기 →</a></article>';
+  }).join('');
+  if(focus){window.scrollTo({top:0,behavior:'instant'});document.getElementById('resultTitle').focus({preventScroll:true});}
+}
+quizView.addEventListener('change',event=>{if(quizSession&&!quizSession.result&&event.target.name==='choice'){const choice=Number(event.target.value);const q=quizSession.questions[quizSession.step];if(Number.isInteger(choice)&&choice>=0&&choice<q.options.length)quizSession.answers[q.id]=choice;}});
+quizView.addEventListener('submit',event=>{
+  event.preventDefault();const s=quizSession;if(!s||s.result)return;
+  if(s.answers[s.questions[s.step].id]===undefined)return;
+  if(s.step<s.questions.length-1){s.step++;renderQuizQuestion();return;}
+  progress.sync();s.result=quizProgress.submit(s.id,s.answers,progress.state.completed,s.id==='review'?s.questions.map(q=>q.id):[]);
+  if(!s.result){quizSession=null;renderQuizHub('다른 탭에서 기록이 바뀌었거나 풀이가 완성되지 않았어요. 목록에서 다시 시작해 주세요.');return;}
+  updateProgressUI();renderQuizResults();
+});
+quizView.addEventListener('click',event=>{
+  const button=event.target.closest('button');if(!button||button.disabled)return;
+  if(button.dataset.startQuiz){const hash='quiz/'+button.dataset.startQuiz;if(location.hash==='#'+hash)startQuiz(button.dataset.startQuiz);else location.hash=hash;return;}
+  switch(button.dataset.quizAction){
+    case 'previous':if(quizSession&&!quizSession.result&&quizSession.step>0){quizSession.step--;renderQuizQuestion();}break;
+    case 'exit':quizSession=null;if(location.hash==='#quiz')renderQuizHub();else location.hash='quiz';break;
+    case 'retry':if(quizSession)startQuiz(quizSession.id);break;
+    case 'review':location.hash='quiz/review';break;
+    case 'invest':location.hash='invest';break;
+    case 'promote':progress.sync();if(quizProgress.promote(progress.state.completed)){updateProgressUI();renderQuizHub('대리로 승급했어요. 앞으로 모의투자로 배운 내용을 적용할 거예요.');}break;
+  }
+});
+function quizRoute(parts,focus,storageRefresh=false){
+  quizProgress.sync();
+  if(storageRefresh&&quizSession){if(quizSession.result)renderQuizResults(false);return;}
+  if(parts[1])startQuiz(parts[1],focus);else{quizSession=null;renderQuizHub();}
+}
+
+'use strict';
 // Shared navigation and level previews. Earned learning progress stays separate.
 const icons={home:'<path d="M3 10 12 3l9 7v10H3z"/><path d="M9 20v-7h6v7"/>',learn:'<path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3z"/><path d="M12 6v15"/>',quiz:'<path d="M8 4h8v3H8z"/><path d="M8 5H5v16h14V5h-3"/><path d="m8 13 2 2 5-5"/>',invest:'<path d="M3 21h18M6 17v-4m6 4V9m6 8V5"/><path d="m4 8 6-4 5 2 5-4"/>',level:'<path d="M4 20h5v-5h5v-5h6V4M4 20V4"/>'};
 const levels=[
@@ -1600,9 +3576,6 @@ const levels=[
 {name:'과장',motto:'자료를 비교하고, 가정의 근거 세우기',purpose:'비교 건물 자료를 읽고 임대료·공실률·운영비 가정을 직접 정해요.',items:['유사 건물의 비교 가능성 판단','가정과 선택 근거 입력','가정 변경에 따른 결과 비교'],view:'invest',cta:'가정 수립 구성 보기'},
 {name:'팀장',motto:'전망이 달라져도 투자 판단이 타당한지 검토하기',purpose:'금리·공실·공사비·매각 조건이 달라지는 상황에서 투자 전략을 비교해요.',items:['금리 하락·유지·상승 시나리오','공실 증가·공사비 상승 민감도 분석','투자 여부·대출·보유·매각 전략 복기'],view:'invest',cta:'시나리오 구성 보기'}
 ];
-const descriptions={
-quiz:{title:'퀴즈',lead:'내가 이해한 내용을 확인하고, 틀린 이유를 돌아봐요.',subtitle:'퀴즈와 복습 기능을 준비하고 있어요',copy:'확정된 수업에 맞춰 문제·정답·해설을 함께 구성할 예정이에요. 현재는 점수나 승급 기록을 생성하지 않아요.',items:['객관식·단답형·간단한 계산 문제','정답뿐 아니라 판단 근거 확인','오답 복습과 실제 학습 진도 저장'],next:'3단계 업데이트에서 정식 퀴즈·승급·오답 복습이 추가됩니다.'}
-};
 function svg(key){return '<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">'+icons[key]+'</svg></span>';}
 document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon);});
 let previewLevel=0;
@@ -1611,8 +3584,6 @@ function showView(name,focus=true){const allowed=['home','learn','quiz','invest'
 document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.level!==undefined)setLevel(Number(btn.dataset.level));location.hash=btn.dataset.view;}));
 document.querySelectorAll('[data-preview-level]').forEach(btn=>btn.addEventListener('click',()=>setLevel(Number(btn.dataset.previewLevel))));
 document.getElementById('levelCta').addEventListener('click',()=>{location.hash=levels[previewLevel].view;});
-for(const [name,data] of Object.entries(descriptions)){const section=document.getElementById('view-'+name);section.innerHTML='<header class="page-head"><span class="eyebrow">QUIZ</span><h1 tabindex="-1">'+data.title+'</h1><p>'+data.lead+'</p></header><div class="asset-panel"><span class="status-label">준비 중</span><h2>'+data.subtitle+'</h2><p>'+data.copy+'</p><ul>'+data.items.map(t=>'<li>'+t+'</li>').join('')+'</ul><p class="asset-footnote">'+data.next+'</p><button class="secondary" type="button">4레벨 구성 보기 →</button></div>';section.querySelector('button').addEventListener('click',()=>{setLevel(0);location.hash='level';});}
-
 const progress=LearningProgress.create({getItem:key=>window.localStorage.getItem(key),setItem:(key,value)=>window.localStorage.setItem(key,value)},curriculum);
 const learningView=document.getElementById('view-learn');
 let activeLesson=null,activeStep=0;
@@ -1620,12 +3591,15 @@ function escapeText(value){return String(value).replace(/[&<>"']/g,char=>({'&':'
 function lessonStatus(lesson){return LearningProgress.status(lesson,curriculum,progress.state);}
 function updateProgressUI(){
   const count=progress.state.completed.length;
-  document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · 승급 준비 중';
-  document.getElementById('stageProgress').textContent='LV.1 · 신입사원 / '+count+'강 완료';
+  const earnedLevel=quizProgress.level(progress.state.completed);
+  document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · '+(earnedLevel===2?'종합 퀴즈 통과':'퀴즈로 이해 확인');
+  document.getElementById('currentLevel').textContent='LV.'+earnedLevel+' · '+(earnedLevel===2?'대리':'신입사원');
+  document.getElementById('levelCurrentCopy').textContent=earnedLevel===2?'현재는 LV.2 · 대리예요. 수업과 퀴즈는 언제든 복습할 수 있어요.':'현재는 LV.1 · 신입사원이에요. 20강 완료와 종합 퀴즈 80점 이상을 달성하면 대리로 승급할 수 있어요.';
+  document.getElementById('stageProgress').textContent='LV.'+earnedLevel+' · '+(earnedLevel===2?'대리':'신입사원')+' / '+count+'강 완료';
   const next=LearningProgress.nextLesson(curriculum,progress.state);
   const finished=count===curriculum.length;
   document.getElementById('homeNextTitle').textContent=next?next.number+'강 · '+next.title:finished?'20강 학습 완료 · 헷갈린 내용 복습하기':'다음 수업을 준비하고 있어요';
-  document.getElementById('homeNextCopy').textContent=finished?'완료한 수업을 다시 읽고, 내 말로 설명해보세요. 정식 퀴즈와 승급은 다음 단계에서 추가돼요.':'먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.';
+  document.getElementById('homeNextCopy').textContent=finished?'단원 퀴즈와 오답을 복습하고, 종합 퀴즈로 이해를 확인해보세요.':'먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.';
   document.getElementById('homeLearningCta').textContent=finished?'복습할 수업 보기 →':'학습 시작하기 →';
 }
 function storageNotice(){return '<p class="storage-note" role="status">'+escapeText(progress.message||'진도는 이 기기·브라우저에 저장돼요. 브라우저 데이터를 지우면 기록도 사라져요.')+'</p>';}
@@ -1658,7 +3632,7 @@ function renderLesson(lesson,step,focus=true){
     (summary?'<ul class="summary-lines">'+lesson.summary.map(line=>'<li>'+escapeText(line)+'</li>').join('')+'</ul><p>각 문장을 네 말로 설명할 수 있는지 떠올려보세요. 헷갈린 내용은 이전으로 돌아가 다시 읽어도 좋아요.</p>':section.html)+
     renderEasy(summary?lesson.easySummary:section.easy)+
     (!summary&&section.check?'<div class="understanding-check"><small>잠깐 생각해보기 · 채점하지 않아요</small><p>'+escapeText(section.check.question)+'</p><details><summary>설명 확인하기</summary><p>'+escapeText(section.check.answer)+'</p></details></div>':'')+
-    (summary?'<details class="lesson-sources"><summary>개념 참고 자료</summary><ul>'+lesson.sources.map(([title,url])=>'<li><a href="'+url+'" target="_blank" rel="noopener noreferrer">'+escapeText(title)+'</a></li>').join('')+'</ul><p>교육용 가상 사례예요. 자료의 개념을 참고해 직접 설명했으며, 실제 거래의 계약·평가 기준은 별도로 확인해야 해요.</p></details>':'')+'</article>'+
+    (summary?'<details class="lesson-sources"><summary>개념 참고 자료</summary><ul>'+lesson.sources.map(([title,url])=>'<li><a href="'+url+'" target="_blank" rel="noopener noreferrer">'+escapeText(title)+'</a></li>').join('')+'</ul><p>교육용 가상 사례예요. 자료의 개념을 참고해 직접 설명했으며, 실제 거래의 계약·평가 기준은 별도로 확인해야 해요.</p></details>':'')+(summary&&done?'<a class="quiz-lesson-link" href="#quiz/lesson-'+lesson.number+'">이 단원 퀴즈 풀기 →</a>':'')+'</article>'+
     '<div class="lesson-controls"><button class="secondary" type="button" data-action="previous" '+(step===0?'disabled':'')+'>← 이전</button><span>'+(step+1)+' / '+(lesson.sections.length+1)+'</span>'+(summary?'<button class="primary" type="button" data-action="'+(done?'review-done':'complete')+'">'+(done?'복습 마치기':'학습 완료하기')+' →</button>':'<button class="primary" type="button" data-action="next">'+(step===lesson.sections.length-1?'핵심 요약 보기':'다음')+' →</button>')+'</div>'+storageNotice();
   document.title=lesson.number+'강 · '+lesson.title+' · 척척 에셋';
   if(focus){window.scrollTo({top:0,behavior:'instant'});learningView.querySelector('.lesson-body h2').focus({preventScroll:true});}
@@ -1671,7 +3645,8 @@ function route(focus=true,recordVisit=true){
       const step=lessonStatus(lesson)==='completed'?0:progress.state.resume[lesson.id]??progress.state.positions[lesson.id]??0;
       if(recordVisit)progress.visit(lesson.id,step);renderLesson(lesson,step,false);
     }else renderLearningList(parts[1]?'이 수업은 아직 열리지 않았어요. 이전 강을 먼저 완료해 주세요.':'');
-  }else if(!learningView.querySelector('h1'))renderLearningList();
+  }else if(parts[0]==='quiz'){quizRoute(parts,focus,!recordVisit);}
+  else if(!learningView.querySelector('h1'))renderLearningList();
   showView(parts[0],focus);updateProgressUI();
   if(activeLesson&&parts[0]==='learn')document.title=activeLesson.number+'강 · '+activeLesson.title+' · 척척 에셋';
 }
@@ -1697,13 +3672,13 @@ learningView.addEventListener('click',event=>{
   if(action==='complete'&&progress.complete(activeLesson.id)){
     updateProgressUI();const next=LearningProgress.nextLesson(curriculum,progress.state);
     const title=activeLesson.title;
-    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강이 열렸어요.':progress.state.completed.length===curriculum.length?'20강을 모두 마쳤어요. 헷갈린 수업은 언제든 복습할 수 있어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
+    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강과 이번 단원 퀴즈가 열렸어요.':progress.state.completed.length===curriculum.length?'20강을 모두 마쳤어요. 퀴즈 메뉴에서 종합 퀴즈에 도전할 수 있어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
     history.replaceState(null,'','#learn');showView('learn');
   }
 });
 window.addEventListener('hashchange',()=>route());
 // Refresh the view on another tab's change without writing it back to storage.
-window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY){route(false,false);}});
+window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY||event.key===QuizProgress.KEY){route(false,false);}});
 setLevel(0);route(false);
 
 </script></body></html>
