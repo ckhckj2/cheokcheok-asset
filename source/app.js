@@ -70,13 +70,13 @@ function renderLesson(lesson,step,focus=true){
   document.title=lesson.number+'강 · '+lesson.title+' · 척척 에셋';
   if(focus){window.scrollTo({top:0,behavior:'instant'});learningView.querySelector('.lesson-body h2').focus({preventScroll:true});}
 }
-function route(focus=true){
+function route(focus=true,recordVisit=true){
   progress.sync();const parts=location.hash.slice(1).split('/');
   if(parts[0]==='learn'){
     const lesson=curriculum.find(l=>l.id===parts[1]);
     if(lesson&&['open','completed'].includes(lessonStatus(lesson))){
       const step=lessonStatus(lesson)==='completed'?0:progress.state.resume[lesson.id]??progress.state.positions[lesson.id]??0;
-      progress.visit(lesson.id,step);renderLesson(lesson,step,false);
+      if(recordVisit)progress.visit(lesson.id,step);renderLesson(lesson,step,false);
     }else renderLearningList(parts[1]?'이 수업은 아직 열리지 않았어요. 이전 강을 먼저 완료해 주세요.':'');
   }else if(!learningView.querySelector('h1'))renderLearningList();
   showView(parts[0],focus);updateProgressUI();
@@ -109,6 +109,7 @@ learningView.addEventListener('click',event=>{
   }
 });
 window.addEventListener('hashchange',()=>route());
-window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY){route(false);}});
+// Refresh the view on another tab's change without writing it back to storage.
+window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY){route(false,false);}});
 setLevel(0);route(false);
 
