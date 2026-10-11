@@ -24,7 +24,7 @@ function browser(seed=[]){
  const nodes=new Map(),handlers={},local=memory(seed),session=memory();
  function node(id){if(!nodes.has(id))nodes.set(id,{id,textContent:'학습',innerHTML:'',dataset:{},focus(){},replaceChildren(){},addEventListener(name,fn){handlers[id+':'+name]=fn;},setAttribute(){},getAttribute(){return 'false';},removeAttribute(){},classList:{toggle(){}},querySelector(){return node('child');}});return nodes.get(id);}
  const ctx={document:{title:'',getElementById:node,createElement:()=>node('new'),querySelectorAll:()=>[],querySelector:()=>node('heading')},location:{hash:'#invest'},history:{replaceState(){}},window:{localStorage:local,sessionStorage:{getItem:session.getItem,setItem:session.setItem,removeItem:k=>session.values.delete(k)},scrollTo(){},addEventListener(name,fn){handlers[name]=fn;}}};
- vm.createContext(ctx);vm.runInContext(['curriculum.js','easy.js','progress.js','review-mode.js','investment.js','quiz-bank.js','quiz-progress.js','quiz-ui.js','investment-ui.js','app.js'].map(n=>fs.readFileSync(__dirname+'/'+n,'utf8')).join('\n'),ctx);
+ vm.createContext(ctx);vm.runInContext(['curriculum.js','easy.js','progress.js','review-mode.js','investment.js','assumptions.js','quiz-bank.js','quiz-progress.js','quiz-ui.js','investment-ui.js','assumptions-ui.js','app.js'].map(n=>fs.readFileSync(__dirname+'/'+n,'utf8')).join('\n'),ctx);
  const run=s=>vm.runInContext(s,ctx),click=(id,key,action)=>handlers[id+':click']({target:{closest(){return {disabled:false,dataset:{[key]:action}};}}});
  const submit=(id,formId,values)=>handlers[id+':submit']({preventDefault(){},target:{id:formId,elements:Object.fromEntries(Object.entries(values).map(([k,v])=>[k,{value:String(v)}]))}});
  return {ctx,local,session,handlers,node,run,click,submit};
