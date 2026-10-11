@@ -13,6 +13,7 @@ const sensitivity=S.sensitivity(A.baseline,scenarios[1],'maintain');assert.equal
 const isolatedCost=S.sensitivity(A.baseline,scenarios[1],'improve')[3];assert.equal(isolatedCost.result.equity,363);near(isolatedCost.result.profit,184);
 const edge=S.calculate({rent:10000,vacancy:40,opex:20},{...scenarios[2],vacancy:60},'maintain');assert.ok(edge.noi<0);assert.equal(edge.sale,null);assert.equal(edge.netSale,null);assert.equal(edge.profit,null);assert.equal(edge.irr,null);assert.equal(edge.flows.at(-1),null);
 const debtGap=S.calculate({rent:10000,vacancy:10,opex:10},{...scenarios[2],vacancy:40,cap:10},'maintain');assert.ok(debtGap.netSale<0);
+const ambiguous=S.calculate(A.baseline,{...scenarios[1],rate:1,cap:10},'maintain');assert.ok(ambiguous.annual>0);assert.ok(ambiguous.netSale<0);assert.equal(ambiguous.irr,null);
 const max=S.sensitivity(A.baseline,{id:'base',rate:12,vacancy:60,costShock:100,cap:10},'maintain');assert.ok(max.every(s=>!s.changed));
 const input={baseInput:A.baseline,scenarios,strategy:'maintain'};
 for(const r of [{...input,strategy:'constructor'},{...input,scenarios:scenarios.slice(0,2)},{...input,scenarios:[scenarios[0],scenarios[0],scenarios[2]]},{...input,scenarios:scenarios.map(s=>({...s,rate:NaN}))},{...input,baseInput:{...A.baseline,rent:'25000'}}])assert.throws(()=>S.normalize(r));
