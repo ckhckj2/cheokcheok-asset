@@ -7,9 +7,6 @@ const levels=[
 {name:'과장',motto:'자료를 비교하고, 가정의 근거 세우기',purpose:'비교 건물 자료를 읽고 임대료·공실률·운영비 가정을 직접 정해요.',items:['유사 건물의 비교 가능성 판단','가정과 선택 근거 입력','가정 변경에 따른 결과 비교'],view:'invest',cta:'가정 수립 구성 보기'},
 {name:'팀장',motto:'전망이 달라져도 투자 판단이 타당한지 검토하기',purpose:'금리·공실·공사비·매각 조건이 달라지는 상황에서 투자 전략을 비교해요.',items:['금리 하락·유지·상승 시나리오','공실 증가·공사비 상승 민감도 분석','투자 여부·대출·보유·매각 전략 복기'],view:'invest',cta:'시나리오 구성 보기'}
 ];
-const descriptions={
-quiz:{title:'퀴즈',lead:'내가 이해한 내용을 확인하고, 틀린 이유를 돌아봐요.',subtitle:'퀴즈와 복습 기능을 준비하고 있어요',copy:'확정된 수업에 맞춰 문제·정답·해설을 함께 구성할 예정이에요. 현재는 점수나 승급 기록을 생성하지 않아요.',items:['객관식·단답형·간단한 계산 문제','정답뿐 아니라 판단 근거 확인','오답 복습과 실제 학습 진도 저장'],next:'3단계 업데이트에서 정식 퀴즈·승급·오답 복습이 추가됩니다.'}
-};
 function svg(key){return '<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">'+icons[key]+'</svg></span>';}
 document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon);});
 let previewLevel=0;
@@ -18,8 +15,6 @@ function showView(name,focus=true){const allowed=['home','learn','quiz','invest'
 document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.level!==undefined)setLevel(Number(btn.dataset.level));location.hash=btn.dataset.view;}));
 document.querySelectorAll('[data-preview-level]').forEach(btn=>btn.addEventListener('click',()=>setLevel(Number(btn.dataset.previewLevel))));
 document.getElementById('levelCta').addEventListener('click',()=>{location.hash=levels[previewLevel].view;});
-for(const [name,data] of Object.entries(descriptions)){const section=document.getElementById('view-'+name);section.innerHTML='<header class="page-head"><span class="eyebrow">QUIZ</span><h1 tabindex="-1">'+data.title+'</h1><p>'+data.lead+'</p></header><div class="asset-panel"><span class="status-label">준비 중</span><h2>'+data.subtitle+'</h2><p>'+data.copy+'</p><ul>'+data.items.map(t=>'<li>'+t+'</li>').join('')+'</ul><p class="asset-footnote">'+data.next+'</p><button class="secondary" type="button">4레벨 구성 보기 →</button></div>';section.querySelector('button').addEventListener('click',()=>{setLevel(0);location.hash='level';});}
-
 const progress=LearningProgress.create({getItem:key=>window.localStorage.getItem(key),setItem:(key,value)=>window.localStorage.setItem(key,value)},curriculum);
 const learningView=document.getElementById('view-learn');
 let activeLesson=null,activeStep=0;
@@ -27,12 +22,15 @@ function escapeText(value){return String(value).replace(/[&<>"']/g,char=>({'&':'
 function lessonStatus(lesson){return LearningProgress.status(lesson,curriculum,progress.state);}
 function updateProgressUI(){
   const count=progress.state.completed.length;
-  document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · 승급 준비 중';
-  document.getElementById('stageProgress').textContent='LV.1 · 신입사원 / '+count+'강 완료';
+  const earnedLevel=quizProgress.level(progress.state.completed);
+  document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · '+(earnedLevel===2?'종합 퀴즈 통과':'퀴즈로 이해 확인');
+  document.getElementById('currentLevel').textContent='LV.'+earnedLevel+' · '+(earnedLevel===2?'대리':'신입사원');
+  document.getElementById('levelCurrentCopy').textContent=earnedLevel===2?'현재는 LV.2 · 대리예요. 수업과 퀴즈는 언제든 복습할 수 있어요.':'현재는 LV.1 · 신입사원이에요. 20강 완료와 종합 퀴즈 80점 이상을 달성하면 대리로 승급할 수 있어요.';
+  document.getElementById('stageProgress').textContent='LV.'+earnedLevel+' · '+(earnedLevel===2?'대리':'신입사원')+' / '+count+'강 완료';
   const next=LearningProgress.nextLesson(curriculum,progress.state);
   const finished=count===curriculum.length;
   document.getElementById('homeNextTitle').textContent=next?next.number+'강 · '+next.title:finished?'20강 학습 완료 · 헷갈린 내용 복습하기':'다음 수업을 준비하고 있어요';
-  document.getElementById('homeNextCopy').textContent=finished?'완료한 수업을 다시 읽고, 내 말로 설명해보세요. 정식 퀴즈와 승급은 다음 단계에서 추가돼요.':'먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.';
+  document.getElementById('homeNextCopy').textContent=finished?'단원 퀴즈와 오답을 복습하고, 종합 퀴즈로 이해를 확인해보세요.':'먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.';
   document.getElementById('homeLearningCta').textContent=finished?'복습할 수업 보기 →':'학습 시작하기 →';
 }
 function storageNotice(){return '<p class="storage-note" role="status">'+escapeText(progress.message||'진도는 이 기기·브라우저에 저장돼요. 브라우저 데이터를 지우면 기록도 사라져요.')+'</p>';}
@@ -65,7 +63,7 @@ function renderLesson(lesson,step,focus=true){
     (summary?'<ul class="summary-lines">'+lesson.summary.map(line=>'<li>'+escapeText(line)+'</li>').join('')+'</ul><p>각 문장을 네 말로 설명할 수 있는지 떠올려보세요. 헷갈린 내용은 이전으로 돌아가 다시 읽어도 좋아요.</p>':section.html)+
     renderEasy(summary?lesson.easySummary:section.easy)+
     (!summary&&section.check?'<div class="understanding-check"><small>잠깐 생각해보기 · 채점하지 않아요</small><p>'+escapeText(section.check.question)+'</p><details><summary>설명 확인하기</summary><p>'+escapeText(section.check.answer)+'</p></details></div>':'')+
-    (summary?'<details class="lesson-sources"><summary>개념 참고 자료</summary><ul>'+lesson.sources.map(([title,url])=>'<li><a href="'+url+'" target="_blank" rel="noopener noreferrer">'+escapeText(title)+'</a></li>').join('')+'</ul><p>교육용 가상 사례예요. 자료의 개념을 참고해 직접 설명했으며, 실제 거래의 계약·평가 기준은 별도로 확인해야 해요.</p></details>':'')+'</article>'+
+    (summary?'<details class="lesson-sources"><summary>개념 참고 자료</summary><ul>'+lesson.sources.map(([title,url])=>'<li><a href="'+url+'" target="_blank" rel="noopener noreferrer">'+escapeText(title)+'</a></li>').join('')+'</ul><p>교육용 가상 사례예요. 자료의 개념을 참고해 직접 설명했으며, 실제 거래의 계약·평가 기준은 별도로 확인해야 해요.</p></details>':'')+(summary&&done?'<a class="quiz-lesson-link" href="#quiz/lesson-'+lesson.number+'">이 단원 퀴즈 풀기 →</a>':'')+'</article>'+
     '<div class="lesson-controls"><button class="secondary" type="button" data-action="previous" '+(step===0?'disabled':'')+'>← 이전</button><span>'+(step+1)+' / '+(lesson.sections.length+1)+'</span>'+(summary?'<button class="primary" type="button" data-action="'+(done?'review-done':'complete')+'">'+(done?'복습 마치기':'학습 완료하기')+' →</button>':'<button class="primary" type="button" data-action="next">'+(step===lesson.sections.length-1?'핵심 요약 보기':'다음')+' →</button>')+'</div>'+storageNotice();
   document.title=lesson.number+'강 · '+lesson.title+' · 척척 에셋';
   if(focus){window.scrollTo({top:0,behavior:'instant'});learningView.querySelector('.lesson-body h2').focus({preventScroll:true});}
@@ -78,7 +76,8 @@ function route(focus=true,recordVisit=true){
       const step=lessonStatus(lesson)==='completed'?0:progress.state.resume[lesson.id]??progress.state.positions[lesson.id]??0;
       if(recordVisit)progress.visit(lesson.id,step);renderLesson(lesson,step,false);
     }else renderLearningList(parts[1]?'이 수업은 아직 열리지 않았어요. 이전 강을 먼저 완료해 주세요.':'');
-  }else if(!learningView.querySelector('h1'))renderLearningList();
+  }else if(parts[0]==='quiz'){quizRoute(parts,focus,!recordVisit);}
+  else if(!learningView.querySelector('h1'))renderLearningList();
   showView(parts[0],focus);updateProgressUI();
   if(activeLesson&&parts[0]==='learn')document.title=activeLesson.number+'강 · '+activeLesson.title+' · 척척 에셋';
 }
@@ -104,12 +103,12 @@ learningView.addEventListener('click',event=>{
   if(action==='complete'&&progress.complete(activeLesson.id)){
     updateProgressUI();const next=LearningProgress.nextLesson(curriculum,progress.state);
     const title=activeLesson.title;
-    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강이 열렸어요.':progress.state.completed.length===curriculum.length?'20강을 모두 마쳤어요. 헷갈린 수업은 언제든 복습할 수 있어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
+    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강과 이번 단원 퀴즈가 열렸어요.':progress.state.completed.length===curriculum.length?'20강을 모두 마쳤어요. 퀴즈 메뉴에서 종합 퀴즈에 도전할 수 있어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
     history.replaceState(null,'','#learn');showView('learn');
   }
 });
 window.addEventListener('hashchange',()=>route());
 // Refresh the view on another tab's change without writing it back to storage.
-window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY){route(false,false);}});
+window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY||event.key===QuizProgress.KEY){route(false,false);}});
 setLevel(0);route(false);
 
