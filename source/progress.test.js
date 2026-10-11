@@ -39,3 +39,13 @@ assert.equal(P.status(pending[19],pending,app.state),'pending');
 assert.equal(P.create(memory(),pending).visit(pending[19].id,0),false);
 for(const lesson of lessons){assert.equal(lesson.summary.length,4);for(const section of lesson.sections)assert.ok(section.check?.question&&section.check?.answer);}
 console.log('PASS: 2-B ten-lesson migration, 11→12 unlock, unavailable lesson guard and 60 self-checks');
+// Reading or revisiting unchanged progress must not broadcast another storage write.
+let broadcasts=0,sharedValue=null;
+const counted={getItem:()=>sharedValue,setItem:(_,value)=>{broadcasts++;sharedValue=value;}};
+const tabOne=P.create(counted,lessons),tabTwo=P.create(counted,lessons);
+tabOne.visit(lessons[0].id,0);const firstBroadcasts=broadcasts;
+tabOne.visit(lessons[0].id,0);tabTwo.sync();
+assert.equal(broadcasts,firstBroadcasts);
+tabOne.visit(lessons[0].id,1);const changedBroadcasts=broadcasts;
+tabTwo.sync();assert.equal(tabTwo.state.positions[lessons[0].id],1);assert.equal(broadcasts,changedBroadcasts);
+console.log('PASS: unchanged visits and cross-tab reads do not broadcast redundant writes');
