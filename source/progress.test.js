@@ -49,3 +49,15 @@ assert.equal(broadcasts,firstBroadcasts);
 tabOne.visit(lessons[0].id,1);const changedBroadcasts=broadcasts;
 tabTwo.sync();assert.equal(tabTwo.state.positions[lessons[0].id],1);assert.equal(broadcasts,changedBroadcasts);
 console.log('PASS: unchanged visits and cross-tab reads do not broadcast redundant writes');
+// Exercise the actual app's storage event: an external change refreshes the view
+// without calling setItem, even when another tab's last lesson is different.
+const nodes=new Map(),events={};let browserValue=null,browserWrites=0;
+function node(id){if(!nodes.has(id))nodes.set(id,{textContent:'학습',innerHTML:'',dataset:{},focus(){},replaceChildren(){},addEventListener(){},setAttribute(){},removeAttribute(){},classList:{toggle(){}},querySelector(){return node('child');}});return nodes.get(id);}
+const browserContext={document:{title:'',getElementById:node,createElement:()=>node('new'),querySelectorAll:()=>[],querySelector:()=>node('heading')},location:{hash:'#learn/basics-equity'},history:{replaceState(){}},window:{localStorage:{getItem:()=>browserValue,setItem:(_,value)=>{browserWrites++;browserValue=value;}},scrollTo(){},addEventListener:(name,handler)=>{events[name]=handler;}}};
+vm.runInNewContext(['curriculum.js','easy.js','progress.js','app.js'].map(name=>fs.readFileSync(__dirname+'/'+name,'utf8')).join('\n'),browserContext);
+const external={version:1,completed:[lessons[0].id],positions:{[lessons[0].id]:3,[lessons[1].id]:0},resume:{[lessons[0].id]:0,[lessons[1].id]:0},last:lessons[1].id};
+browserValue=JSON.stringify(external);const writesBefore=browserWrites;
+events.storage({key:P.KEY});events.storage({key:P.KEY});
+assert.equal(browserWrites,writesBefore);assert.equal(browserValue,JSON.stringify(external));
+assert.ok(node('miniProgress').textContent.startsWith('1 / 20'));
+console.log('PASS: actual app storage-event refresh keeps external progress and never writes it back');
