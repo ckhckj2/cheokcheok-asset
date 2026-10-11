@@ -19,10 +19,13 @@ const progress=LearningProgress.create({getItem:key=>window.localStorage.getItem
 const learningView=document.getElementById('view-learn');
 let activeLesson=null,activeStep=0;
 function escapeText(value){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));}
-function lessonStatus(lesson){return LearningProgress.status(lesson,curriculum,progress.state);}
+function lessonStatus(lesson){if(ReviewMode.enabled&&lesson.sections.length)return 'completed';return LearningProgress.status(lesson,curriculum,progress.state);}
 function updateProgressUI(){
   const count=progress.state.completed.length;
-  const earnedLevel=quizProgress.level(progress.state.completed);
+  document.getElementById('adminBanner').hidden=!ReviewMode.enabled;
+  document.getElementById('adminToggle').textContent=ReviewMode.enabled?'학습 모드로 돌아가기':'관리자 모드로 보기';
+  document.getElementById('adminToggle').setAttribute('aria-pressed',String(ReviewMode.enabled));
+  const earnedLevel=earnedQuizProgress.level(progress.state.completed);
   document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · '+(earnedLevel===2?'종합 퀴즈 통과':'퀴즈로 이해 확인');
   document.getElementById('currentLevel').textContent='LV.'+earnedLevel+' · '+(earnedLevel===2?'대리':'신입사원');
   document.getElementById('levelCurrentCopy').textContent=earnedLevel===2?'현재는 LV.2 · 대리예요. 수업과 퀴즈는 언제든 복습할 수 있어요.':'현재는 LV.1 · 신입사원이에요. 20강 완료와 종합 퀴즈 80점 이상을 달성하면 대리로 승급할 수 있어요.';
@@ -36,7 +39,7 @@ function updateProgressUI(){
 function storageNotice(){return '<p class="storage-note" role="status">'+escapeText(progress.message||'진도는 이 기기·브라우저에 저장돼요. 브라우저 데이터를 지우면 기록도 사라져요.')+'</p>';}
 function lessonRow(lesson){
   const status=lessonStatus(lesson),available=status==='open'||status==='completed';
-  const label={completed:'복습하기',open:(progress.state.positions[lesson.id]||0)>0?'이어서 학습':'학습하기',locked:'이전 강 완료 후',pending:'수업 준비 중'}[status];
+  const label={completed:ReviewMode.enabled?'검토하기':'복습하기',open:(progress.state.positions[lesson.id]||0)>0?'이어서 학습':'학습하기',locked:'이전 강 완료 후',pending:'수업 준비 중'}[status];
   return '<li><button type="button" class="lesson-row '+status+'" data-lesson="'+lesson.id+'" '+(available?'':'disabled')+'><span class="lesson-number">'+String(lesson.number).padStart(2,'0')+'</span><span class="lesson-row-copy"><b>'+escapeText(lesson.title)+'</b><small>'+escapeText(lesson.goal)+'</small></span><span class="lesson-state">'+label+'</span></button></li>';
 }
 function renderLearningList(notice=''){
@@ -58,7 +61,7 @@ function renderLesson(lesson,step,focus=true){
   activeLesson=lesson;activeStep=step;
   const done=lessonStatus(lesson)==='completed',summary=step===lesson.sections.length;
   const section=lesson.sections[step];
-  learningView.innerHTML='<button class="text-button" type="button" data-action="list">← 전체 수업</button><header class="page-head lesson-head"><span class="eyebrow">'+(done?'REVIEW · 복습':'LESSON '+String(lesson.number).padStart(2,'0'))+'</span><h1 tabindex="-1">'+lesson.number+'강 · '+escapeText(lesson.title)+'</h1><p>'+escapeText(lesson.goal)+'</p></header><div class="lesson-steps" aria-label="수업 진행">'+lesson.sections.map((s,i)=>'<span class="'+(i===step?'current':i<step?'passed':'')+'">'+(i+1)+' · '+escapeText(s.title.split(' · ')[0])+'</span>').join('')+'<span class="'+(summary?'current':'')+'">정리</span></div>'+
+  learningView.innerHTML='<button class="text-button" type="button" data-action="list">← 전체 수업</button><header class="page-head lesson-head"><span class="eyebrow">'+(ReviewMode.enabled?'ADMIN · 콘텐츠 검토':done?'REVIEW · 복습':'LESSON '+String(lesson.number).padStart(2,'0'))+'</span><h1 tabindex="-1">'+lesson.number+'강 · '+escapeText(lesson.title)+'</h1><p>'+escapeText(lesson.goal)+'</p></header><div class="lesson-steps" aria-label="수업 진행">'+lesson.sections.map((s,i)=>'<span class="'+(i===step?'current':i<step?'passed':'')+'">'+(i+1)+' · '+escapeText(s.title.split(' · ')[0])+'</span>').join('')+'<span class="'+(summary?'current':'')+'">정리</span></div>'+
     '<article class="lesson-body asset-panel"><span class="status-label">'+(summary?'핵심 요약':(step+1)+' / '+lesson.sections.length+' 소단원')+'</span><h2 tabindex="-1">'+escapeText(summary?'배운 내용, 네 줄로 정리':section.title)+'</h2>'+
     (summary?'<ul class="summary-lines">'+lesson.summary.map(line=>'<li>'+escapeText(line)+'</li>').join('')+'</ul><p>각 문장을 네 말로 설명할 수 있는지 떠올려보세요. 헷갈린 내용은 이전으로 돌아가 다시 읽어도 좋아요.</p>':section.html)+
     renderEasy(summary?lesson.easySummary:section.easy)+
@@ -74,9 +77,10 @@ function route(focus=true,recordVisit=true){
     const lesson=curriculum.find(l=>l.id===parts[1]);
     if(lesson&&['open','completed'].includes(lessonStatus(lesson))){
       const step=lessonStatus(lesson)==='completed'?0:progress.state.resume[lesson.id]??progress.state.positions[lesson.id]??0;
-      if(recordVisit)progress.visit(lesson.id,step);renderLesson(lesson,step,false);
+      if(recordVisit&&!ReviewMode.enabled)progress.visit(lesson.id,step);renderLesson(lesson,step,false);
     }else renderLearningList(parts[1]?'이 수업은 아직 열리지 않았어요. 이전 강을 먼저 완료해 주세요.':'');
-  }else if(parts[0]==='quiz'){quizRoute(parts,focus,!recordVisit);}
+  }else if(parts[0]==='invest'){investmentRoute(!recordVisit);}
+  else if(parts[0]==='quiz'){quizRoute(parts,focus,!recordVisit);}
   else if(!learningView.querySelector('h1'))renderLearningList();
   showView(parts[0],focus);updateProgressUI();
   if(activeLesson&&parts[0]==='learn')document.title=activeLesson.number+'강 · '+activeLesson.title+' · 척척 에셋';
@@ -97,10 +101,10 @@ learningView.addEventListener('click',event=>{
   if(!activeLesson)return;
   if(action==='next'||action==='previous'){
     const step=activeStep+(action==='next'?1:-1);
-    if(progress.visit(activeLesson.id,step)){renderLesson(activeLesson,step);updateProgressUI();}
+    if(ReviewMode.enabled&&step>=0&&step<=activeLesson.sections.length||!ReviewMode.enabled&&progress.visit(activeLesson.id,step)){renderLesson(activeLesson,step);updateProgressUI();}
     else route();
   }
-  if(action==='complete'&&progress.complete(activeLesson.id)){
+  if(action==='complete'&&!ReviewMode.enabled&&progress.complete(activeLesson.id)){
     updateProgressUI();const next=LearningProgress.nextLesson(curriculum,progress.state);
     const title=activeLesson.title;
     renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강과 이번 단원 퀴즈가 열렸어요.':progress.state.completed.length===curriculum.length?'20강을 모두 마쳤어요. 퀴즈 메뉴에서 종합 퀴즈에 도전할 수 있어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
@@ -109,6 +113,10 @@ learningView.addEventListener('click',event=>{
 });
 window.addEventListener('hashchange',()=>route());
 // Refresh the view on another tab's change without writing it back to storage.
-window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY||event.key===QuizProgress.KEY){route(false,false);}});
+window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY||event.key===QuizProgress.KEY||event.key===Investment.KEY){route(false,false);}});
+function setReviewMode(enabled){ReviewMode.set(enabled);quizProgress=enabled?reviewQuizProgress:earnedQuizProgress;quizSession=null;investmentSession=null;activeLesson=null;renderLearningList();route(false,false);}
+document.getElementById('adminToggle').addEventListener('click',()=>setReviewMode(!ReviewMode.enabled));
+document.getElementById('adminExit').addEventListener('click',()=>setReviewMode(false));
+quizProgress=ReviewMode.enabled?reviewQuizProgress:earnedQuizProgress;
 setLevel(0);route(false);
 
