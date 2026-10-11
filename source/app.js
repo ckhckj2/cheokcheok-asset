@@ -8,6 +8,11 @@ const levels=[
 {name:'팀장',motto:'전망이 달라져도 투자 판단이 타당한지 검토하기',purpose:'금리·공실·공사비·매각 조건이 달라지는 상황에서 투자 전략을 비교해요.',items:['금리 하락·유지·상승 시나리오','공실 증가·공사비 상승 민감도 분석','투자 여부·대출·보유·매각 전략 복기'],view:'scenarios',cta:'시나리오 실습 보기'}
 ];
 function svg(key){return '<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">'+icons[key]+'</svg></span>';}
+// The skip link moves focus within the current route; a hash change would open home.
+document.getElementById('skipContent').addEventListener('click',event=>{
+  event.preventDefault();
+  document.querySelector('.view.active h1')?.focus();
+});
 document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon);});
 let previewLevel=0;
 function setLevel(index){previewLevel=index;document.querySelectorAll('[data-preview-level]').forEach(btn=>btn.setAttribute('aria-pressed',String(Number(btn.dataset.previewLevel)===index)));const item=levels[index];document.getElementById('levelNumber').textContent='0'+(index+1);document.getElementById('levelName').textContent='LV.'+(index+1)+' · '+item.name;document.getElementById('levelMotto').textContent=item.motto;document.getElementById('levelPurpose').textContent=item.purpose;const list=document.getElementById('levelFeatures');list.replaceChildren(...item.items.map(label=>{const li=document.createElement('li');li.textContent=label;return li;}));document.getElementById('levelCta').textContent=item.cta;}
@@ -78,7 +83,8 @@ function route(focus=true,recordVisit=true){
   if(parts[0]==='learn'){
     const lesson=curriculum.find(l=>l.id===parts[1]);
     if(lesson&&['open','completed'].includes(lessonStatus(lesson))){
-      const step=lessonStatus(lesson)==='completed'?0:progress.state.resume[lesson.id]??progress.state.positions[lesson.id]??0;
+      const keepPosition=!recordVisit&&activeLesson===lesson&&activeStep>=0&&activeStep<=lesson.sections.length;
+      const step=keepPosition?activeStep:lessonStatus(lesson)==='completed'?0:progress.state.resume[lesson.id]??progress.state.positions[lesson.id]??0;
       if(recordVisit&&!ReviewMode.enabled)progress.visit(lesson.id,step);renderLesson(lesson,step,false);
     }else renderLearningList(parts[1]?'이 수업은 아직 열리지 않았어요. 이전 강을 먼저 완료해 주세요.':'');
   }else if(parts[0]==='invest'){investmentRoute(!recordVisit);}

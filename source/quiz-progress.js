@@ -21,11 +21,13 @@ const QuizProgress=(()=>{
       if(!raw||raw.version!==1||!raw.results||typeof raw.results!=='object'||Array.isArray(raw.results)||!raw.responses||typeof raw.responses!=='object'||Array.isArray(raw.responses))throw Error('Invalid quiz record');
       const next=empty();
       for(const id of groups.keys()){
-        const r=raw.results[id];if(!r)continue;
+        const r=raw.results[id];if(!Object.hasOwn(raw.results,id))continue;
+        if(!r)throw Error('Invalid quiz result');
         const latest=result(r.latest,id),best=result(r.best,id);
+        if(!latest||!best)throw Error('Invalid quiz result');
         if(latest&&best){const winner=latest.correct>best.correct?latest:best;next.results[id]={latest,best:winner};}
       }
-      for(const q of questions){const r=response(raw.responses[q.id],q);if(r)next.responses[q.id]=r;}
+      for(const q of questions){if(!Object.hasOwn(raw.responses,q.id))continue;const r=response(raw.responses[q.id],q);if(!r)throw Error('Invalid quiz response');next.responses[q.id]=r;}
       // A promotion record is meaningful only alongside a passing full exam.
       if(raw.promotion&&response({choice:0,...raw.promotion},questions[0])&&next.results.final?.best.correct>=8)next.promotion={time:raw.promotion.time,id:raw.promotion.id};
       return next;

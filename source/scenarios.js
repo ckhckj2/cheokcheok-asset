@@ -43,7 +43,8 @@ const Scenarios=(()=>{
     let state={version:1,promoted:false,records:[]},message='',writable=true;
     function clean(raw){
       if(!raw||raw.version!==1||typeof raw.promoted!=='boolean'||!Array.isArray(raw.records))throw Error('Invalid scenario record');
-      const records=raw.records.flatMap(r=>{try{if(!r||typeof r.id!=='string'||r.id.length>100||!Number.isSafeInteger(r.time)||r.time<0)return [];return [{...record(r),id:r.id,time:r.time}];}catch(e){return [];}}).sort((a,b)=>a.time-b.time||a.id.localeCompare(b.id)).slice(-20);
+      // A malformed row blocks writes to the snapshot instead of being silently deleted.
+      const records=raw.records.map(r=>{if(!r||typeof r.id!=='string'||r.id.length>100||!Number.isSafeInteger(r.time)||r.time<0)throw Error('Invalid scenario entry');return {...record(r),id:r.id,time:r.time};}).sort((a,b)=>a.time-b.time||a.id.localeCompare(b.id)).slice(-20);
       return {version:1,promoted:raw.promoted,records};
     }
     const read=()=>{const v=storage.getItem(KEY);return v===null?{version:1,promoted:false,records:[]}:clean(JSON.parse(v));};

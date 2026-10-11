@@ -56,7 +56,8 @@ investmentView.addEventListener('submit',event=>{
   const form=event.target,s=investmentSession;
   if(form.id==='investmentForm'){
     const fields=form.elements;
-    try{s.input=Investment.normalize({price:Number(fields.price.value),ltv:Number(fields.ltv.value),rate:Number(fields.rate.value),operation:fields.operation.value,years:Number(fields.years.value),sale:Number(fields.sale.value)});
+    try{if(['price','rate','sale'].some(key=>!String(fields[key].value).trim()))throw Error('매입가격·금리·매각가격을 모두 입력해 주세요.');
+      s.input=Investment.normalize({price:Number(fields.price.value),ltv:Number(fields.ltv.value),rate:Number(fields.rate.value),operation:fields.operation.value,years:Number(fields.years.value),sale:Number(fields.sale.value)});
       s.decision=fields.decision.value;s.reason=fields.reason.value.trim();if(s.reason.length<10||s.reason.length>1000||!['hold','invest'].includes(s.decision))throw Error('판단 이유를 10~1,000자로 적어 주세요.');
       s.result=Investment.calculate(s.input);s.saved=false;renderInvestmentResults();
     }catch(error){document.getElementById('investmentError').textContent=error.message;}

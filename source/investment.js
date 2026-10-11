@@ -28,7 +28,8 @@ const Investment=(()=>{
     const flows=[-equity,...Array.from({length:input.years},(_,i)=>annual+(i===input.years-1?netSale:0))];
     const profit=annual*input.years+netSale-equity,returnOnEquity=profit/equity;
     const warnings=[];
-    if(annual<=0)warnings.push('운영에서 남는 돈으로 이자를 모두 내지 못해요. 추가 자금이 필요할 수 있어요.');
+    if(annual<0)warnings.push('운영에서 남는 돈으로 이자를 모두 내지 못해요. 추가 자금이 필요할 수 있어요.');
+    if(annual===0)warnings.push('이자는 낼 수 있지만 여유 현금이 없어요. 수입 감소나 추가 비용에 대비해야 해요.');
     if(netSale<0)warnings.push('매각대금에서 비용을 빼도 대출을 전부 갚지 못해요. 부족한 돈을 따로 마련해야 해요.');
     if(profit<0)warnings.push('이 가정에서는 전체 회수액이 처음 넣은 돈보다 적어요.');
     if(input.ltv===70)warnings.push('대출이 건물 가격의 70%예요. 가격·수입이 내려갈 때 자기자본 손실이 커질 수 있어요.');
@@ -36,7 +37,14 @@ const Investment=(()=>{
   }
   function create(storage){
     let records=[],message='',writable=true;
-    function clean(raw){if(!raw||raw.version!==1||!Array.isArray(raw.records))throw Error('Invalid investment record');return raw.records.filter(r=>r&&typeof r.id==='string'&&r.id.length<100&&Number.isSafeInteger(r.time)&&['invest','hold'].includes(r.decision)&&typeof r.reason==='string'&&r.reason.trim().length>=10&&r.reason.length<=1000&&typeof r.reflection==='string'&&r.reflection.trim().length>=10&&r.reflection.length<=1000).flatMap(r=>{try{return [{id:r.id,time:r.time,input:normalize(r.input),decision:r.decision,reason:r.reason,reflection:r.reflection}];}catch(error){return [];}}).sort((a,b)=>a.time-b.time||a.id.localeCompare(b.id)).slice(-20);}
+    function clean(raw){
+      if(!raw||raw.version!==1||!Array.isArray(raw.records))throw Error('Invalid investment record');
+      // Reject a partially damaged snapshot so the next write cannot erase its rows.
+      return raw.records.map(r=>{
+        if(!r||typeof r.id!=='string'||r.id.length>=100||!Number.isSafeInteger(r.time)||r.time<0||!['invest','hold'].includes(r.decision)||typeof r.reason!=='string'||r.reason.trim().length<10||r.reason.length>1000||typeof r.reflection!=='string'||r.reflection.trim().length<10||r.reflection.length>1000)throw Error('Invalid investment entry');
+        return {id:r.id,time:r.time,input:normalize(r.input),decision:r.decision,reason:r.reason,reflection:r.reflection};
+      }).sort((a,b)=>a.time-b.time||a.id.localeCompare(b.id)).slice(-20);
+    }
     const read=()=>{const value=storage.getItem(KEY);return value===null?[]:clean(JSON.parse(value));};
     const merge=(a,b)=>clean({version:1,records:[...new Map([...a,...b].map(r=>[r.id,r])).values()]});
     try{records=read();}catch(error){writable=false;message='투자 연습 기록을 읽지 못해 이번 방문의 기록만 유지해요. 기존 기록은 덮어쓰지 않아요.';}
