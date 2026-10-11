@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FBFCFE"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Cb2r2MY9jaFfhQIiRa4MSoLD2ZNieUc+H621AiCNnAk='; style-src 'sha256-NcMGiEnbkiba19kWRWJ9RO2aCp21DDIIJ7V5EexDDoc='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="description" content="척척 에셋: 기초학습에서 모의투자와 투자 판단까지 이어지는 부동산 자산운용 교육 프로그램."><title>척척 에셋</title><style>/* Reused from ckhckj2/Project-context: v2.css */
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FBFCFE"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-iHdizOz9KbDrwSMADfxY6CbrwDaGhndniDIUKXnclAA='; style-src 'sha256-wqQdFYvf1wB/1KtlnOBvlRk9mLIYwSF7odukybmnt0E='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="description" content="척척 에셋: 기초학습에서 모의투자와 투자 판단까지 이어지는 부동산 자산운용 교육 프로그램."><title>척척 에셋</title><style>/* Reused from ckhckj2/Project-context: v2.css */
 :root{--bg:#F6F7FB;--surface:#fff;--ink:#26324A;--muted:#77819A;--line:#E5E9F2;--primary:#4C6FFF;--primarySoft:#EEF2FF;--green:#159A73;--greenSoft:#EAF8F3;--amber:#C98218;--amberSoft:#FFF6E6;--coral:#E77373;--coralSoft:#FFF0F0;--shadow:0 10px 30px rgba(42,58,91,.065)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(76,111,255,.18);outline-offset:2px}.hidden{display:none!important}
 #masterBar{display:none;margin:8px 10px 0;padding:10px 12px;border:1px solid #E5D69F;border-radius:16px;background:linear-gradient(90deg,#FFFBEB,#F7F2FF);box-shadow:0 8px 24px rgba(119,92,24,.06);align-items:center;gap:10px;flex-wrap:wrap}.certified #masterBar{display:flex}.master-copy{min-width:150px;margin-right:auto}.master-copy small{display:block;font-size:8.5px;letter-spacing:.11em;font-weight:950;color:#9B8140;margin-bottom:3px}.master-copy b{font-size:11.5px;color:#725C25}.master-levels{display:flex;gap:6px;flex-wrap:wrap}.master-levels button{border:1px solid #E6E1D3;background:#fff;color:#766F62;border-radius:999px;padding:8px 11px;font-size:10.5px;font-weight:900}.master-levels button.active{background:#5A62D7;color:#fff;border-color:#5A62D7}.master-levels button[data-level="5"].active{background:linear-gradient(135deg,#705BD2,#B58A2D);border-color:transparent}.master-note{width:100%;font-size:9.5px;color:#9A8E72;line-height:1.45}
@@ -80,17 +80,20 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #25
 /* Optional explanations stay separate from the main lesson and never gate completion. */
 .easy-help{margin:25px 0}.easy-toggle{border:1px solid #e8d36f;border-radius:11px;background:#fff9d9;color:#785b00;padding:12px 17px;font-size:13px;font-weight:800;min-height:44px}.easy-toggle:hover{background:#fff1ac}.easy-explanation{margin-top:15px;border:1px solid #f0dfa0;background:#fffdf3;border-radius:15px;padding:24px}.easy-explanation>.eyebrow{color:#785b00}.easy-explanation h3{font-size:19px;color:#10234a;line-height:1.6;margin:0 0 16px}.easy-explanation>p{color:#354766;font-size:15px;line-height:2;margin:15px 0}.easy-limit{border-top:1px solid #eadfaf;padding-top:17px;margin-top:23px}.easy-limit>b{font-size:12px;color:#785b00}.easy-limit>p{font-size:12px;color:#667085;margin:8px 0 0;line-height:1.9}.easy-toggle[aria-expanded=true]{background:#fef3b8}
 @media(max-width:700px){.easy-explanation{padding:19px}.easy-explanation h3{font-size:17px}.easy-explanation>p{font-size:14px}.easy-toggle{width:100%}.easy-limit>p{font-size:12px}}
+
+/* Long Excel references remain readable on narrow screens. */
+.lesson-body{overflow-wrap:anywhere}
 </style></head>
-<body><a class="skip-link" href="#mainContent">본문으로 이동</a><div class="shell"><aside class="side"><div class="cc-side-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div><div class="cc-tagline">부동산 자산운용, 차근차근 <b>척척</b></div><span class="version">v0.2-B.1 · 학습 시작</span></div>
+<body><a class="skip-link" href="#mainContent">본문으로 이동</a><div class="shell"><aside class="side"><div class="cc-side-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div><div class="cc-tagline">부동산 자산운용, 차근차근 <b>척척</b></div><span class="version">v0.2-C · 학습 시작</span></div>
 <nav class="nav" aria-label="주 메뉴"><button type="button" data-nav="home" data-view="home"><span data-icon="home"></span>홈</button><button type="button" data-nav="learn" data-view="learn"><span data-icon="learn"></span>기초학습</button><button type="button" data-nav="quiz" data-view="quiz"><span data-icon="quiz"></span>퀴즈</button><button type="button" data-nav="invest" data-view="invest"><span data-icon="invest"></span>모의투자</button><button type="button" data-nav="level" data-view="level"><span data-icon="level"></span>내 레벨</button></nav><div class="cc-side-divider"></div><div class="cc-side-subnav"><button type="button" data-view="roadmap">업데이트 안내 →</button></div><div class="level-mini"><small>CURRENT LEVEL</small><b>LV.1 · 신입사원</b><p id="miniProgress">학습 시작 전 · 0 / 20강<br>승급 기능은 준비 중이에요.</p><button type="button" data-view="level">4레벨 구성 보기 →</button></div></aside>
-<main class="main" id="mainContent"><div class="inner"><div class="mobile-head"><div class="mobile-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div></div><span class="version">v0.2-B.1</span></div><div class="asset-topline"><span>부동산 자산운용 학습</span><span class="stage-chip" id="stageProgress">LV.1 · 신입사원 / 학습 시작 전</span></div>
-<section id="view-home" class="view active"><div class="hero"><span class="eyebrow">CHEOKCHEOK ASSET</span><h1 tabindex="-1">배운 개념을,<br>내 투자 판단으로.</h1><p class="lead">기초를 익히고, 가정을 세우고, 선택의 결과를 비교해요.<br>척척 에셋에서 자산운용을 차근차근 연습하세요.</p></div><div class="asset-next"><div><span class="eyebrow">지금 할 일</span><h2 id="homeNextTitle">1강부터 차근차근 시작해요</h2><p>먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.</p></div><button type="button" class="primary" data-view="learn">학습 시작하기 →</button></div>
-<div class="asset-grid"><button type="button" class="asset-card" data-view="learn"><span data-icon="learn"></span><b>학습하기</b><p>개념과 용어를 익히고<br>숫자 예시로 이해해요.</p><small>신입사원 · 1~10강 학습 가능 →</small></button><button type="button" class="asset-card" data-view="quiz"><span data-icon="quiz"></span><b>퀴즈 풀기</b><p>이해한 내용을 확인하고<br>틀린 이유를 복습해요.</p><small>신입사원 · 문제 준비 중 →</small></button><button type="button" class="asset-card" data-view="invest"><span data-icon="invest"></span><b>모의투자</b><p>직접 선택하고<br>결과와 위험을 비교해요.</p><small>대리부터 · 실습 준비 중 →</small></button></div>
-<h2 class="section-caption">차근차근 넓어지는 판단의 범위</h2><div class="asset-journey"><button type="button" class="journey-btn" data-view="level" data-level="0"><small>LEVEL 01</small><b>신입사원</b><span>기초학습·퀴즈</span></button><button type="button" class="journey-btn" data-view="level" data-level="1"><small>LEVEL 02</small><b>대리</b><span>선택·결과 비교·복기</span></button><button type="button" class="journey-btn" data-view="level" data-level="2"><small>LEVEL 03</small><b>과장</b><span>시장자료·가정 수립</span></button><button type="button" class="journey-btn" data-view="level" data-level="3"><small>LEVEL 04</small><b>팀장</b><span>시나리오·투자 전략</span></button></div><p class="asset-footnote">1~10강을 공부할 수 있어요. 11~20강과 정식 퀴즈·모의투자는 순차적으로 추가됩니다.</p></section>
+<main class="main" id="mainContent"><div class="inner"><div class="mobile-head"><div class="mobile-brand"><div class="asset-brand"><div class="cc-logo" aria-label="척척"><div class="cc-wordmark">척척</div><span class="cc-smile"></span></div><span class="asset-tag">에셋</span></div></div><span class="version">v0.2-C</span></div><div class="asset-topline"><span>부동산 자산운용 학습</span><span class="stage-chip" id="stageProgress">LV.1 · 신입사원 / 학습 시작 전</span></div>
+<section id="view-home" class="view active"><div class="hero"><span class="eyebrow">CHEOKCHEOK ASSET</span><h1 tabindex="-1">배운 개념을,<br>내 투자 판단으로.</h1><p class="lead">기초를 익히고, 가정을 세우고, 선택의 결과를 비교해요.<br>척척 에셋에서 자산운용을 차근차근 연습하세요.</p></div><div class="asset-next"><div><span class="eyebrow">지금 할 일</span><h2 id="homeNextTitle">1강부터 차근차근 시작해요</h2><p id="homeNextCopy">먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.</p></div><button type="button" class="primary" id="homeLearningCta" data-view="learn">학습 시작하기 →</button></div>
+<div class="asset-grid"><button type="button" class="asset-card" data-view="learn"><span data-icon="learn"></span><b>학습하기</b><p>개념과 용어를 익히고<br>숫자 예시로 이해해요.</p><small>신입사원 · 1~20강 순차 학습 →</small></button><button type="button" class="asset-card" data-view="quiz"><span data-icon="quiz"></span><b>퀴즈 풀기</b><p>이해한 내용을 확인하고<br>틀린 이유를 복습해요.</p><small>신입사원 · 문제 준비 중 →</small></button><button type="button" class="asset-card" data-view="invest"><span data-icon="invest"></span><b>모의투자</b><p>직접 선택하고<br>결과와 위험을 비교해요.</p><small>대리부터 · 실습 준비 중 →</small></button></div>
+<h2 class="section-caption">차근차근 넓어지는 판단의 범위</h2><div class="asset-journey"><button type="button" class="journey-btn" data-view="level" data-level="0"><small>LEVEL 01</small><b>신입사원</b><span>기초학습·퀴즈</span></button><button type="button" class="journey-btn" data-view="level" data-level="1"><small>LEVEL 02</small><b>대리</b><span>선택·결과 비교·복기</span></button><button type="button" class="journey-btn" data-view="level" data-level="2"><small>LEVEL 03</small><b>과장</b><span>시장자료·가정 수립</span></button><button type="button" class="journey-btn" data-view="level" data-level="3"><small>LEVEL 04</small><b>팀장</b><span>시나리오·투자 전략</span></button></div><p class="asset-footnote">1~20강과 각 강의 요약·쉬운 설명·복습을 이용할 수 있어요. 정식 퀴즈·승급·모의투자는 다음 단계에서 추가됩니다.</p></section>
 <section id="view-learn" class="view" hidden></section><section id="view-quiz" class="view" hidden></section>
 <section id="view-invest" class="view" hidden><header class="page-head"><span class="eyebrow">INVESTMENT PRACTICE</span><h1 tabindex="-1">모의투자</h1><p>내 판단을 기록하고, 그 판단이 결과에 미친 영향을 확인해요.</p></header><div class="asset-panel"><span class="status-label">준비 중 · 대리부터 시작</span><h2>직접 판단하는 투자 연습</h2><p>가상 부동산의 조건을 읽고 투자 여부와 운영 전략을 정할 거예요.<br>선택에 따른 좋은 영향과 나쁜 영향을 함께 비교하고 복기합니다.</p><div class="flow-list"><div><small>01 · 판단</small><b>선택과 이유 남기기</b></div><div><small>02 · 결과</small><b>현금흐름·수익률·위험 비교</b></div><div><small>03 · 복기</small><b>놓친 위험과 다른 선택 검토</b></div></div><ul><li>대리: 주어진 조건으로 매입·대출·운영·매각 판단</li><li>과장: 비교 자료를 근거로 임대료·공실률·운영비 설정</li><li>팀장: 금리·공실·공사비·매각 조건 변화에 따른 전략 검토</li></ul><button type="button" class="secondary" data-view="level" data-level="1">레벨별 연습 구성 보기 →</button><p class="asset-footnote">4단계 업데이트부터 투자 계산과 실습이 추가됩니다. 초기 실습은 가상 사례를 사용합니다.</p></div></section>
 <section id="view-level" class="view" hidden><header class="page-head"><span class="eyebrow">LEVEL PATH</span><h1 tabindex="-1">내 레벨</h1><p>현재는 LV.1 · 신입사원이에요. 학습 진도와 승급은 별개예요.</p></header><div class="level-note">아래 버튼은 레벨별 구성 미리보기예요. 상위 레벨을 살펴봐도 실제 레벨이나 진도는 바뀌지 않아요.</div><div class="asset-tabs" role="group" aria-label="레벨별 구성 미리보기"><button type="button" data-preview-level="0" aria-pressed="true">신입사원</button><button type="button" data-preview-level="1" aria-pressed="false">대리</button><button type="button" data-preview-level="2" aria-pressed="false">과장</button><button type="button" data-preview-level="3" aria-pressed="false">팀장</button></div><div class="asset-panel" aria-live="polite"><div class="level-heading"><span class="level-number" id="levelNumber">01</span><h2 id="levelName">LV.1 · 신입사원</h2></div><p id="levelMotto" class="level-motto"></p><p id="levelPurpose"></p><ul id="levelFeatures"></ul><span class="status-label">기능 준비 중</span><br><button type="button" class="secondary" id="levelCta">기초학습 구성 보기</button><p class="asset-footnote">승급 후에도 하위 레벨의 수업과 도구를 다시 이용할 수 있도록 구성합니다.</p></div></section>
-<section id="view-roadmap" class="view" hidden><header class="page-head"><span class="eyebrow">UPDATES</span><h1 tabindex="-1">업데이트 안내</h1><p>작동하는 단위로 완성하고, 확인하면서 넓혀가요.</p></header><div class="asset-panel"><h2>첫 버전까지 7단계</h2><ol class="roadmap-list"><li><strong>1</strong><span>기본 화면·블루와 옐로우·4레벨 메뉴</span><em>완료</em></li><li><strong>2</strong><span>20강 학습·요약·저장·순차 해금·복습</span><em>2-B 완료</em></li><li><strong>3</strong><span>퀴즈·해설·승급·오답 복습</span><em>예정</em></li><li><strong>4</strong><span>대리: 모의투자·선택과 결과 비교·복기</span><em>예정</em></li><li><strong>5</strong><span>과장: 비교 사례·가정과 근거 수립</span><em>예정</em></li><li><strong>6</strong><span>팀장: 시나리오·민감도 분석·투자 판단</span><em>예정</em></li><li><strong>7</strong><span>계산·저장·승급·모바일 통합 검증</span><em>예정</em></li></ol><p class="asset-footnote">2-A: 학습 화면과 1~4강 완료 · 2-B: 1~10강·같은 사례로 설명 개선 완료 · 2-C: 11~20강 예정</p><p class="asset-footnote">모의투자 학습의 ‘가정 → 계산 → 민감도 분석·투자 판단’ 3단계와 개발 업데이트 번호는 별개입니다.</p></div></section>
+<section id="view-roadmap" class="view" hidden><header class="page-head"><span class="eyebrow">UPDATES</span><h1 tabindex="-1">업데이트 안내</h1><p>작동하는 단위로 완성하고, 확인하면서 넓혀가요.</p></header><div class="asset-panel"><h2>첫 버전까지 7단계</h2><ol class="roadmap-list"><li><strong>1</strong><span>기본 화면·블루와 옐로우·4레벨 메뉴</span><em>완료</em></li><li><strong>2</strong><span>20강 학습·요약·저장·순차 해금·복습</span><em>2-C 완료</em></li><li><strong>3</strong><span>퀴즈·해설·승급·오답 복습</span><em>예정</em></li><li><strong>4</strong><span>대리: 모의투자·선택과 결과 비교·복기</span><em>예정</em></li><li><strong>5</strong><span>과장: 비교 사례·가정과 근거 수립</span><em>예정</em></li><li><strong>6</strong><span>팀장: 시나리오·민감도 분석·투자 판단</span><em>예정</em></li><li><strong>7</strong><span>계산·저장·승급·모바일 통합 검증</span><em>예정</em></li></ol><p class="asset-footnote">2-A: 학습 화면과 1~4강 완료 · 2-B: 1~10강·같은 사례로 설명 개선 완료 · 2-C: 11~20강·20강 완료 후 복습 안내 완료</p><p class="asset-footnote">모의투자 학습의 ‘가정 → 계산 → 민감도 분석·투자 판단’ 3단계와 개발 업데이트 번호는 별개입니다.</p></div></section>
 </div></main></div><nav class="bottom-nav" aria-label="모바일 주 메뉴"><button type="button" data-nav="home" data-view="home"><span data-icon="home"></span>홈</button><button type="button" data-nav="learn" data-view="learn"><span data-icon="learn"></span>학습</button><button type="button" data-nav="quiz" data-view="quiz"><span data-icon="quiz"></span>퀴즈</button><button type="button" data-nav="invest" data-view="invest"><span data-icon="invest"></span>모의투자</button><button type="button" data-nav="level" data-view="level"><span data-icon="level"></span>내 레벨</button></nav><noscript>화면 이동을 이용하려면 JavaScript를 허용해 주세요.</noscript><script>'use strict';
 // Stable lesson IDs are independent of presentation order and completion records.
 const curriculum = [
@@ -485,6 +488,367 @@ Object.assign(curriculum[9],{
 ,
   sources:[sources.cre,sources.refinance,sources.irr]
 });
+
+Object.assign(curriculum[10],{
+  "sections": [
+    {
+      "title": "짓고 팔면 사업 전체에서 얼마가 남을까요?",
+      "html": "<p>6강의 개발사업을 이어갈게요. <b>땅을 사고 건물을 짓는 데 총 800억</b>이 들고, 완성해서 팔면 1,000억을 받을 것으로 가정해요. 운영 중인 1,000억 건물과는 다른 사업이에요.</p><p><b>어디에 800억을 쓸까요?</b> 토지비 200억, 공사비 450억, 나머지 사업비 150억으로 나눠요. 나머지에는 설계·인허가·판매·금융비용 등을 포함했다고 가정해요.</p><p><b>수입 1,000억 − 비용 800억 = 사업이익 200억.</b> 사업에서 들어올 돈과 들어갈 비용을 항목별로 정리한 표가 사업수지표예요. 실제 매각가가 확정됐다는 뜻은 아니에요.</p><p>처음에는 복잡한 양식보다 <b>“어디서 돈이 들어오고, 무엇에 돈을 쓰지?”</b> 두 질문으로 시작해요. 이 표의 200억은 단순한 세전 사업이익이에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>개념용 단순 예시예요. 법인세 등 세금과 항목별 세부 조건은 생략했어요. 실제로는 부가세·취득 관련 세금·수수료·예비비 등의 반영 기준을 확인하고 비용 중복이나 누락을 점검해야 해요.</p></details>",
+      "check": {
+        "question": "공사비만 50억 늘고 예상 수입이 같다면, 이 사례의 사업이익은 얼마가 될까요?",
+        "answer": "총비용은 850억, 사업이익은 150억이에요. 비용 증가가 남는 돈을 줄여요."
+      }
+    },
+    {
+      "title": "대출 600억은 비용에 또 더할까요?",
+      "html": "<p>총사업비 800억은 <b>투자자 돈 200억 + 대출 600억</b>으로 마련해요. <b>800억 비용에 대출 600억을 또 더하면 될까요?</b></p><p>아니에요. 800억은 돈을 <b>쓰는 곳</b>, 200억과 600억은 돈을 <b>마련하는 곳</b>이에요. 빌린 원금 자체를 사업비에 다시 더하면 같은 자금을 헷갈리게 세요. 대출 이자는 별도 비용이고, 이 예시에서는 나머지 사업비에 포함했어요.</p><p>나중에 1,000억을 받고, 중간 현금 없이 비용 800억이 모두 지급됐다고 해봐요. 대출 원금 600억을 갚으면 투자자에게 400억이 남아요. <b>원래 투자금 200억 + 사업이익 200억</b>이에요.</p><p>여기서는 빌린 원금도 실제로 갚아야 해요. <b>사업이익 계산</b>과 <b>투자자에게 돌아오는 현금 계산</b>에서 서로 다른 자리에 놓는 것뿐이에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>이 예시는 비용이 모두 지급되고 이자가 사업비에 포함되며, 중간 분배·추가 출자·세금·잔여 부채가 없는 가정이에요. 실제 원금 상환은 현금흐름표에서 따로 기록해요.</p></details>",
+      "check": {
+        "question": "투자자에게 돌아올 400억을 전부 이익이라고 불러도 될까요?",
+        "answer": "아니에요. 원래 넣은 200억도 포함돼요. 이 단순 예시의 이익은 200억이에요."
+      }
+    },
+    {
+      "title": "200억 이익이면 돈이 늘 넉넉할까요?",
+      "html": "<p>표에서는 마지막에 200억이 남아요. 그런데 <b>공사비를 내야 하는 달에 매각대금이 아직 안 들어오면요?</b> 이익이 보여도 통장에 돈이 부족할 수 있어요.</p><p>사업수지표는 전체 수입과 비용을 보는 지도예요. 돈이 부족한 날을 찾으려면 <b>언제 받고 언제 내는지</b>를 기간별로 나눠야 해요.</p><p>토지비는 먼저, 공사비는 공정에 따라, 매각대금은 나중에 들어올 수 있어요. 지연이 생기면 그 사이 이자와 필요한 현금이 달라져요.</p><p><b>전체 이익과 기간별 현금을 같이 봐야 해요.</b> 다음 강에서는 익숙한 운영 건물을 이용해 엑셀에 돈의 시간표를 만들 거예요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>회계상 이익과 실제 현금은 기준이 달라요. 수지표·현금흐름표·자금조달 계획을 연결하고, 중간 자금 부족을 추가 출자나 대출로 메우는 조건도 확인해야 해요.</p></details>",
+      "check": {
+        "question": "사업이익이 양수이면 중간에 현금이 모자라는 일은 절대 없을까요?",
+        "answer": "그렇지 않아요. 받을 돈보다 지급할 돈이 먼저 오면 현금 부족이 생길 수 있어요."
+      }
+    }
+  ],
+  "summary": [
+    "사업수지표는 사업 전체에서 들어올 수입과 쓸 비용을 정리한 표예요.",
+    "예상 수입 1,000억에서 총비용 800억을 빼면 세전 사업이익은 200억이에요.",
+    "대출 원금은 자금조달과 상환에 놓아요. 이자 비용과 구분해요.",
+    "전체 이익이 있어도 중간 현금은 부족할 수 있으므로 돈의 시간표도 봐요."
+  ]
+,
+  sources:[sources.cre]
+});
+Object.assign(curriculum[11],{
+  "sections": [
+    {
+      "title": "엑셀은 가정 칸과 계산 칸부터 나눠요",
+      "html": "<p>10강의 운영 건물로 돌아올게요. <b>가격 1,000억, 투자금 300억, 대출 700억, 연 수입 60억, 운영비 10억, 금리 4%</b>예요. 대출은 3년 뒤 매각할 때 갚는다고 가정해요.</p><p><b>금리를 바꾸면 모든 계산을 다시 고쳐야 할까요?</b> 가정을 한곳에 모으고 계산 칸이 그곳을 참조하게 하면 돼요. 엑셀에서 B2에 가격 1000, B3에 대출 700, B4에 수입 60, B5에 운영비 10, B6에 금리 4%, B7에 예상 매각가 1100을 입력해요. 단위는 억 원이에요.</p><p>B8에는 <b>=B2-B3</b>를 넣으면 초기 자기자본 300이에요. 다른 계산 칸에는 4%를 반복해서 적지 않고 <b>$B$6</b>을 참조해요. 금리 가정을 바꾸면 연결된 계산도 바뀌어요.</p><p>이 강의는 <b>네 엑셀에서 따라 만드는 학습</b>이에요. 앱 안에 엑셀 편집기나 실제 투자 모델 자동 생성 기능이 생긴 것은 아니에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>셀 참조의 $는 복사할 때 열·행을 고정하는 표기예요. 모든 금액 단위와 금리·기간 단위를 맞추고, 원금 상환·추가 비용 등 생략 항목을 별도로 표시해요.</p></details>",
+      "check": {
+        "question": "금리를 5%로 바꿀 때 B6만 수정해도 이자 계산이 바뀌게 하려면, 계산식에 무엇을 연결해야 할까요?",
+        "answer": "금리 숫자 4%를 직접 반복하지 않고 B6 셀을 참조해요. 복사할 때 고정하려면 $B$6을 사용해요."
+      }
+    },
+    {
+      "title": "0년부터 3년까지 현금을 한 줄로 놓아요",
+      "html": "<p><b>투자자가 돈을 넣는 날과 받는 날</b>을 나눠볼게요. D10~G10에 0년·1년·2년·3년을 적어요. 0년은 지금이고, 이후 현금은 각 연말이라고 가정해요.</p><p>D11에는 <b>=-$B$8</b>을 넣어 -300을 기록해요. 돈을 낸 것은 음수예요. E11에는 <b>=$B$4-$B$5-$B$3*$B$6</b>을 넣어요. 60−10−28=22예요. 이 식을 F11로 복사하면 2년에도 22예요.</p><p>3년에는 운영 후 현금 22억과 매각 후 현금이 함께 들어와요. G11에는 <b>=$B$4-$B$5-$B$3*$B$6+$B$7-$B$3</b>을 넣어요. 22+1100−700=422예요.</p><p>따라서 지분 현금흐름은 <b>-300 → 22 → 22 → 422</b>예요. 세금·거래비용·수선비 등을 생략한 계산용 예시이고, 대출 원금은 마지막에 한 번만 갚아요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>3년 내내 대출 잔액과 적용 금리가 일정하고 연말 매각을 가정했어요. 실제로는 중간 원금 상환·추가 출자·분배·세금·비용·유보 현금과 날짜를 반영해야 해요.</p></details>",
+      "check": {
+        "question": "G11의 422억에는 마지막 해 운영 현금 22억도 들어 있을까요?",
+        "answer": "네. 그해 운영 현금 22억과 매각가 1,100억에서 대출 700억을 뺀 400억을 합친 금액이에요."
+      }
+    },
+    {
+      "title": "함수를 넣기 전에 표가 맞는지 확인해요",
+      "html": "<p>이제 <b>=IRR(D11:G11)</b>을 입력하면 이 1년 간격 지분 현금흐름의 연 IRR을 계산할 수 있어요. 숫자가 나왔다고 가정까지 맞는 것은 아니에요.</p><p><b>현재가치도 보고 싶다면요?</b> B9에 설명용 할인율 10%를 넣고 <b>=NPV($B$9,E11:G11)+D11</b>로 계산해요. NPV 함수 안에는 미래 연말 현금을 넣고, 지금 낸 -300은 밖에서 더해요.</p><p>먼저 0년의 -300, 매년 이자 28, 마지막 상환 700이 맞는지 확인해요. 매각대금이 두 번 들어가거나, 원금 상환이 빠지면 수익률이 잘못 높아질 수 있어요.</p><p><b>함수는 입력된 시간표를 계산할 뿐</b>이에요. 임대수입·매각가·비용의 근거를 대신 검증하지는 않아요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>IRR과 NPV는 일정한 기간 간격을 전제로 해요. 날짜가 불규칙하면 XIRR·XNPV 등을 검토해요. 할인율은 지분 현금흐름에 맞는 기준이어야 하며, 10%는 실제 요구 수익률을 제안하는 값이 아니에요.</p></details>",
+      "check": {
+        "question": "지금 낸 -300억을 미래 현금과 함께 NPV 함수 안에 넣으면 같은 시점으로 계산될까요?",
+        "answer": "아니에요. 이 예시에서는 지금 현금 D11을 함수 밖에서 더해야 해요. NPV의 첫 값은 한 기간 뒤 현금으로 취급돼요."
+      }
+    }
+  ],
+  "summary": [
+    "가정은 한곳에 입력하고 계산식이 그 셀을 참조하게 만들어요.",
+    "돈을 넣으면 음수, 받으면 양수로 기간별 현금을 기록해요.",
+    "이 단순 지분 예시의 현금흐름은 -300·22·22·422억이에요.",
+    "IRR·NPV 결과 전에 날짜·원금 상환·매각대금·빠진 비용부터 확인해요."
+  ]
+,
+  sources:[sources.irr,sources.npv,sources.cre]
+});
+Object.assign(curriculum[12],{
+  "sections": [
+    {
+      "title": "인근 월세를 보면 그대로 써도 될까요?",
+      "html": "<p>네가 물었던 임대료 예측부터 볼게요. <b>인근 비슷한 건물 사례가 중요한 출발점</b>이에요. 그런데 바로 옆 건물이라고 같은 월세를 받을 수 있을까요?</p><p>위치·연식·층·면적·시설·용도·세입자 조건이 다르면 임대료도 달라져요. 면적 기준이 같은지, 관리비를 포함했는지, 광고 호가인지 실제 계약인지도 봐요.</p><p>가상 비교 사례 A는 같은 면적 기준으로 월 3만 원/㎡, B는 2.8만 원/㎡라고 해봐요. B의 시설이 우리 건물과 더 비슷하다면 A와 B를 무조건 평균내기보다 <b>어느 사례를 왜 더 참고했는지</b> 적어요.</p><p>무료 임대 기간이나 보증금 조건도 비교해야 해요. <b>자료 → 비교 가능한지 확인 → 차이 조정 → 가정과 이유 기록</b>이 예측의 첫 흐름이에요. 실제 자료 수집·자동 예측 기능은 뒤 단계에서 만들 예정이에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>보증금·렌트프리·임대 기간·인상 조건에 따라 실질 임대수익이 달라져요. 단순 평균이 항상 적절하지 않으며, 표본이 부족하면 가정 범위를 넓혀 검토해야 해요.</p></details>",
+      "check": {
+        "question": "광고에 적힌 월세와 실제 계약 월세를 같은 확정 자료로 취급해도 될까요?",
+        "answer": "아니에요. 호가와 계약 자료를 구분하고, 면적·관리비·무료 임대 기간 등 비교 조건도 확인해야 해요."
+      }
+    },
+    {
+      "title": "빈 사무실이 10%라면 수입은 얼마일까요?",
+      "html": "<p>앞 강에서는 실제 받을 운영 수입을 60억으로 정했어요. 이번에는 구분해서 <b>모든 공간이 임대되면 받을 연 임대료가 60억</b>인 별도 예시로 볼게요.</p><p><b>공실 영향으로 10%를 못 받으면요?</b> 임대료 수입은 60억 × 90% = 54억이에요. 여기서는 모든 공간의 임대료가 같고, 1년 내내 같은 공실이라고 단순화해요.</p><p>운영비 10억을 빼면 <b>NOI 44억</b>이에요. 공실이 20%라면 수입 48억, NOI 38억이에요. 빈 공간이 늘면 운영 수익이 줄어요.</p><p>실제 공실은 단순한 한 숫자보다 <b>어느 공간이 언제 비고, 언제 새 세입자가 들어오는지</b>를 봐야 해요. 면적 기준 공실률과 못 받은 임대료 비율도 항상 같지는 않아요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>실무에서는 계약 만기·면적별 임대료·재임대 기간·미수·렌트프리 등을 기간별로 반영해요. 면적 공실률을 전체 수입에 곱하는 단순식은 임대료가 같은 이번 가정에서만 사용해요.</p></details>",
+      "check": {
+        "question": "연 잠재 임대료 60억에서 공실 영향 10%를 빼고 운영비 10억을 내면 NOI는 얼마일까요?",
+        "answer": "60×90%−10=44억이에요. 여기서 60억은 공실 차감 전 잠재 임대료라는 점을 기억해요."
+      }
+    },
+    {
+      "title": "공실이면 운영비도 똑같이 줄까요?",
+      "html": "<p>빈 사무실이 늘면 월세가 줄어요. <b>청소·보안·시설 관리비도 같은 비율로 줄어들까요?</b> 건물을 유지하는 기본 비용은 계속 들 수 있어요.</p><p>그래서 운영비는 관리 계약·과거 지출·비슷한 건물 자료를 보고, 기본적으로 드는 비용과 사용량에 따라 바뀌는 비용을 나눠봐요.</p><p>이 예시에서 수입 54억, 운영비 10억이면 NOI 44억이에요. 운영비가 12억으로 늘면 <b>NOI는 42억</b>이에요. 같은 월세라도 비용 가정이 결과를 바꿔요.</p><p>큰 수리비는 일상 운영비와 따로 놓아볼게요. <b>운영비와 큰 수리비를 둘 다 현금흐름에 넣되, 같은 돈을 두 번 빼지 않도록</b> 기준을 정해요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>임대차와 관리 계약에 따라 임차인 부담 비용·회수 가능한 비용이 달라요. 과거 비용에는 일회성 항목이 섞일 수 있어요. CAPEX와 운영비 분류는 실제 자료 기준을 확인해요.</p></details>",
+      "check": {
+        "question": "공실이 늘었다고 운영비 10억도 무조건 같은 비율로 줄여도 될까요?",
+        "answer": "아니에요. 기본 관리비·보안 등 계속 드는 비용과 변하는 비용을 구분해야 해요."
+      }
+    }
+  ],
+  "summary": [
+    "인근 사례는 출발점이에요. 위치·시설·면적·실제 계약 조건을 맞춰 비교해요.",
+    "잠재 임대료와 공실 차감 후 수입을 구분해 공실을 두 번 빼지 않아요.",
+    "잠재 60억·공실 영향 10%·운영비 10억이면 NOI는 44억이에요.",
+    "공실이 늘어도 기본 운영비가 남을 수 있고, 큰 수리비는 따로 확인해요."
+  ]
+,
+  sources:[sources.cre]
+});
+Object.assign(curriculum[13],{
+  "sections": [
+    {
+      "title": "44억을 버는 건물의 가격을 추정해요",
+      "html": "<p>13강의 건물에서 연 NOI를 44억으로 가정했어요. <b>이 건물에 얼마를 낼지 어떻게 생각할까요?</b> 먼저 운영 수익과 가격의 비율을 연결해요.</p><p>시장 자료 등을 검토해 적용 Cap Rate를 5.5%라고 가정하면 <b>44억 ÷ 5.5% = 800억</b>이에요. 수익을 기준으로 한 하나의 가격 추정이에요.</p><p>5%를 적용하면 880억, 6%면 약 733.3억이에요. 같은 건물이어도 <b>NOI와 적용 비율의 근거</b>가 달라지면 계산한 값이 달라져요.</p><p>제목의 매입가격 산정은 실제 투자에 쓰는 판단 방법을 익힌다는 뜻이에요. 이 건물과 가격은 모두 <b>가상 자료</b>이며 실제 감정평가나 추천 매입가가 아니에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>직접환원은 수입의 안정성과 NOI·Cap Rate의 기준을 함께 확인해야 해요. 일시적 공실이나 미래 수선비가 큰 자산은 현금흐름 모델 등 다른 검토도 필요해요.</p></details>",
+      "check": {
+        "question": "NOI 44억이 같다면 Cap Rate를 5.5%보다 높게 적용할 때 계산한 가치는 올라갈까요?",
+        "answer": "낮아져요. 같은 수익을 더 높은 비율로 나누면 지불할 가격이 작아져요."
+      }
+    },
+    {
+      "title": "옆 건물 거래가격과도 맞춰봐요",
+      "html": "<p>수익으로 계산한 가격이 800억이에요. 주변 거래를 봤더니 비슷한 면적 건물이 750억, 850억에 팔렸다는 가상 자료가 있어요.</p><p><b>평균이 800억이니 검토가 끝났을까요?</b> 건물 연식·위치·임대율·수리 상태·계약 시점이 다르면 거래가격도 달라져요. 면적과 가격 기준부터 맞춰봐요.</p><p>850억 건물에 더 좋은 세입자와 긴 임대 계약이 있었는지, 750억 건물에 큰 수리가 필요했는지 질문해요. 차이를 설명할 수 있어야 우리 건물에 참고할 수 있어요.</p><p><b>수익 기준 값과 거래 사례를 서로 점검</b>하는 거예요. 두 숫자가 다르면 억지로 같게 만들지 말고 어떤 가정이나 조건이 다른지 찾아요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>면적 기준·거래 구조·시점·세금과 비용 포함 여부를 맞춰 비교해요. 호가와 거래가격도 다르며 표본이 적으면 확정값보다 범위로 검토하는 것이 도움이 돼요.</p></details>",
+      "check": {
+        "question": "비슷한 두 거래의 평균값만으로 우리 건물 가격을 확정해도 될까요?",
+        "answer": "아니에요. 거래 시점과 건물·임대차·수선 조건의 차이를 조정하거나 설명해야 해요."
+      }
+    },
+    {
+      "title": "800억 가치면 800억 전부를 내도 될까요?",
+      "html": "<p>계산한 건물 가치가 800억이라고 해요. 그런데 매입과 거래 비용이 20억이고, 인수 직후 수리에 30억이 필요하다고 별도로 가정해요.</p><p><b>건물값 800억만 있으면 살 수 있을까요?</b> 아니에요. 매입가격이 800억이면 초기 필요 현금 총액은 <b>800+20+30=850억</b>이에요. 대출과 자기자본을 합쳐 마련할 금액이에요.</p><p>초기 전체 지출을 800억 안으로 제한한다고 정했다면, 이 단순 계산에서 매입가격에 쓸 수 있는 금액은 <b>800−20−30=750억</b>이에요.</p><p>그래서 <b>추정 가치, 계약 매입가격, 전체 필요 자금</b>을 따로 봐요. 감당 가능한 가격은 비용·대출·요구 수익·위험도 함께 검토해야 정할 수 있어요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>수선비가 이미 NOI·평가가격 등에 반영됐는지 확인해 중복 차감을 피해야 해요. 취득 관련 세금·금융비용·추가 현금 등을 빠뜨리지 말고, 조건별 현금흐름과 수익률로도 매입가를 검토해요.</p></details>",
+      "check": {
+        "question": "가격 800억, 별도 비용 20억, 즉시 수리비 30억이면 초기 전체 자금은 얼마일까요?",
+        "answer": "850억이에요. 건물의 계약 가격 외 지출도 필요해요."
+      }
+    }
+  ],
+  "summary": [
+    "NOI 44억에 Cap Rate 5.5%를 가정하면 수익 기준 추정 가치는 800억이에요.",
+    "주변 거래는 건물·임대차·수선·시점의 차이를 맞춰 참고해요.",
+    "계산한 가치와 계약가격, 실제 마련해야 할 전체 자금은 달라요.",
+    "거래·수리 비용과 대출 조건까지 넣어 감당 가능한 가격을 검토해요."
+  ]
+,
+  sources:[sources.cre]
+});
+Object.assign(curriculum[14],{
+  "sections": [
+    {
+      "title": "공사비 30억을 줄이면 어떻게 달라지나요?",
+      "html": "<p>11강의 개발사업으로 돌아와요. 예상 수입 1,000억, 토지비 200억, 공사비 450억, 나머지 사업비 150억으로 총 800억이었죠.</p><p><b>필요한 성능을 유지하면서 공사비를 420억으로 낮추면요?</b> 다른 조건이 같을 때 총비용은 770억, 단순 세전 사업이익은 <b>230억</b>이에요. 원래보다 30억 늘어요.</p><p>이런 검토에서 비용 대비 필요한 기능과 가치를 함께 높이는 접근을 <b>VE, 가치공학</b>이라고 이해해요. 단순히 싼 자재로 바꾸는 것과는 달라요.</p><p><b>절감한 30억이 일정·품질·운영비를 악화시키지 않는지</b>도 봐야 해요. 네 설계 경험의 대안 비교를 사업 결과로 연결하는 부분이에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>VE의 세부 절차와 계약 기준은 프로젝트마다 달라요. 법규·안전·성능 조건을 먼저 충족해야 하며, 생애주기 비용과 사용자 요구도 함께 검토해요.</p></details>",
+      "check": {
+        "question": "공사비 30억을 줄였지만 필요한 성능을 충족하지 못한다면 좋은 VE라고 볼 수 있을까요?",
+        "answer": "아니에요. 필요한 기능과 품질·안전 등을 충족하면서 전체 가치를 검토해야 해요."
+      }
+    },
+    {
+      "title": "설계 변경으로 반년 늦어진다면요?",
+      "html": "<p>공사비 30억을 줄인 대안에 검토 시간이 더 필요해서, 사업이 6개월 늦어진다고 가정해요. <b>절감액 30억을 그대로 이익에 더해도 될까요?</b></p><p>6강처럼 지연 기간 대출 잔액 600억, 연 금리 6%가 같다면 추가 이자는 18억이에요. 비용 770억에 더하면 <b>788억</b>이에요.</p><p>수입 1,000억이 같다면 단순 사업이익은 <b>212억</b>이에요. 원래 200억보다 12억 늘었지만, 230억 그대로는 아니에요.</p><p>이 계산에서도 매각 지연의 추가 위험과 다른 지연 비용은 생략했어요. <b>절감 → 일정 영향 → 금융비용 → 회수 시점</b>까지 이어서 비교해요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>6개월 추가 이자는 잔액과 금리가 일정한 단순 가정이에요. 보유비용·분양 및 매각 지연·추가 자금·대출 만기 등은 별도 검토하고, 수익률은 변경된 현금흐름으로 다시 계산해요.</p></details>",
+      "check": {
+        "question": "30억 절감에 추가 이자 18억이 생겼다면, 이 두 변화만 비교한 순절감액은 얼마일까요?",
+        "answer": "12억이에요. 다른 지연 비용과 위험이 있다면 실제 효과는 더 달라질 수 있어요."
+      }
+    },
+    {
+      "title": "이익 200억과 수익률 25%는 같은 말일까요?",
+      "html": "<p>원래 수입 1,000억, 비용 800억이면 이익은 200억이에요. 총사업비에 비해 이익은 <b>200÷800=25%</b>예요.</p><p><b>그러면 연 IRR도 25%일까요?</b> 아니에요. 25%는 이 예시에서 정한 “사업이익 ÷ 총사업비” 비율이고, 시간이 들어 있지 않아요.</p><p>투자자 연 IRR은 자기 돈을 언제 얼마 넣고, 언제 얼마 받는지로 계산해요. 대출·추가 출자·중간 분배·회수 시점에 따라 달라져요.</p><p>그래서 대안을 비교할 때 <b>총이익, 비교 기준이 적힌 비율, 기간별 현금과 IRR</b>을 나눠요. 하나가 좋아졌다고 나머지도 반드시 좋아지는 것은 아니에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>이 25%는 총사업비 대비 단순 이익 비율이며 매출 기준 이익률이나 지분 IRR과 달라요. 세금 등을 생략한 예시이고, 비율을 보고할 때 분자·분모·기간을 반드시 밝히세요.</p></details>",
+      "check": {
+        "question": "사업이익을 총사업비로 나눈 25%를 연 수익률이라고 그대로 말해도 될까요?",
+        "answer": "아니에요. 기간을 반영하지 않은 단순 사업 비율이에요. 연 IRR을 알려면 시점별 투자와 회수금이 필요해요."
+      }
+    }
+  ],
+  "summary": [
+    "VE는 필요한 기능과 가치를 함께 보며 비용 대안을 비교하는 접근이에요.",
+    "30억 절감에 추가 이자 18억이 생기면, 두 변화의 순효과는 12억이에요.",
+    "설계·공정 변경은 금융비용과 돈을 받는 날짜에도 영향을 줄 수 있어요.",
+    "사업이익·사업비 대비 비율·투자자 연 IRR은 다른 숫자예요."
+  ]
+,
+  sources:[sources.cre,sources.irr]
+});
+Object.assign(curriculum[15],{
+  "sections": [
+    {
+      "title": "같은 사업에 돈을 내도 순서가 다를 수 있어요",
+      "html": "<p>이번에는 회수 순서를 보려고 <b>총자금 800억인 별도 PF 구조</b>를 만들게요. 선순위 대출 500억, 중순위 대출 100억, 후순위 대출 100억, 자기자본 100억이에요.</p><p><b>같은 사업에 들어간 돈이면 모두 동시에 돌려받을까요?</b> 이 수업에서는 계약상 선순위 → 중순위 → 후순위 대출 → 자기자본 순서로 회수한다고 정해요.</p><p>선순위는 약정한 순서에서 먼저 회수하는 쪽, 후순위는 앞선 채권을 갚은 뒤 회수하는 쪽이에요. <b>후순위 대출도 빌린 돈</b>이고 자기자본과 같지는 않아요.</p><p>앞의 200억 자기자본·600억 대출 개발 예시와 자금 구조가 달라요. 지금은 금리보다 <b>“돈이 부족하면 누가 먼저 못 받지?”</b>를 보려는 예시예요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>실제 회수는 담보·법적 권리·채권자 간 약정·비용 등에 따라 달라져요. 여기서 정한 순서는 교육용 약정이며 법률상 모든 채권의 순서를 설명하는 것은 아니에요.</p></details>",
+      "check": {
+        "question": "후순위 대출은 자기자본과 동일한 돈일까요?",
+        "answer": "아니에요. 후순위도 대출 계약의 원금·이자 권리가 있는 빌린 돈이에요. 앞선 대출보다 회수 순서가 뒤라는 뜻이에요."
+      }
+    },
+    {
+      "title": "650억만 회수하면 누가 얼마를 받을까요?",
+      "html": "<p>사업에서 나눠줄 수 있는 돈이 <b>650억</b>뿐이라고 해봐요. 이 예시에서는 이자와 회수비용을 빼고 원금 순서만 계산해요.</p><p>먼저 선순위 500억을 줘요. 150억이 남아요. 다음 중순위 100억을 주면 50억이 남아요.</p><p>후순위는 받을 원금 100억 중 <b>50억만</b> 받아요. 자기자본에 돌아갈 돈은 0이에요. <b>500 → 100 → 50 → 0</b>으로 나눠지는 거예요.</p><p>총 회수액이 550억이면 선순위 500억, 중순위 50억, 후순위와 자기자본은 0이에요. 회수액이 더 줄면 선순위도 손실을 볼 수 있어요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>실제 순서에는 이자·수수료·집행 비용·우선권 등도 반영돼요. 채권 금액과 분배 가능한 돈의 범위를 먼저 맞추고, “선순위라 무조건 안전하다”고 단정하지 않아요.</p></details>",
+      "check": {
+        "question": "650억을 회수하는 이 약정에서 후순위가 원금 100억을 전부 받을 수 있을까요?",
+        "answer": "아니에요. 선순위와 중순위에 600억을 지급한 뒤 50억만 남아요. 후순위 원금도 50억 손실이에요."
+      }
+    },
+    {
+      "title": "뒤에 서는 돈은 무엇을 더 확인할까요?",
+      "html": "<p>후순위에게 더 높은 약정 금리를 제시하는 구조가 있을 수 있어요. <b>금리가 높으면 그만큼 확실히 벌까요?</b> 받기 전에 앞선 채권이 먼저 상환돼야 할 수 있어요.</p><p>따라서 약정 금리와 실제 회수 가능성은 나눠봐요. 사업이 예상보다 덜 벌거나 매각이 늦어지면 후순위가 먼저 영향을 받을 수 있어요.</p><p>선순위도 담보가 얼마나 되는지, 만기에 갚을 수 있는지, 보증이나 추가 자금의 조건이 무엇인지 확인해야 해요.</p><p><b>어디에 서서, 무엇으로, 언제 돈을 받을지</b>를 함께 보는 것이 PF 구조 검토예요. 높은 숫자 하나보다 손실과 상환 조건을 봐요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>약정 금리와 순위의 관계는 계약과 시장에 따라 달라요. 선·중·후순위 이름만으로 위험을 전부 설명할 수 없고, 담보·보증·만기·채권자 간 약정을 함께 검토해야 해요.</p></details>",
+      "check": {
+        "question": "후순위 약정 금리가 높다는 이유만으로 실제 투자 수익도 더 높다고 확정할 수 있을까요?",
+        "answer": "아니에요. 약속된 이자와 실제 회수는 달라요. 회수 순서와 사업의 상환 재원·조건을 봐야 해요."
+      }
+    }
+  ],
+  "summary": [
+    "선·중·후순위는 약정에서 돈을 회수하는 순서와 연결돼요.",
+    "후순위 대출도 빌린 돈이며 자기자본과는 달라요.",
+    "이 예시에서 650억은 선순위 500억·중순위 100억·후순위 50억으로 나뉘어요.",
+    "약정 금리와 실제 회수는 달라요. 선순위도 손실 가능성이 있어요."
+  ]
+,
+  sources:[sources.cre]
+});
+Object.assign(curriculum[16],{
+  "sections": [
+    {
+      "title": "제안서의 60억 수입을 무엇으로 확인하나요?",
+      "html": "<p>다시 운영 건물의 제안서예요. 연 수입 60억이라고 적혀 있어요. <b>어떤 자료를 봐야 그 숫자를 믿을 수 있을까요?</b></p><p>세입자 목록, 임대차 계약, 실제 입금과 미수 자료를 연결해봐요. 계약한 월세와 실제 들어온 돈이 다를 수 있어요.</p><p>시설 상태와 큰 수리 필요성, 권리 관계, 인허가와 사용 조건, 비용 자료도 확인해요. 여러 분야의 사실과 위험을 확인하는 실사가 <b>DD</b>였죠.</p><p>자료가 없으면 “문제 없음”으로 쓰지 않아요. <b>확인된 사실, 앞으로의 가정, 아직 확인 못 한 것</b>을 나눠 남겨요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>실사 범위와 전문가는 사업과 계약에 맞게 정해요. 등기·법률·세무·환경·기술 등 전문 검토를 필요에 따라 연결하며, 교육용 체크리스트가 실제 실사를 대신하지 않아요.</p></details>",
+      "check": {
+        "question": "임대차 계약만 있고 실제 입금 자료가 없다면 수입이 전부 들어왔다고 확정해도 될까요?",
+        "answer": "아니에요. 계약상 받을 돈과 실제 입금·미수는 구분해서 확인해야 해요."
+      }
+    },
+    {
+      "title": "큰 수리가 발견되면 어떻게 판단에 넣나요?",
+      "html": "<p>시설 검토에서 큰 수리에 30억이 필요할 수 있다는 의견이 나왔어요. <b>“시설 문제 있음” 한 줄로 끝내면 될까요?</b></p><p>우선 견적의 범위와 금액 근거를 확인해요. 꼭 필요한 공사인지, 언제 해야 하는지, 세입자 이용을 막거나 월세를 줄이는지도 봐요.</p><p>30억이 추가 현금 지출이라면 모델에 넣고, 수입 중단이나 일정 지연도 해당 기간에 반영해요. 가격 조정, 판매자의 보수, 확인 전 보류 같은 조건을 검토할 수 있어요.</p><p>이렇게 <b>발견한 사실 → 비용·일정·수입 영향 → 대응과 투자 조건</b>을 연결해요. 기술 검토가 투자 판단에 쓰이는 흐름이에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>수리비와 수입 영향이 기존 평가·예산에 이미 반영됐는지 확인해요. 계약 조건·보수 완료 기준·책임 분담은 실제 협의와 전문 검토가 필요해요.</p></details>",
+      "check": {
+        "question": "수리비를 가격에서 조정하고 모델에서도 동일한 효과를 다시 빼면 괜찮을까요?",
+        "answer": "중복 반영인지 확인해야 해요. 누가 언제 실제 부담하는 비용인지와 매입가격 조정의 효과를 구분해요."
+      }
+    },
+    {
+      "title": "투자위원회에는 무엇을 설명해야 할까요?",
+      "html": "<p>검토 결과를 투자위원회에 가져간다고 해봐요. <b>좋은 점만 모아 설명하면 충분할까요?</b> 결정에 필요한 위험과 미확인 사항도 보여줘야 해요.</p><p>“이 가격에 살 이유”, “수입과 비용의 근거”, “만기 상환 방법”, “불리한 조건에서의 결과”, “필요한 계약 조건”을 연결해요.</p><p>결론은 투자뿐 아니라 조건부 투자·보류·포기도 가능해요. 예를 들어 추가 자료가 없으면 보류하고, 수리가 완료되고 예산 조건을 충족하면 다시 심사하는 식이에요.</p><p><b>누가 어떤 자료를 언제 확인하고, 그 결과에 따라 결론이 어떻게 바뀌는지</b>까지 적으면 결정 후 할 일도 분명해져요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>실제 투자위원회의 권한·절차·의결 조건은 회사 규정과 상품 구조에 따라 달라요. 여기서는 검토 논리의 구성을 배우며 실제 승인 절차를 재현하지 않아요.</p></details>",
+      "check": {
+        "question": "아직 확인하지 못한 중요한 위험이 있다면, 승인 자료에서 빼도 될까요?",
+        "answer": "아니에요. 미확인 사실과 영향, 확인 책임자·기한·투자 조건을 밝혀야 검토와 의사결정이 가능해요."
+      }
+    }
+  ],
+  "summary": [
+    "실사는 제안서 숫자를 계약·입금·시설 등 자료로 확인하는 과정이에요.",
+    "사실·가정·미확인 사항을 나누고 자료가 없으면 모른다고 표시해요.",
+    "발견한 문제는 비용·일정·수입·대응 조건으로 옮겨요.",
+    "투자위원회에는 장점과 위험, 결론을 바꿀 조건 및 후속 확인도 설명해요."
+  ]
+,
+  sources:[sources.cre]
+});
+Object.assign(curriculum[17],{
+  "sections": [
+    {
+      "title": "금리만 바꿔서 얼마나 달라지는지 봐요",
+      "html": "<p>13강의 별도 공실 예시를 이어갈게요. 잠재 임대료 60억, 공실 영향 10%, 운영비 10억이면 <b>NOI 44억</b>이에요. 대출은 700억이라고 가정해요.</p><p><b>다른 조건은 그대로 두고 적용 금리만 4%에서 5%로 바꾸면요?</b> 이자는 28억에서 35억으로 늘어요. 이자 차감 후 현금은 16억에서 9억으로 줄어요.</p><p><b>한 조건만 바꿔 결과가 얼마나 움직이는지</b> 보는 것이 민감도 분석의 첫 방법이에요. 금리 1%p 변화에 연 현금이 7억 줄어든 거예요.</p><p>이번에는 공실이나 수입이 함께 바뀐 것이 아니에요. 변수를 하나만 바꿔야 이 차이가 어디서 생겼는지 알 수 있어요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>잔액과 적용 금리의 변화를 가정한 계산이에요. 고정금리 계약은 현재 이자가 그대로일 수 있고, 원금·세금·수리비 등은 이자 후 현금에서 추가로 반영해야 해요.</p></details>",
+      "check": {
+        "question": "NOI 44억과 대출 700억이 같을 때 금리 4%→5% 변화로 이자 후 현금은 얼마나 줄까요?",
+        "answer": "7억 줄어요. 이자가 28억에서 35억으로 늘어 현금은 16억에서 9억이 돼요."
+      }
+    },
+    {
+      "title": "공실과 금리가 함께 나빠지면요?",
+      "html": "<p>기준은 NOI 44억, 금리 4%일 때 이자 후 현금 16억이에요. 이번에는 <b>공실 영향 20%와 금리 5%</b>가 동시에 생긴다고 가정해요.</p><p>잠재 60억 중 80%를 받으면 48억이에요. 운영비 10억을 빼면 NOI 38억이고, 이자 35억을 내면 <b>3억</b>이 남아요.</p><p>기준 16억에서 3억으로 줄었어요. <b>공실 영향으로 6억, 금리 영향으로 7억</b>이 줄어 합계 13억 차이예요. 이 단순식에서는 두 영향이 이렇게 더해져요.</p><p>여러 조건을 함께 바꾼 상황은 시나리오로 봐요. <b>3억이 남아도 큰 수리·세금·원금 지출을 감당할 수 있는지는 아직 모른다</b>는 점까지 읽어요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>일반 모델에서는 변수들이 서로 영향을 주거나 비선형으로 움직여 영향이 단순 합계가 아닐 수 있어요. 공실·금리·비용·매각가·시점을 함께 변경한 현금흐름으로 상환 가능성을 검토해요.</p></details>",
+      "check": {
+        "question": "공실 영향 20%, 운영비 10억, 대출 700억, 금리 5%이면 이자 후 현금은 얼마일까요?",
+        "answer": "60×80%−10−700×5%=3억이에요. 다른 현금 지출을 빼기 전 금액이에요."
+      }
+    },
+    {
+      "title": "공사비 변화도 같은 방식으로 비교해요",
+      "html": "<p>이제 개발사업으로 돌아가요. 11강의 예상 수입 1,000억과 총비용 800억에서 이익은 200억이었죠. <b>공사비 450억이 10% 늘면요?</b></p><p>공사비 증가액은 45억이에요. 다른 조건이 같으면 총비용 845억, 단순 사업이익은 <b>155억</b>이에요. 공사비 10% 상승이 이익도 10% 감소라는 뜻은 아니에요.</p><p>여기에 15강의 지연 추가 이자 18억도 함께 생긴다면 비용 863억, 이익 137억이에요. 실제 지연은 매각 수입이나 다른 비용도 바꿀 수 있어요.</p><p>결과를 비교한 뒤 <b>어느 조건에서 추가 자금이 필요하고, 어느 조건에서 보류할지</b> 정해요. 민감도 분석은 미래를 맞히는 기능이 아니라 판단이 버티는 조건을 찾는 연습이에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>가격·금액의 10% 변화와 금리의 1%p 변화는 다른 단위예요. 비용 증가가 대출 잔액·이자·추가 출자에 미치는 영향까지 반영하면 단순 계산과 결과가 달라질 수 있어요.</p></details>",
+      "check": {
+        "question": "450억 공사비가 10% 늘면, 총사업비 800억에 10%를 곱해 80억을 더해도 될까요?",
+        "answer": "아니에요. 바꾼 항목은 공사비 450억이므로 45억을 더해 총 845억이에요."
+      }
+    }
+  ],
+  "summary": [
+    "민감도 분석은 먼저 한 조건만 바꿔 결과 차이를 확인해요.",
+    "공실·금리 등 여러 악재를 함께 바꾸는 시나리오도 비교해요.",
+    "공사비 450억의 10% 증가는 45억이지 총사업비의 10%가 아니에요.",
+    "불리한 조건의 현금·추가 자금·상환을 보고 판단을 바꿀 기준을 세워요."
+  ]
+,
+  sources:[sources.cre,sources.refinance]
+});
+Object.assign(curriculum[18],{
+  "sections": [
+    {
+      "title": "이 건물에 투자할 이유를 한 줄로 말해요",
+      "html": "<p>검토한 건물을 투자자에게 설명하려고 해요. <b>“좋은 입지의 우량 자산”이라고만 쓰면 충분할까요?</b> 어떤 자료가 있고 그 자료가 어떻게 수익으로 이어지는지 보여줘야 해요.</p><p>예를 들어 “확인된 임대 계약이 예상 운영 수입을 뒷받침하고, 제안 가격과 비용 조건에서 목표 현금을 검토할 수 있다”처럼 <b>근거와 투자 조건</b>을 연결해요. 실제 자료가 없다면 확인됐다고 쓰지 않아요.</p><p>이 투자 이유와 숫자·위험·조건을 정리하는 문서가 <b>IM, 투자제안서</b>예요. 말이 멋진 것보다 근거를 되짚을 수 있는 것이 중요해요.</p><p>“무엇이 좋아서”와 함께 <b>“어떤 가격과 조건에서”</b>를 붙여요. 같은 건물도 너무 비싸거나 대출 만기가 맞지 않으면 판단이 바뀔 수 있어요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>IM의 구성과 표현·공시 요건은 실제 상품과 회사·규정에 따라 달라요. 이 강의는 교육용 제안 논리 연습이고 실제 모집·판매 문서를 만드는 것은 아니에요.</p></details>",
+      "check": {
+        "question": "자료를 확인하지 않았는데 “안정적인 월세가 보장된다”고 써도 될까요?",
+        "answer": "안 돼요. 확인된 계약·실제 수입과 미래 가정을 구분하고, 보장되지 않은 수입을 확정 표현하지 않아요."
+      }
+    },
+    {
+      "title": "표의 숫자 옆에 근거와 가정을 붙여요",
+      "html": "<p>IM에 NOI 44억이라고 적었어요. <b>읽는 사람이 어떻게 그 숫자를 확인할까요?</b> 13강처럼 잠재 수입 60억, 공실 영향 10%, 운영비 10억의 계산과 각 근거를 붙여요.</p><p>단위는 억 원, 기간은 연간, 공실은 단순 수입 차감 가정이라고 밝혀요. 대출 700억과 금리 4%면 이자 후 16억이라는 연결도 보여줘요.</p><p>기준 결과 옆에는 18강의 악화 조건도 적어요. 공실 영향 20%와 금리 5%에서는 이자 후 3억이에요. <b>좋은 경우만 보여주지 않는 것</b>이 중요해요.</p><p>자료 출처와 기준일, 미확인 비용, 추가 확인 사항을 함께 남겨요. 그래야 숫자가 바뀌었을 때 어느 가정부터 다시 볼지 알 수 있어요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>금액·수익률·평가액·현금의 기준을 통일해요. 자료 기준일이 다른 값을 섞지 말고, 시나리오 결과와 확정 자료를 구분해 표시해요.</p></details>",
+      "check": {
+        "question": "NOI 44억과 이자 후 16억을 둘 다 “투자자 분배금”이라고 적어도 될까요?",
+        "answer": "아니에요. 뺀 비용이 다르고 추가 지출도 생략돼 있어요. 지표 이름과 계산 범위를 밝혀야 해요."
+      }
+    },
+    {
+      "title": "결론 뒤에는 실행 조건을 적어요",
+      "html": "<p>IM의 결론을 “투자 검토”라고 정했어요. <b>그다음 무엇을 확인해야 실행할 수 있을까요?</b> 결론과 조건을 연결해요.</p><p>예를 들어 임대 계약 확인, 수리비 견적 확보, 대출 조건 확정, 만기 상환 계획 검증을 조건으로 적어요. 누가 언제 확인할지도 정해요.</p><p>조건을 충족하지 못하면 보류하거나 가격·대출 구조를 다시 검토할 수 있어요. “좋다”는 결론을 무조건 유지하지 말고 <b>판단을 바꾸는 조건</b>을 밝혀요.</p><p>앞 강의들을 한 흐름으로 묶는 거예요. <b>자료 → 가정 → 계산 → 불리한 경우 → 결론과 실행 조건.</b> 다음 마지막 강에서 이 흐름으로 모의 심사를 해볼게요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>실제 승인·계약·집행 권한은 정해진 절차와 규정을 따라요. 이 학습의 결론은 가상 자료를 이용한 설명 연습이며 실제 투자 실행이나 승인을 뜻하지 않아요.</p></details>",
+      "check": {
+        "question": "중요한 대출 조건이 미확정이면 제안서에서 빼고 승인만 먼저 받는 것이 좋은 정리일까요?",
+        "answer": "아니에요. 미확정 조건과 영향을 밝히고, 확인·재검토·실행 조건으로 연결해야 해요."
+      }
+    }
+  ],
+  "summary": [
+    "IM은 투자 이유를 자료·가격·조건·계산과 연결하는 문서예요.",
+    "각 숫자에 단위·기간·근거·가정과 계산 범위를 붙여요.",
+    "기준 결과와 함께 불리한 시나리오 및 미확인 위험도 보여줘요.",
+    "결론 뒤에는 확인 책임·기한·실행 조건과 판단을 바꿀 조건을 적어요."
+  ]
+,
+  sources:[sources.cre]
+});
+Object.assign(curriculum[19],{
+  "sections": [
+    {
+      "title": "실전 퀴즈 ① 같은 투자안을 네 질문으로 읽어요",
+      "html": "<p>마지막에는 익숙한 운영 건물을 직접 심사해볼게요. <b>매입가 1,000억, 대출 700억, 자기자본 300억</b>이에요. 연 실제 가정 수입 60억, 운영비 10억, 금리 4%이고 원금은 3년 뒤 한 번에 갚아요.</p><p><b>운영으로 얼마가 남고, 가격과 비교한 비율은 얼마일까요?</b> 이자를 내기 전 NOI와 Cap Rate부터 생각해봐요.</p><p>다음은 건물값 중 빚의 비율과 이자 후 현금이에요. <b>네 숫자를 외우기보다 각 질문의 뺄셈과 나눗셈</b>을 설명해보세요.</p><p>아래 해설은 스스로 비교하는 연습이에요. 이 강의의 실전 퀴즈는 <b>채점·정답 저장·승급을 하지 않아요.</b> 정식 퀴즈와 오답 기록은 3단계에서 추가할 예정이에요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>이 강의에서는 취득·매각 비용·세금·큰 수리·펀드 비용·현금 유보를 생략했어요. 제시된 값만으로 실제 분배금이나 전체 IRR을 확정하지 않아요.</p></details>",
+      "check": {
+        "question": "① NOI ② 매입가 기준 Cap Rate ③ LTV ④ 연 이자 차감 후 현금을 계산해볼까요?",
+        "answer": "①60−10=50억 ②50÷1000=5% ③700÷1000=70% ④50−700×4%=22억이에요. 22억은 세금·수리비 등 추가 지출을 빼기 전 현금이에요."
+      }
+    },
+    {
+      "title": "실전 퀴즈 ② 원금 갚을 날을 심사해요",
+      "html": "<p>같은 건물의 대출 만기 때 평가액이 900억으로 내려갔다고 해봐요. 새 은행은 가치의 70%까지만 빌려준다고 가정해요.</p><p><b>새로 얼마를 빌릴 수 있고, 700억을 갚는 데 얼마가 부족할까요?</b> 3강의 그림을 다시 이어봐요. 이 70%는 실제 대출 규정이 아니라 연습 조건이에요.</p><p>또한 이자 후 22억을 매년 전부 분배했다고 가정하면, 그 돈이 펀드 통장에 그대로 쌓였다고 볼 수 없어요. <b>분배한 돈과 상환용으로 남겨둔 현금</b>을 나눠봐요.</p><p>만기에는 재대출·매각·남겨둔 현금·추가 출자 중 무엇으로 부족분을 마련할지 확인해야 해요. 어느 방법도 자료 없이 자동으로 가능하다고 단정하지 않아요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>유보 현금·추가 출자·매각 재원은 실제 잔액·약정·일정으로 확인해야 해요. 기존 대출 만기와 새 대출 실행 또는 매각대금 수령 시점이 어긋나면 추가 현금 필요가 생길 수 있어요.</p></details>",
+      "check": {
+        "question": "평가액 900억에 새 대출 한도 70%면, 기존 700억 상환에 얼마가 부족할까요? 이미 분배한 22억씩을 통장에 남은 돈으로 세도 될까요?",
+        "answer": "새 대출은 630억이므로 70억이 부족해요. 이미 투자자에게 분배한 돈은 펀드에 남은 현금이 아니에요. 상환에 쓸 실제 현금과 다른 조달 방법을 따로 확인해야 해요."
+      }
+    },
+    {
+      "title": "모의 심사: 결론과 그 이유를 함께 남겨요",
+      "html": "<p>이제 네가 검토하는 사람이라고 해봐요. 숫자는 계산했지만 큰 수리비와 임대차 만기, 새 대출 가능성은 아직 몰라요. <b>투자·조건부 투자·보류·포기 중 어떻게 설명할까요?</b></p><p>자료가 부족한 지금은 “상환 재원과 비용을 확인하기 전에는 실행하지 않고 보류한다”처럼 답할 수 있어요. 한 가지 정답을 찍는 문제가 아니라 <b>주어진 자료에 맞는 이유</b>를 만드는 연습이에요.</p><p>“나는 ○○로 판단한다. 이유는 ○○다. ○○ 자료를 확인해야 한다. ○○ 조건이면 판단을 바꾼다.” 네 문장으로 말해보세요. 조건부 투자라면 그 조건과 충족 여부 확인도 밝혀요.</p><p><b>20강의 목표는 용어를 외운 뒤 끝내는 것이 아니라, 숫자와 위험을 연결해 내 말로 설명하는 것</b>이에요. 완료 후에도 모든 강을 복습할 수 있어요. 학습 완료만으로 실제 승급되지는 않아요.</p><details class=\"lesson-note\"><summary>이해한 뒤 더 알아보기</summary><p>실제 투자 판단은 충분한 자료와 전문 검토·승인 절차가 필요해요. 여기의 결론은 교육용 가상 심사이며 실제 투자 추천이나 실행이 아니에요. 정식 퀴즈·채점·승급은 아직 준비 중이에요.</p></details>",
+      "check": {
+        "question": "“연 현금이 남으니 투자”라는 결론에 어떤 질문을 더 붙여야 할까요?",
+        "answer": "월세 근거·큰 수리와 추가 비용·임대차 만기·대출 상환 재원·불리한 조건을 확인해요. 자료가 부족하면 보류 이유와 확인 조건을 밝힐 수 있어요."
+      }
+    }
+  ],
+  "summary": [
+    "NOI·Cap Rate·LTV·이자 후 현금이 답하는 질문을 각각 설명해요.",
+    "연간 현금과 대출 만기 큰돈을 구분하고 상환 부족분을 확인해요.",
+    "분배한 돈과 펀드에 남겨둔 현금을 같은 돈으로 세지 않아요.",
+    "결론·근거·추가 확인·판단을 바꿀 조건을 내 말로 정리해요."
+  ]
+,
+  sources:[sources.cre,sources.refinance]
+});
 if (typeof module !== 'undefined') module.exports = curriculum;
 
 'use strict';
@@ -827,6 +1191,346 @@ easyLessons.forEach((items,i)=>{
   items.forEach((explanation,step)=>{curriculum[i].sections[step].easy=explanation;});
   curriculum[i].easySummary={title:'본문의 흐름을 다시 이어볼게요',paragraphs:easySummary[i],note:'헷갈린 문장이 있다면 해당 소단원의 쉬운 설명에서 중간 과정을 다시 확인해요.'};
 });
+
+const practiceEasyLessons=[
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "먼저 받은 돈이라고 가정하는 1,000억을 한쪽에 놓아요. 아직 예상 수입이에요.",
+        "다른 쪽에는 땅값 200억, 공사비 450억, 나머지 150억을 놓아요. 합치면 800억이에요.",
+        "들어올 1,000억에서 나갈 800억을 빼서 200억이에요. 첫 표에서는 사업 자체의 수입과 비용부터 보는 거예요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "800억 비용을 낼 때 투자자 돈 200억과 은행 돈 600억을 사용했어요. 빌린 600억은 비용을 마련한 방법이에요.",
+        "사업이 끝나고 1,000억을 받으면, 그중 600억을 은행에 돌려줘요. 투자자들 몫은 400억이에요.",
+        "그 400억에는 투자자들이 처음 낸 200억이 들어 있어요. 사업이 남긴 이익 200억과 원금 200억을 구분해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "사업 끝에 1,000억을 받는 계획이어도, 오늘 공사비를 내야 한다면 그 미래 돈을 바로 쓸 수는 없어요.",
+        "돈이 들어오는 날짜와 나가는 날짜를 맞춰야 해요. 차이가 나면 필요한 자금과 조달 방법을 확인해요.",
+        "그래서 “끝나면 얼마 남나?”와 “진행 중 갚고 낼 돈이 있나?”를 다른 질문으로 둬요. 둘 다 맞아야 사업이 이어져요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "B2부터 B7까지는 우리가 정하는 조건이에요. 가격과 대출, 수입과 비용, 금리와 예상 매각가예요.",
+        "B8은 가격에서 대출을 뺀 계산이에요. =B2-B3을 넣으면 1000에서 700을 빼서 300이 나와요.",
+        "계산식이 같은 금리 칸을 바라보면, 금리 한 칸을 바꿔 여러 결과를 비교할 수 있어요. 가정과 계산을 나누는 이유예요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "먼저 투자자가 지금 내는 300억에 마이너스를 붙여요. 이후 받는 돈에는 플러스를 붙여요.",
+        "첫해와 둘째 해는 운영비와 이자를 낸 뒤 22억씩 받는다고 해요. 이 단순 예시에서는 남은 현금을 전부 분배한다고 가정해요.",
+        "마지막 해에는 월세에서 남는 22억도 받고 건물을 판 뒤 남는 400억도 받아요. 그래서 422억이에요. 매각대금과 원금 상환을 한 번씩만 넣어야 해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "IRR은 -300, 22, 22, 422를 순서대로 읽어요. 이 순서와 간격이 돈을 넣고 받은 시간표예요.",
+        "NPV는 첫 번째 입력을 한 해 뒤 돈으로 읽어요. 그러니 오늘 낸 -300까지 그 안에 넣으면 시간 위치가 틀어져요.",
+        "함수가 계산해 준 결과와, 우리가 쓴 표가 사실에 맞는지는 다른 확인이에요. 먼저 입출금과 날짜를 맞추고 그다음 결과를 읽어요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "인근 사례는 “이 주변에서는 얼마를 부르거나 계약했지?”를 알려줘요. 우리 건물이 그와 같다는 증거는 아니에요.",
+        "같은 면적 1㎡를 기준으로 바꾸고, 월세에 어떤 비용이 들어 있는지 맞춰요. 그다음 연식과 시설, 위치 차이를 봐요.",
+        "우리 건물과 더 비슷한 사례에 이유를 붙여 참고해요. 숫자 하나를 맞히는 것보다 어떤 자료에서 왜 그 숫자를 골랐는지 남기는 것이 중요해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "60억은 모두 임대된 상태에서 받을 수 있다고 가정한 돈이에요. 아직 공실을 뺀 숫자가 아니에요.",
+        "그중 10%인 6억을 못 받는다고 보면 54억이 들어와요. 여기서 운영비 10억을 내면 44억이 남아요.",
+        "앞 강의 실제 가정 수입 60억에서 공실을 또 빼는 것이 아니에요. 이번 60억은 잠재 수입이라는 새로운 조건이라 계산 시작점이 달라요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "세입자가 없어도 건물의 설비를 점검하고 보안을 유지해야 할 수 있어요. 그래서 월세가 줄어도 비용이 그대로일 수 있어요.",
+        "수입 54억에서 비용 10억이면 44억, 비용 12억이면 42억이에요. 운영비 2억 차이가 남는 돈 2억 차이가 돼요.",
+        "작은 반복 지출과 큰 일회성 수리는 위치를 나눠요. 각각 어디에 기록했는지 알면 NOI와 최종 현금을 헷갈리지 않아요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "4강처럼 연 수익을 가격과 비교해요. 이번에는 NOI가 50억이 아니라 공실을 반영한 44억이에요.",
+        "가격이 800억이면 44÷800=5.5%가 돼요. 그래서 거꾸로 44÷5.5%를 하면 800억이에요.",
+        "5.5%는 이번에 정한 평가 가정이에요. 이 숫자가 왜 적절한지 확인하지 않고 계산만 하면, 정밀해 보이는 잘못된 값이 나올 수 있어요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "750억과 850억은 다른 두 건물의 실제 거래였다고 가정하는 자료예요. 우리 건물을 직접 평가한 값은 아니에요.",
+        "그 건물이 우리와 얼마나 비슷한지 봐요. 같은 면적이어도 임대료가 높거나 큰 수리가 없으면 가격 차이가 생길 수 있어요.",
+        "자료를 참고한 이유를 적어요. “평균이라서”보다 “이 조건은 같고 이 조건은 다르다”가 가격 근거를 설명해줘요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "800억은 판매자에게 줄 건물 가격이에요. 거래 비용 20억과 수리비 30억은 다른 곳으로 나가는 돈이에요.",
+        "셋을 합치면 850억이에요. 이 총액을 얼마의 대출과 얼마의 자기 돈으로 마련할지 생각해요.",
+        "총액 한도를 800억으로 정하면 다른 지출 50억을 빼고 건물에 줄 금액은 750억이에요. 이것은 예산 역산이지 실제 시장가격을 확정하는 공식은 아니에요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "원래 800억 비용에서 공사비 30억만 줄였으니 770억이에요. 1,000억에서 빼면 230억이 남아요.",
+        "하지만 계산을 위해 “다른 조건이 같음”이라고 했어요. 실제로는 바꾼 설계가 공기와 임대수익에 영향을 줄 수 있어요.",
+        "그래서 절감액과 함께 무엇을 유지했고 무엇이 달라졌는지 적어요. 비용을 낮춘 이유와 결과가 연결돼야 해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "첫 계산에서는 공사비만 봐서 30억을 줄였어요. 두 번째 계산에서는 기다리는 동안 이자가 18억 더 나가요.",
+        "30억을 아끼고 18억을 더 쓰면 차이는 12억이에요. 총비용은 800억에서 12억 줄어든 788억이에요.",
+        "이익 증가와 돈을 받는 날짜는 별개예요. 212억을 남길 예상이라도 늦게 받는다면 투자자의 시간표와 수익률을 다시 봐야 해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "200억은 남은 돈의 금액이에요. 25%는 그 200억을 어떤 기준으로 나눴는지 보여주는 비율이에요.",
+        "기준을 800억 사업비로 정했기 때문에 25%예요. 투자자 돈 200억이나 매출 1,000억을 기준으로 하면 다른 비율이 나와요.",
+        "그리고 같은 금액도 1년 뒤와 3년 뒤에 받는 것은 달라요. 시간까지 비교하려면 투자자 현금흐름과 IRR을 따로 봐요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "사업에 들어간 800억을 네 줄로 나눠요. 500억, 100억, 100억은 서로 순서가 다른 대출이고, 마지막 100억은 투자자 자기 돈이에요.",
+        "은행이나 투자자가 여럿이라고 똑같이 나눠 돌려주는 구조는 아닐 수 있어요. 여기서는 약정된 네 단계 순서대로 줘요.",
+        "선·중·후는 이 대출들 사이에서 어디에 놓였는지를 뜻해요. 실제 어떤 권리와 담보가 있는지는 계약을 봐야 해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "650억에서 첫 줄 500억을 빼면 150억이에요. 둘째 줄 100억을 빼면 50억이에요.",
+        "셋째 줄은 100억을 받을 약속이지만 이제 50억밖에 없어요. 그 50억을 받고, 마지막 자기자본에는 돈이 없어요.",
+        "이렇게 차례대로 빼는 그림이 회수 순서예요. 먼저 받는 쪽이 상대적으로 보호돼도, 전체 돈이 더 부족해지면 그쪽도 못 받을 수 있어요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "높은 이자는 계약에 적힌 받을 돈이에요. 그 계약을 지킬 돈이 사업에서 생기는지는 다른 문제예요.",
+        "앞선 대출을 갚고 남은 돈이 부족하면, 뒤의 대출은 이자뿐 아니라 원금도 못 받을 수 있어요.",
+        "그래서 “몇 %지?”와 함께 “누가 먼저 받고, 부족하면 나는 얼마나 못 받지?”를 질문해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "계약서는 얼마를 받을 약속인지 알려줘요. 입금 자료는 그 돈을 실제 받았는지 알려줘요.",
+        "두 자료가 맞는지 연결하면 누락이나 미납을 찾을 수 있어요. 제안서 숫자를 자료로 되짚는 과정이에요.",
+        "자료가 비어 있으면 아직 모르는 거예요. 모른다는 표시를 남겨야 다음 확인과 투자 조건으로 연결할 수 있어요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "30억이라는 말부터 확정 금액인지 예상 견적인지 나눠요. 공사 범위가 바뀌면 비용도 바뀔 수 있어요.",
+        "그 비용을 누가 내는지 정해요. 우리가 낸다면 언제 현금이 나가는지 적고, 판매자가 고쳐주면 완료 조건을 봐요.",
+        "그다음 다른 영향도 적어요. 공사 중 임대가 멈추거나 인수가 늦어지면 30억 외에 수입과 금융비용이 달라져요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "위원회는 계산식만 확인하는 자리가 아니라, 무엇을 근거로 어떤 위험을 감수할지 결정하는 자리라고 생각해요.",
+        "확인한 내용과 아직 모르는 내용을 분리해 보여줘요. 조건이 붙으면 그 조건을 누가 충족시키고 확인할지도 정해요.",
+        "좋은 설명은 “좋은 건물입니다”에서 끝나지 않아요. 이 가격과 이 조건에서 살 이유와, 결론을 바꿀 위험을 함께 말해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "첫 계산은 44−28=16억이에요. 두 번째는 44−35=9억이에요.",
+        "44억은 그대로 두고 은행에 주는 돈만 바꿨어요. 그래서 7억 차이를 금리 변화의 영향으로 읽을 수 있어요.",
+        "그다음 공실만 바꾸는 별도 계산을 하면 어떤 변수에 더 민감한지 비교할 수 있어요. 조건의 단위도 같이 적어야 해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "빈 공간 때문에 들어오는 돈이 54억에서 48억으로 줄어요. 운영비가 같으니 NOI도 6억 줄어요.",
+        "동시에 금리 때문에 이자가 28억에서 35억으로 늘어 7억이 더 나가요.",
+        "총 13억이 줄어 기준 16억에서 3억이 돼요. 한 가지 악재만 봤을 때보다 버틸 현금이 훨씬 적어져요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "10%를 무엇에 적용했는지 먼저 봐요. 이번에는 전체 사업비 800억이 아니라 공사비 450억이에요.",
+        "450억의 10%인 45억이 더 나가면 남는 이익은 200억에서 155억으로 줄어요.",
+        "지연 이자 18억까지 더 나가면 137억이에요. 여러 악재를 모았을 때 필요한 돈과 회수 시점도 함께 바꿔봐야 해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "투자 이유는 광고 문구가 아니라 확인할 수 있는 주장으로 시작해요. 무엇을 근거로 월세를 예상했는지 적어요.",
+        "그 월세와 비용을 어느 가격에 사는지 연결해요. 수익이 같아도 매입가격이 높으면 결과가 달라져요.",
+        "그래서 건물의 장점만 쓰지 않고, 가격과 대출·운영 조건까지 붙여야 하나의 투자 논리가 돼요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "44억은 운영비까지만 뺀 숫자예요. 거기서 이자 28억을 더 빼면 16억이에요.",
+        "표에 숫자만 두면 독자가 어디까지 계산했는지 몰라요. 수입과 공실, 운영비, 이자를 한 단계씩 연결해요.",
+        "불리한 가정에서는 3억이 된다는 것도 보여줘요. 기본 숫자에 대한 자신감보다 조건이 바뀔 때의 위험까지 설명하는 것이 중요해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "계산이 4% 대출을 전제로 하는데 실제 금리가 아직 정해지지 않았다면, 결과도 그 조건에 기대고 있어요.",
+        "그래서 대출 조건 확인을 다음 행동으로 적어요. 확정 금리가 달라지면 계산과 결론도 다시 봐요.",
+        "결론과 실행은 한 번에 같아지는 것이 아니에요. 어떤 조건이 충족돼야 다음 행동을 할 수 있는지 남겨요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ],
+  [
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "먼저 건물 운영만 계산해요. 60억이 들어오고 10억을 쓰니 50억이 남아요.",
+        "그 50억을 건물가격 1,000억과 비교하면 5%예요. 빌린 700억을 같은 가격과 비교하면 70%예요.",
+        "은행 이자는 28억이니 50억에서 빼면 22억이에요. 같은 건물을 보지만 질문마다 다른 숫자를 계산해요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "900억에 70%를 곱하면 630억이에요. 기존 은행은 700억을 돌려달라고 하니 차이 70억을 마련해야 해요.",
+        "매년 남은 22억을 전부 투자자에게 줬다면 그 돈은 투자자 쪽에 있어요. 펀드 통장에 모였다고 계산하면 안 돼요.",
+        "재대출을 받을 계획만 적지 말고, 부족분과 실제 남긴 현금을 확인해요. 돈이 오는 시점이 원금 갚을 날과 맞는지도 봐요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    },
+    {
+      "title": "같은 이야기, 한 걸음씩",
+      "paragraphs": [
+        "22억이 남는 계산은 투자안의 한 부분이에요. 원금 갚을 방법과 빠진 비용은 아직 해결되지 않았어요.",
+        "그래서 계산 결과만 말하지 않고 모르는 것도 말해요. 무엇을 확인하면 결론이 바뀔지 정하면 다음 행동이 보여요.",
+        "이유가 자료와 연결되는지가 중요해요. 20강을 완료한 뒤 헷갈린 강으로 돌아가 같은 숫자를 다시 설명해볼 수 있어요."
+      ],
+      "note": "위 본문과 같은 사례를 더 천천히 풀었어요. 숫자는 개념을 익히기 위한 가정이에요."
+    }
+  ]
+];
+const practiceEasySummaries=[
+  [
+    "800억은 사업에 쓸 비용이고 200억 투자금과 600억 대출은 그 돈을 마련하는 방법이에요. 수입 1,000억에서 비용 800억을 빼면 사업이익 200억이에요.",
+    "대출 원금을 갚고 투자자에게 돌아올 400억에는 처음 넣은 200억도 있어요. 이익이 보이는 것과 공사비 낼 날에 현금이 있는 것도 따로 확인해요."
+  ],
+  [
+    "가정을 한곳에 모으고 계산이 그 셀을 바라보게 해요. 지금 넣은 돈은 -300, 첫 두 해 받는 돈은 22씩, 마지막에는 운영과 매각을 합쳐 422억이에요.",
+    "함수는 그 숫자와 시간을 읽어요. IRR에는 전체 순서를, NPV에는 미래 현금을 넣고 오늘의 -300은 밖에서 더해요. 결과보다 먼저 표에 빠지거나 두 번 센 돈이 없는지 봐요."
+  ],
+  [
+    "주변 자료를 참고하되 우리 건물과 면적·시설·계약 조건이 맞는지 먼저 봐요. 잠재 월세 60억은 공실을 빼기 전 숫자예요.",
+    "10%를 못 받으면 수입 54억이고 운영비 10억을 빼면 44억이에요. 빈 공간이 늘어도 비용이 모두 사라지지는 않으니 기본 관리비와 큰 수리도 따로 봐요."
+  ],
+  [
+    "운영 수익 44억을 5.5%와 연결하면 800억 가격이 나와요. 이 값은 고른 수익과 비율에 따라 바뀌는 추정이에요.",
+    "800억을 판매자에게 줘도 거래비와 수리비 50억이 더 필요하면 전체는 850억이에요. 계산한 가치·계약가격·전체 마련할 돈을 다른 칸에 놓아요."
+  ],
+  [
+    "공사비를 30억 줄여도 지연 이자가 18억 더 생기면 순효과는 12억이에요. 설계 대안의 비용과 일정 영향을 함께 보는 거예요.",
+    "이익 200억을 총비용 800억으로 나눈 25%에는 시간이 들어 있지 않아요. 연 IRR은 투자자 돈이 언제 들어가고 나오는지 다시 놓고 계산해요."
+  ],
+  [
+    "여러 대출이 같은 사업에 있어도 약정에서 받는 순서가 다를 수 있어요. 이 사례에서는 650억에서 선순위 500억, 중순위 100억을 먼저 빼요.",
+    "남은 50억만 후순위에 가고 자기자본에는 돈이 없어요. 약속한 금리와 실제 받을 수 있는 돈은 다른 질문이고, 먼저 받는 쪽도 회수액이 더 부족하면 손실을 볼 수 있어요."
+  ],
+  [
+    "60억 수입이라는 문장을 계약과 입금 자료로 따라가요. 시설 문제도 비용과 날짜, 수입 영향으로 옮겨요. 확인하지 못한 것은 모르는 상태로 표시해요.",
+    "결정하는 사람에게 좋은 점뿐 아니라 위험과 조건을 함께 보여줘요. 누가 무엇을 언제 확인하고, 결과에 따라 결론이 어떻게 달라지는지까지 연결해요."
+  ],
+  [
+    "먼저 금리만 바꾸면 현금 감소가 어디서 왔는지 보여요. 공실까지 악화시키면 기준 16억이 3억으로 줄어드는 시나리오도 계산할 수 있어요.",
+    "공사비 10%는 해당 공사비 450억에 적용해서 45억이에요. 어떤 조건을 얼마나 바꿨는지 밝히고, 현금과 상환이 버티는지 확인해요."
+  ],
+  [
+    "투자제안서는 장점을 포장하는 글보다 근거를 따라갈 수 있는 설명이에요. 자료에서 수입·비용 가정을 만들고 계산과 위험으로 연결해요.",
+    "기준 결과와 불리한 경우를 함께 보여준 뒤 결론과 실행 조건을 붙여요. 중요한 가정이 달라지면 판단을 다시 볼 조건도 남겨요."
+  ],
+  [
+    "네 지표를 계산해도 큰 수리와 만기 원금은 아직 남은 질문이에요. 분배한 현금을 펀드에 쌓인 돈으로 다시 세면 안 돼요.",
+    "모의 심사에서는 결론과 이유, 더 확인할 자료, 판단을 바꿀 조건을 말해요. 이 과정을 완료해도 정식 퀴즈 점수나 승급 기록이 생기는 것은 아니에요."
+  ]
+];
+practiceEasyLessons.forEach((items,i)=>{
+  const lesson=curriculum[i+10];
+  items.forEach((explanation,step)=>{lesson.sections[step].easy=explanation;});
+  lesson.easySummary={title:'본문의 흐름을 다시 이어볼게요',paragraphs:practiceEasySummaries[i],note:'헷갈린 문장이 있다면 해당 소단원의 쉬운 설명에서 중간 과정을 다시 확인해요.'};
+});
 if(typeof module!=='undefined')module.exports={easyLessons,easySummary};
 
 'use strict';
@@ -919,7 +1623,10 @@ function updateProgressUI(){
   document.getElementById('miniProgress').textContent=count+' / 20강 학습 완료 · 승급 준비 중';
   document.getElementById('stageProgress').textContent='LV.1 · 신입사원 / '+count+'강 완료';
   const next=LearningProgress.nextLesson(curriculum,progress.state);
-  document.getElementById('homeNextTitle').textContent=next?next.number+'강 · '+next.title:'다음 수업을 준비하고 있어요';
+  const finished=count===curriculum.length;
+  document.getElementById('homeNextTitle').textContent=next?next.number+'강 · '+next.title:finished?'20강 학습 완료 · 헷갈린 내용 복습하기':'다음 수업을 준비하고 있어요';
+  document.getElementById('homeNextCopy').textContent=finished?'완료한 수업을 다시 읽고, 내 말로 설명해보세요. 정식 퀴즈와 승급은 다음 단계에서 추가돼요.':'먼저 기초를 익히고, 모의투자로 배운 내용을 적용할 거예요.';
+  document.getElementById('homeLearningCta').textContent=finished?'복습할 수업 보기 →':'학습 시작하기 →';
 }
 function storageNotice(){return '<p class="storage-note" role="status">'+escapeText(progress.message||'진도는 이 기기·브라우저에 저장돼요. 브라우저 데이터를 지우면 기록도 사라져요.')+'</p>';}
 function lessonRow(lesson){
@@ -933,9 +1640,9 @@ function renderLearningList(notice=''){
   const completed=progress.state.completed.length;
   learningView.innerHTML='<header class="page-head"><span class="eyebrow">LEARNING</span><h1 tabindex="-1">기초학습</h1><p>쉽게 이해하고, 숫자로 확인하고, 내 말로 정리해요.</p></header>'+
     (notice?'<p class="lesson-note" role="status">'+escapeText(notice)+'</p>':'')+
-    '<div class="learning-overview"><div><span class="eyebrow">나의 학습</span><h2>'+completed+' / 20강 완료</h2><p>완료한 수업은 언제든 다시 볼 수 있어요.</p></div>'+(next?'<button type="button" class="primary" data-lesson="'+next.id+'">'+next.number+'강 '+((progress.state.positions[next.id]||0)>0?'이어서 학습':'시작하기')+' →</button>':'<span class="status-label">다음 수업 준비 중</span>')+'</div><progress class="learning-progress" max="20" value="'+completed+'" aria-label="20강 학습 완료 진도"></progress>'+storageNotice()+
+    '<div class="learning-overview"><div><span class="eyebrow">나의 학습</span><h2>'+completed+' / 20강 완료</h2><p>완료한 수업은 언제든 다시 볼 수 있어요.</p></div>'+(next?'<button type="button" class="primary" data-lesson="'+next.id+'">'+next.number+'강 '+((progress.state.positions[next.id]||0)>0?'이어서 학습':'시작하기')+' →</button>':'<span class="status-label">'+(completed===curriculum.length?'20강 학습 완료 · 복습 가능':'다음 수업 준비 중')+'</span>')+'</div><progress class="learning-progress" max="20" value="'+completed+'" aria-label="20강 학습 완료 진도"></progress>'+storageNotice()+
     '<div class="lesson-group"><h2>01 · 금융 기초 <small>1~10강</small></h2><ol class="lesson-list">'+curriculum.slice(0,10).map(lessonRow).join('')+'</ol></div>'+
-    '<div class="lesson-group"><h2>02 · 부동산 투자 실무 입문 <small>11~20강</small></h2><ol class="lesson-list">'+curriculum.slice(10).map(lessonRow).join('')+'</ol></div><p class="asset-footnote">현재 1~10강을 학습할 수 있어요. 11~20강은 2-C에서 추가돼요. 학습 완료는 스스로 읽고 정리한 기록이며, 퀴즈 점수나 승급을 의미하지 않아요.</p>';
+    '<div class="lesson-group"><h2>02 · 부동산 투자 실무 입문 <small>11~20강</small></h2><ol class="lesson-list">'+curriculum.slice(10).map(lessonRow).join('')+'</ol></div><p class="asset-footnote">1~20강이 모두 준비됐어요. 이전 강을 완료하면 다음 강이 열려요. 학습 완료는 스스로 읽고 정리한 기록이며, 퀴즈 점수나 승급을 의미하지 않아요.</p>';
 }
 function renderEasy(explanation){
   if(!explanation)return '';
@@ -990,7 +1697,7 @@ learningView.addEventListener('click',event=>{
   if(action==='complete'&&progress.complete(activeLesson.id)){
     updateProgressUI();const next=LearningProgress.nextLesson(curriculum,progress.state);
     const title=activeLesson.title;
-    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강이 열렸어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
+    renderLearningList(title+' 학습을 완료했어요. '+(next?next.number+'강이 열렸어요.':progress.state.completed.length===curriculum.length?'20강을 모두 마쳤어요. 헷갈린 수업은 언제든 복습할 수 있어요.':'다음 수업이 추가되면 이어서 공부할 수 있어요.'));
     history.replaceState(null,'','#learn');showView('learn');
   }
 });
