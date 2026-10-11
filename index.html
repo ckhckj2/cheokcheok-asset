@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FBFCFE"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-iHdizOz9KbDrwSMADfxY6CbrwDaGhndniDIUKXnclAA='; style-src 'sha256-wqQdFYvf1wB/1KtlnOBvlRk9mLIYwSF7odukybmnt0E='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="description" content="척척 에셋: 기초학습에서 모의투자와 투자 판단까지 이어지는 부동산 자산운용 교육 프로그램."><title>척척 에셋</title><style>/* Reused from ckhckj2/Project-context: v2.css */
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FBFCFE"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-89GyYtk4565/DZmNgC1MIgnrPQnZ92yAXGjMG5RzTp8='; style-src 'sha256-wqQdFYvf1wB/1KtlnOBvlRk9mLIYwSF7odukybmnt0E='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="description" content="척척 에셋: 기초학습에서 모의투자와 투자 판단까지 이어지는 부동산 자산운용 교육 프로그램."><title>척척 에셋</title><style>/* Reused from ckhckj2/Project-context: v2.css */
 :root{--bg:#F6F7FB;--surface:#fff;--ink:#26324A;--muted:#77819A;--line:#E5E9F2;--primary:#4C6FFF;--primarySoft:#EEF2FF;--green:#159A73;--greenSoft:#EAF8F3;--amber:#C98218;--amberSoft:#FFF6E6;--coral:#E77373;--coralSoft:#FFF0F0;--shadow:0 10px 30px rgba(42,58,91,.065)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(76,111,255,.18);outline-offset:2px}.hidden{display:none!important}
 #masterBar{display:none;margin:8px 10px 0;padding:10px 12px;border:1px solid #E5D69F;border-radius:16px;background:linear-gradient(90deg,#FFFBEB,#F7F2FF);box-shadow:0 8px 24px rgba(119,92,24,.06);align-items:center;gap:10px;flex-wrap:wrap}.certified #masterBar{display:flex}.master-copy{min-width:150px;margin-right:auto}.master-copy small{display:block;font-size:8.5px;letter-spacing:.11em;font-weight:950;color:#9B8140;margin-bottom:3px}.master-copy b{font-size:11.5px;color:#725C25}.master-levels{display:flex;gap:6px;flex-wrap:wrap}.master-levels button{border:1px solid #E6E1D3;background:#fff;color:#766F62;border-radius:999px;padding:8px 11px;font-size:10.5px;font-weight:900}.master-levels button.active{background:#5A62D7;color:#fff;border-color:#5A62D7}.master-levels button[data-level="5"].active{background:linear-gradient(135deg,#705BD2,#B58A2D);border-color:transparent}.master-note{width:100%;font-size:9.5px;color:#9A8E72;line-height:1.45}
@@ -1572,7 +1572,7 @@ const LearningProgress = (() => {
     try{state=read();}catch(error){writable=false;message='저장된 진도를 읽을 수 없어 이번 방문의 진도만 유지해요. 기존 기록은 덮어쓰지 않아요.';}
     function save(next){
       if(writable){
-        try{next=merge(read(),next,lessons);storage.setItem(KEY,JSON.stringify(next));}
+        try{const persisted=read();next=merge(persisted,next,lessons);if(JSON.stringify(next)!==JSON.stringify(persisted))storage.setItem(KEY,JSON.stringify(next));}
         catch(error){writable=false;message='진도를 저장하지 못했어요. 이번 방문에서는 계속 공부할 수 있지만, 새로고침하면 기록이 사라질 수 있어요.';}
       }
       state=next;return state;
@@ -1663,13 +1663,13 @@ function renderLesson(lesson,step,focus=true){
   document.title=lesson.number+'강 · '+lesson.title+' · 척척 에셋';
   if(focus){window.scrollTo({top:0,behavior:'instant'});learningView.querySelector('.lesson-body h2').focus({preventScroll:true});}
 }
-function route(focus=true){
+function route(focus=true,recordVisit=true){
   progress.sync();const parts=location.hash.slice(1).split('/');
   if(parts[0]==='learn'){
     const lesson=curriculum.find(l=>l.id===parts[1]);
     if(lesson&&['open','completed'].includes(lessonStatus(lesson))){
       const step=lessonStatus(lesson)==='completed'?0:progress.state.resume[lesson.id]??progress.state.positions[lesson.id]??0;
-      progress.visit(lesson.id,step);renderLesson(lesson,step,false);
+      if(recordVisit)progress.visit(lesson.id,step);renderLesson(lesson,step,false);
     }else renderLearningList(parts[1]?'이 수업은 아직 열리지 않았어요. 이전 강을 먼저 완료해 주세요.':'');
   }else if(!learningView.querySelector('h1'))renderLearningList();
   showView(parts[0],focus);updateProgressUI();
@@ -1702,7 +1702,8 @@ learningView.addEventListener('click',event=>{
   }
 });
 window.addEventListener('hashchange',()=>route());
-window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY){route(false);}});
+// Refresh the view on another tab's change without writing it back to storage.
+window.addEventListener('storage',event=>{if(event.key===LearningProgress.KEY){route(false,false);}});
 setLevel(0);route(false);
 
 </script></body></html>
